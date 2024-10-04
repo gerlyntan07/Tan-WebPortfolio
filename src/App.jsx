@@ -10,58 +10,66 @@ function App() {
 
     function openMenu() {
         if (popupMenuRef.current) {
-            popupMenuRef.current.style.marginLeft = '0%';
+            popupMenuRef.current.style.width = '100%';
+            popupMenuRef.current.style.display = 'flex';
         }
     }
 
     function closeMenu() {
         if (popupMenuRef.current) {
-            popupMenuRef.current.style.marginLeft = '100%';
+            popupMenuRef.current.style.width = '0%';
         }
     }
 
     return (
         <>
-            {/* POPUP MENU */}
-            <div className='popup-menu' id='popupMenu' ref={popupMenuRef}>
-                <div className="popup-container">
-                    <div className='popup-top'>
-                        <img className='darkmode-popup' src={DarkMode} alt="menu button" />
-                        <button className='closeBtn' onClick={closeMenu}>x</button>
+            <div id='body'>
+                {/* POPUP MENU */}
+                <div className='popup-menu' id='popupMenu' ref={popupMenuRef}>
+                        <div className="popup-container">
+                            <div className='popup-top'>
+                                <img className='darkmode-popup' src={DarkMode} alt="menu button" />
+                                <button className='closeBtn' onClick={closeMenu}>x</button>
+                            </div>
+
+                            <div className='popup-navBtn'>
+                                <ul>
+                                    <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Home</Link></li>
+                                    <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>About</Link></li>
+                                    <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Projects</Link></li>
+                                    <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Contact</Link></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className='popup-navBtn'>
-                        <ul>
-                            <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Home</Link></li>
-                            <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>About</Link></li>
-                            <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Projects</Link></li>
-                            <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Contact</Link></li>
-                        </ul>
-                    </div>
+                <div id="nav">
+                    <header>
+                        <div>
+                            <img className='gt-logo' src={Logo} alt="logo" />
+                        </div>
+
+                        <div className='nav-btn'>
+                            <ul>
+                                <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Home</Link></li>
+                                <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>About</Link></li>
+                                <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Projects</Link></li>
+                                <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Contact</Link></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img className='darkmode-icon' src={DarkMode} alt="dark mode" />
+                            <button id='menuBtn' onClick={openMenu}>
+                                <img className='menuBtn' src={MenuBtn} alt="menu" />
+                            </button>
+                        </div>
+                    </header>
                 </div>
+
+
             </div>
 
-            <header>
-                <div>
-                    <img className='gt-logo' src={Logo} alt="logo" />
-                </div>
-
-                <div className='nav-btn'>
-                    <ul>
-                        <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Home</Link></li>
-                        <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>About</Link></li>
-                        <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Projects</Link></li>
-                        <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Contact</Link></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <img className='darkmode-icon' src={DarkMode} alt="dark mode" />
-                    <button id='menuBtn' onClick={openMenu}>
-                        <img className='menuBtn' src={MenuBtn} alt="menu" />
-                    </button>
-                </div>
-            </header>
         </>
     );
 }

@@ -14,6 +14,12 @@
     --sectionContainerDark: #222222;
     --popupMenu: #AC9D93;
 }
+#body{
+    width: 100%;
+}
+#nav{
+    width: 100%;
+}
 *{
     padding: 0;
     margin: 0;
@@ -51,13 +57,13 @@ header li{
 /* SMARTPHONE */
 @media screen and (max-width: 767px) {
     .popup-menu{
-        display: flex;
         background-color: var(--popupMenu);
-        width: 100%;
         height: 100%;
         position: absolute;
-        margin-left: 100%;
+        width: 0%;
+        right: 0;
         transition: .7s ease;
+        overflow: hidden; /* Ensure it doesn't take up space */
     }
     .popup-navBtn{
         display: flex;
