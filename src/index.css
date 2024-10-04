@@ -1,0 +1,132 @@
+@font-face {
+    font-family: montserrat;
+    src: url(assets/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: poltawski;
+    src: url(assets/Poltawski_Nowy/PoltawskiNowy-VariableFont_wght.ttf);
+}
+:root{
+    --darkBrown: #A67538;
+    --lightBrown: #CB995B;
+    --sectionClrLight: #EDE6DD;
+    --sectionClrDark: #3E3E3E;
+    --sectionContainerDark: #222222;
+    --popupMenu: #AC9D93;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    max-height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.384);
+}
+header li{
+    font: 300 18px poltawski;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0px 30px;
+    cursor: pointer;
+    display: inline-block;
+}
+.darkmode-icon{
+    max-width: 20px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+.gt-logo{
+    max-width: 35px;
+    margin: 5px 0px 5px 50px;
+}
+.menuBtn{
+    display: none;
+}
+/* SMARTPHONE */
+@media screen and (max-width: 767px) {
+    .popup-menu{
+        display: flex;
+        background-color: var(--popupMenu);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        margin-left: 100%;
+        transition: .7s ease;
+    }
+    .popup-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+    .closeBtn{
+        margin-right: 30px;
+        font: 500 20px montserrat;
+        color: white;
+        background-color: transparent;
+        border: none;
+    }
+    .darkmode-popup{
+        height: 25px;
+        margin-left: 30px;
+        filter: invert(100%);
+    }
+    .gt-logo{
+        margin-left: 25px;
+    }
+    .nav-btn{
+        display: none;
+    }
+    .darkmode-icon{
+        display: none;
+    }
+    .menuBtn{
+        display: flex;
+        width: 25px;
+        cursor: pointer;
+    }
+    #menuBtn{
+        margin-right: 25px;
+        background-color: transparent;
+        border: none;
+    }
+    .popup-container ul li{
+        color: white;
+        list-style: none;
+        display: block;
+        margin: 40px 0px;
+        font: 300 20px poltawski;
+    }
+    .popup-top{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 30px 0px 60px 0px;
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+    .popup-menu{
+        display: none;
+    }
+    header li{
+        margin: 0px 23px;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1024px) {
+    .popup-menu{
+        display: none;
+    }
+    
+}
