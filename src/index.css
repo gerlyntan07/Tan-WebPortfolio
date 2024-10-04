@@ -224,6 +224,7 @@ h1{
     .dl-cv{
         width: max-content;
         align-self: center;
+        margin-right: 0px;
     }
 }
 
