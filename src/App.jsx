@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import Logo from '/src/assets/portfolio-logo.png';
 import DarkMode from '/src/assets/icons8-dark-mode-50.png';
+import MenuBtn from '/src/assets/icons8-menu-50.png'
 import { Link } from 'react-scroll';
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
             <div className='popup-menu' id='popupMenu' ref={popupMenuRef}>
                 <div className="popup-container">
                     <div className='popup-top'>
-                        <img className='darkmode-popup' src={DarkMode} alt="" />
+                        <img className='darkmode-popup' src={MenuBtn} alt="menu button" />
                         <button className='closeBtn' onClick={closeMenu}>x</button>
                     </div>
 
