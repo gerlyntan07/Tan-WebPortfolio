@@ -26,7 +26,7 @@ function App() {
             <div className='popup-menu' id='popupMenu' ref={popupMenuRef}>
                 <div className="popup-container">
                     <div className='popup-top'>
-                        <img className='darkmode-popup' src={MenuBtn} alt="menu button" />
+                        <img className='darkmode-popup' src={DarkMode} alt="menu button" />
                         <button className='closeBtn' onClick={closeMenu}>x</button>
                     </div>
 
@@ -58,7 +58,7 @@ function App() {
                 <div>
                     <img className='darkmode-icon' src={DarkMode} alt="dark mode" />
                     <button id='menuBtn' onClick={openMenu}>
-                        <img className='menuBtn' src="src/assets/icons8-menu-50.png" alt="menu" />
+                        <img className='menuBtn' src={MenuBtn} alt="menu" />
                     </button>
                 </div>
             </header>
