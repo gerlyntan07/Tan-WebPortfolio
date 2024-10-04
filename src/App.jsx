@@ -11,7 +11,6 @@ function App() {
     function openMenu() {
         if (popupMenuRef.current) {
             popupMenuRef.current.style.width = '100%';
-            popupMenuRef.current.style.display = 'flex';
         }
     }
 

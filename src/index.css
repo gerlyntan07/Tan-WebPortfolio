@@ -54,9 +54,13 @@ header li{
 .menuBtn{
     display: none;
 }
+.popup-menu{
+    display: none;
+}
 /* SMARTPHONE */
 @media screen and (max-width: 767px) {
     .popup-menu{
+        display: flex;
         background-color: var(--popupMenu);
         height: 100%;
         position: absolute;
