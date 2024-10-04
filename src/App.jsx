@@ -1,7 +1,12 @@
 import React, { useRef } from 'react';
+import HeroImg from '/src/assets/hero-pic.png'
 import Logo from '/src/assets/portfolio-logo.png';
 import DarkMode from '/src/assets/icons8-dark-mode-50.png';
+import Github from '/src/assets/github.png';
+import Facebook from '/src/assets/facebook.png';
+import Instagram from '/src/assets/instagram.png'
 import MenuBtn from '/src/assets/icons8-menu-50.png'
+import cv from '/src/assets/Gerlyn-Tan-CV.pdf';
 import { Link } from 'react-scroll';
 
 function App() {
@@ -25,22 +30,22 @@ function App() {
             <div id='body'>
                 {/* POPUP MENU */}
                 <div className='popup-menu' id='popupMenu' ref={popupMenuRef}>
-                        <div className="popup-container">
-                            <div className='popup-top'>
-                                <img className='darkmode-popup' src={DarkMode} alt="menu button" />
-                                <button className='closeBtn' onClick={closeMenu}>x</button>
-                            </div>
+                    <div className="popup-container">
+                        <div className='popup-top'>
+                            <img className='darkmode-popup' src={DarkMode} alt="menu button" />
+                            <button className='closeBtn' onClick={closeMenu}>x</button>
+                        </div>
 
-                            <div className='popup-navBtn'>
-                                <ul>
-                                    <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Home</Link></li>
-                                    <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>About</Link></li>
-                                    <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Projects</Link></li>
-                                    <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Contact</Link></li>
-                                </ul>
-                            </div>
+                        <div className='popup-navBtn'>
+                            <ul>
+                                <li><a href="#hero">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Projects</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
                         </div>
                     </div>
+                </div>
 
                 <div id="nav">
                     <header>
@@ -50,10 +55,10 @@ function App() {
 
                         <div className='nav-btn'>
                             <ul>
-                                <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Home</Link></li>
-                                <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>About</Link></li>
-                                <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Projects</Link></li>
-                                <li><Link to='/' spy={true} smooth={true} duration={500} offset={100}>Contact</Link></li>
+                                <li><a href="#hero">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Projects</a></li>
+                                <li><a href="#">Contact</a></li>
                             </ul>
                         </div>
 
@@ -66,6 +71,27 @@ function App() {
                     </header>
                 </div>
 
+                <div id='hero'>
+                    <div className='hero-text'>
+                        <p className='hero-des'>Say <span>hello</span> to my <span>world</span>! I am</p>
+                        <h1>GERLYN TAN</h1>
+                        <p className='hero-des'>A passionate Computer Science student dedicated to building appealing, creative, and user-friendly projects. Let’s craft your ideas into reality!</p>
+                        
+                        <div className='hero-btn-links'>
+                            <a href={cv} download='cv' className='dl-cv'>DOWNLOAD CV</a>
+                            
+                            <div className="links-section">
+                                <a  href="https://github.com/gerlyntan07" target='_blank'><img className='link-icon' src={Github} alt="github logo" /></a>
+                                <a  href="https://www.facebook.com/gerlyn.tan.50" target='_blank'><img className='link-icon' src={Facebook} alt="facebook logo" /></a>
+                                <a  href="https://www.instagram.com/mehehehe__/" target='_blank'><img className='link-icon' src={Instagram} alt="instagram logo" /></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='hero-img'>
+                        <img src={HeroImg} className='hero' alt="hero image" />
+                    </div>
+                </div>
 
             </div>
 
