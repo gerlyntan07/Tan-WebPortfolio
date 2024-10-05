@@ -132,7 +132,7 @@ h1{
     align-items: center;
     justify-content: center;
     height: 21rem;
-    margin-top: 50px;
+    margin: 50px 0px;
 }
 .abt-container {
     width: 80%;
@@ -179,6 +179,58 @@ h1{
     line-height: 25px;
 }
 
+/*PROJECTS SECTION*/
+#projects{
+    width: 100%;
+    background-color: var(--sectionClrLight);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 0px;
+}
+.projects-top{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+}
+h2{
+    font: 600 italic 25px poltawski;
+    margin-bottom: 15px;
+}
+.project-desc{
+    font: 400 18px montserrat;
+}
+.projects-bot{
+
+    text-align: center;
+    width: 80%;
+    background-color: lightcoral;
+}
+.proj-cards{
+    width: 300px;
+    height: 250px;
+    background-color: lightblue;
+    display: inline-block;
+    margin: 20px 20px;
+    text-align: left;
+}
+.projCards-top{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.projCover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projCards-title-desc{
+    display: none;
+}
 /* SMARTPHONE */
 @media screen and (max-width: 767px) {
     .popup-menu{
@@ -284,7 +336,7 @@ h1{
         margin-right: 0px;
     }
     #about{
-        margin-top: 50px;
+        margin: 50px 0px;
         height: 45rem;
     }
     .abt-container{

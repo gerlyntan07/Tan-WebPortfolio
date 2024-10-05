@@ -7,6 +7,7 @@ import Facebook from '/src/assets/facebook.png';
 import Instagram from '/src/assets/instagram.png'
 import MenuBtn from '/src/assets/icons8-menu-50.png'
 import cv from '/src/assets/Gerlyn-Tan-CV.pdf';
+import ProjectCards from '/src/ProjectCards.jsx';
 import { Link } from 'react-scroll';
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
                 <div className='popup-menu' id='popupMenu' ref={popupMenuRef}>
                     <div className="popup-container">
                         <div className='popup-top'>
-                            <img className='darkmode-popup' src={DarkMode} alt="menu button" />
+                            <img className='darkmode-popup' src={DarkMode} alt="dark mode icon" />
                             <button className='closeBtn' onClick={closeMenu}>x</button>
                         </div>
 
@@ -128,8 +129,25 @@ function App() {
                         </div>
                     </div>
                 </div>
-            </div>
 
+                {/* HEADER MENU */}
+                <div id="projects">
+                        <div className="projects-top">
+                            <h2>PROJECTS</h2>
+                            <p className="project-desc">These are the individual projects I have worked on and the group projects I took part in.</p>
+                        </div>
+
+                        <div className="projects-bot">
+                            <ProjectCards img="src/assets/codev.png" date="January 2023" />
+                            <ProjectCards date="CvSU Website" />
+                            <ProjectCards date="CvSU Website" />
+                            <ProjectCards date="CvSU Website" />
+                            <ProjectCards date="CvSU Website" />
+                            <ProjectCards date="CvSU Website" />
+                        </div>
+                </div>
+
+            </div>
         </>
     );
 }
