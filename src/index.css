@@ -185,12 +185,12 @@ h1{
         display: flex;
         background-color: var(--popupMenu);
         height: 100%;
-        position: absolute;
+        position: fixed;
         width: 0%;
         right: 0;
         z-index: 1;
         transition: .7s ease;
-        overflow: hidden; /* Ensure it doesn't take up space */
+        overflow: hidden;
     }
     .popup-navBtn{
         display: flex;
@@ -283,6 +283,31 @@ h1{
         align-self: center;
         margin-right: 0px;
     }
+    #about{
+        margin-top: 50px;
+        height: 45rem;
+    }
+    .abt-container{
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .abt-content{
+        width: 75%;
+    }
+    .line-separator {
+        width: 100%;
+        height: 5px;
+        background-color: var(--sectionClrLight);
+        align-self: stretch;
+    }
+    .abt-skill, .abt-tools{
+        font-size: 16px;
+    }
+    .skill-desc, .tools-list{
+        font: 15px;
+    }
 }
 
 /* TABLET */
@@ -301,6 +326,9 @@ h1{
     }
     .hero-text{
         max-width: 25rem;
+    }
+    .abt-container{
+        width: 90%;
     }
 }
 

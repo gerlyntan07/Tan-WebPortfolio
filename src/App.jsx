@@ -39,9 +39,9 @@ function App() {
                         <div className='popup-navBtn'>
                             <ul>
                                 <li><a href="#hero" onClick={closeMenu}>Home</a></li>
-                                <li><a href="#" onClick={closeMenu}>About</a></li>
-                                <li><a href="#" onClick={closeMenu}>Projects</a></li>
-                                <li><a href="#" onClick={closeMenu}>Contact</a></li>
+                                <li><a href="#about" onClick={closeMenu}>About</a></li>
+                                <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
+                                <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -58,8 +58,8 @@ function App() {
                             <ul>
                                 <li><a href="#hero">Home</a></li>
                                 <li><a href="#about">About</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="#projects">Projects</a></li>
+                                <li><a href="#contact">Contact</a></li>
                             </ul>
                         </div>
 
