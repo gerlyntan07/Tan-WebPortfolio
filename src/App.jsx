@@ -47,6 +47,7 @@ function App() {
                     </div>
                 </div>
 
+                {/* HEADER MENU */}
                 <div id="nav">
                     <header>
                         <div>
@@ -56,7 +57,7 @@ function App() {
                         <div className='nav-btn'>
                             <ul>
                                 <li><a href="#hero">Home</a></li>
-                                <li><a href="#">About</a></li>
+                                <li><a href="#about">About</a></li>
                                 <li><a href="#">Projects</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
@@ -71,6 +72,7 @@ function App() {
                     </header>
                 </div>
 
+                {/* HERO SECTION */}
                 <div id='hero'>
                     <div className='hero-text'>
                         <p className='hero-des'>Say <span>hello</span> to my <span>world</span>! I am</p>
@@ -93,6 +95,39 @@ function App() {
                     </div>
                 </div>
 
+                {/* ABOUT SECTION */}
+                <div id="about">
+                    <div className="abt-container">
+                        <div className="abt-content">
+                            <p className="abt-skill">FRONT-END DEVELOPMENT</p>
+                            <p className='skill-desc'>I always get the role of a front-end developer in group projects. I like to code things from scratch, and I enjoy crafting ideas to life.</p>
+                            <p className="abt-tools">Language and Dev Tools:</p>
+
+                            <ul className='tools-list'>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>React</li>
+                                <li>VS Code</li>
+                            </ul>
+                        </div>
+
+                        <div className="line-separator">&nbsp;</div>
+
+                        <div className="abt-content">
+                            <p className="abt-skill">UI DESIGN</p>
+                            <p className='skill-desc'>Arts is one thing I have been fond of doing since I was a kid. I love playing with colors and making simple yet appealing designs.</p>
+                            <p className="abt-tools">Design Tools:</p>
+
+                            <ul className='tools-list'>
+                                <li>Figma</li>
+                                <li>Canva</li>
+                                <li>Inkscape</li>
+                                <li>Pen & Paper</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </>
