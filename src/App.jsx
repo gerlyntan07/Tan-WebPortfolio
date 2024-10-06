@@ -8,9 +8,17 @@ import Instagram from '/src/assets/instagram.png'
 import MenuBtn from '/src/assets/icons8-menu-50.png'
 import cv from '/src/assets/Gerlyn-Tan-CV.pdf';
 import ProjectCards from '/src/ProjectCards.jsx';
+import Codev from '/src/assets/codev.png';
+import CvSUWeb from '/src/assets/CvSU-Website.png';
 import { Link } from 'react-scroll';
 
 function App() {
+    function gotoCodev(){        
+        window.open('https://gerlyntan07.github.io/codev/', '_blank');
+    }
+    function gotoCvSUWeb(){
+        window.open('https://gerlyntan07.github.io/group1_cvsuwebsite/', '_blank');
+    }
     // Using useRef to access the DOM element
     const popupMenuRef = useRef(null);
 
@@ -84,9 +92,9 @@ function App() {
                             <a href={cv} download='cv' className='dl-cv'>DOWNLOAD CV</a>
                             
                             <div className="links-section">
-                                <a  href="https://github.com/gerlyntan07" target='_blank'><img className='link-icon' src={Github} alt="github logo" /></a>
-                                <a  href="https://www.facebook.com/gerlyn.tan.50" target='_blank'><img className='link-icon' src={Facebook} alt="facebook logo" /></a>
-                                <a  href="https://www.instagram.com/mehehehe__/" target='_blank'><img className='link-icon' src={Instagram} alt="instagram logo" /></a>
+                                <a href="https://github.com/gerlyntan07" target='_blank'><img className='link-icon' src={Github} alt="github logo" /></a>
+                                <a href="https://www.facebook.com/gerlyn.tan.50" target='_blank'><img className='link-icon' src={Facebook} alt="facebook logo" /></a>
+                                <a href="https://www.instagram.com/mehehehe__/" target='_blank'><img className='link-icon' src={Instagram} alt="instagram logo" /></a>
                             </div>
                         </div>
                     </div>
@@ -134,12 +142,12 @@ function App() {
                 <div id="projects">
                         <div className="projects-top">
                             <h2>PROJECTS</h2>
-                            <p className="project-desc">These are the individual projects I have worked on and the group projects I took part in.</p>
+                            <p className="project-desc">These are the individual school projects I have worked on and the group school projects I participated in.</p>
                         </div>
 
                         <div className="projects-bot">
-                            <ProjectCards img="src/assets/codev.png" date="January 2023" />
-                            <ProjectCards date="CvSU Website" />
+                            <ProjectCards img={Codev} viewOn={gotoCodev} title="Codev IT Company" description="Marketing the services offered by an IT company" date="January 2023" language="HTML/CSS"/>
+                            <ProjectCards img={CvSUWeb} viewOn={gotoCvSUWeb} title="CvSU Website" description="Landing page for CvSU - Bacoor City campus website" date="CvSU Website" language="HTML/CSS" />
                             <ProjectCards date="CvSU Website" />
                             <ProjectCards date="CvSU Website" />
                             <ProjectCards date="CvSU Website" />

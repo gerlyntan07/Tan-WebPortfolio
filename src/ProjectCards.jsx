@@ -8,6 +8,7 @@ function ProjectCards(props){
                     <p className="projTitle">{props.title}</p>
                     <div className="title-desc-separator">&nbsp;</div>
                     <p className="projDesc">{props.description}</p>
+                    <button className="viewProj" onClick={props.viewOn}>View Project</button>
                 </div>
             </div>
 
