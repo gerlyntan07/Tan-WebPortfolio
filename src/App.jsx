@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import HeroImg from '/src/assets/hero-pic.png'
 import Logo from '/src/assets/portfolio-logo.png';
 import DarkMode from '/src/assets/icons8-dark-mode-50.png';
@@ -11,7 +11,6 @@ import ProjectCards from '/src/ProjectCards.jsx';
 import Codev from '/src/assets/codev.png';
 import CvSUWeb from '/src/assets/CvSU-Website.png';
 import RecordsManagement from '/src/assets/recordsmgmt.png';
-import { Link } from 'react-scroll';
 
 function App() {
     function gotoCodev(){        
@@ -66,7 +65,7 @@ function App() {
 
                         <div className='nav-btn'>
                             <ul>
-                                <li><a href="#hero">Home</a></li>
+                                <li><a href="#hero">Meow</a></li>
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#projects">Projects</a></li>
                                 <li><a href="#contact">Contact</a></li>
