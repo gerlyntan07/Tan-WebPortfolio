@@ -10,6 +10,7 @@ import cv from '/src/assets/Gerlyn-Tan-CV.pdf';
 import ProjectCards from '/src/ProjectCards.jsx';
 import Codev from '/src/assets/codev.png';
 import CvSUWeb from '/src/assets/CvSU-Website.png';
+import RecordsManagement from '/src/assets/recordsmgmt.png';
 import { Link } from 'react-scroll';
 
 function App() {
@@ -148,7 +149,7 @@ function App() {
                         <div className="projects-bot">
                             <ProjectCards img={Codev} viewOn={gotoCodev} title="Codev IT Company" description="Marketing the services offered by an IT company" date="January 2023" language="HTML/CSS"/>
                             <ProjectCards img={CvSUWeb} viewOn={gotoCvSUWeb} title="CvSU Website" description="Landing page for CvSU - Bacoor City campus website" date="CvSU Website" language="HTML/CSS" />
-                            <ProjectCards date="CvSU Website" />
+                            <ProjectCards img={RecordsManagement} date="CvSU Website" />
                             <ProjectCards date="CvSU Website" />
                             <ProjectCards date="CvSU Website" />
                             <ProjectCards date="CvSU Website" />
