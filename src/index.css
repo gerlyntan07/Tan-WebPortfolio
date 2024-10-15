@@ -319,6 +319,40 @@ h2{
     font: 400 15px montserrat;
     margin: 0;
 }
+#body .image-slider{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.726);
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+    transition: .7s ease;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+#carousel-div{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#carousel-div .carousel{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#close-carousel{
+    align-self: flex-end;
+    justify-self: start;
+    color: white;
+    font: 600 25px montserrat;
+    background-color: transparent;
+    border: none;
+}
 /* SMARTPHONE */
 @media screen and (max-width: 767px) {
     .popup-menu{

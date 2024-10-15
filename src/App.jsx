@@ -14,14 +14,15 @@ import RecordsManagement from '/src/assets/student records management/1.png';
 import AlumniTracker from '/src/assets/alumni tracking/1.png';
 import HotelReserve from '/src/assets/hotel reservation/1.png';
 import MiniMikimix from '/src/assets/mini mikimix/1.png';
-import Slider from '/src/components/Slider.jsx';
+import StudentRecordsSlider from '/src/components/StudentRecordsSlider.jsx';
 
 
 function App() {
-    function gotoCodev(){        
+
+    function gotoCodev() {
         window.open('https://gerlyntan07.github.io/codev/', '_blank');
     }
-    function gotoCvSUWeb(){
+    function gotoCvSUWeb() {
         window.open('https://gerlyntan07.github.io/group1_cvsuwebsite/', '_blank');
     }
     // Using useRef to access the DOM element
@@ -42,6 +43,11 @@ function App() {
     return (
         <>
             <div id='body'>
+                {/* POPUP IMAGE SLIDER */}
+                <div className="image-slider">
+                    <StudentRecordsSlider />
+                </div>
+
                 {/* POPUP MENU */}
                 <div className='popup-menu' id='popupMenu' ref={popupMenuRef}>
                     <div className="popup-container">
@@ -92,10 +98,10 @@ function App() {
                         <p className='hero-des'>Say <span>hello</span> to my <span>world</span>! I am</p>
                         <h1>GERLYN TAN</h1>
                         <p className='hero-des'>A passionate Computer Science student dedicated to building appealing, creative, and user-friendly projects. Let’s craft your ideas into reality!</p>
-                        
+
                         <div className='hero-btn-links'>
                             <a href={cv} download='cv' className='dl-cv'>DOWNLOAD CV</a>
-                            
+
                             <div className="links-section">
                                 <a href="https://github.com/gerlyntan07" target='_blank'><img className='link-icon' src={Github} alt="github logo" /></a>
                                 <a href="https://www.facebook.com/gerlyn.tan.50" target='_blank'><img className='link-icon' src={Facebook} alt="facebook logo" /></a>
@@ -145,24 +151,20 @@ function App() {
 
                 {/* HEADER MENU */}
                 <div id="projects">
-                        <div className="projects-top">
-                            <h2>PROJECTS</h2>  
-                            <p className="project-desc">These are the individual school projects I have worked on and the group school projects I participated in.</p>
-                        </div>
+                    <div className="projects-top">
+                        <h2>PROJECTS</h2>
+                        <p className="project-desc">These are the individual school projects I have worked on and the group school projects I participated in.</p>
+                    </div>
 
-                        <div className="projects-bot">
-                            <ProjectCards img={Codev} viewOn={gotoCodev} title="Codev IT Company" description="Marketing the services offered by an IT company" date="November 2023" language="HTML/CSS"/>
-                            <ProjectCards img={CvSUWeb} viewOn={gotoCvSUWeb} title="CvSU Website" description="Landing page for CvSU - Bacoor City campus website" date="October 2023" language="HTML/CSS" />
-                            <ProjectCards img={RecordsManagement} title="Student Records" description="System for course and grades management" date="June 2024" language="HTML/CSS, JavaScript, PHP"/>
-                            <ProjectCards img={AlumniTracker} title="Alumni Tracking System" description="Tracking alumni and recording their information" date="January 2024" language="HTML/CSS, PHP" />
-                            <ProjectCards img={HotelReserve} title="Hotel Reservation" description="Be able to book rooms at Hilton" date="January 2023" language="ASP.Net" />
-                            <ProjectCards img={MiniMikimix} title="Mini Mikimix" description="Manage and record orders" date="January 2024" language="Java" />
-                            
-                        </div>
-                </div>
+                    <div className="projects-bot">
+                        <ProjectCards img={Codev} viewOn={gotoCodev} title="Codev IT Company" description="Marketing the services offered by an IT company" date="November 2023" language="HTML/CSS" />
+                        <ProjectCards img={CvSUWeb} viewOn={gotoCvSUWeb} title="CvSU Website" description="Landing page for CvSU - Bacoor City campus website" date="October 2023" language="HTML/CSS" />
+                        <ProjectCards img={RecordsManagement} title="Student Records" description="System for course and grades management" date="June 2024" language="HTML/CSS, JavaScript, PHP" />
+                        <ProjectCards img={AlumniTracker} title="Alumni Tracking System" description="Tracking alumni and recording their information" date="January 2024" language="HTML/CSS, PHP" />
+                        <ProjectCards img={HotelReserve} title="Hotel Reservation" description="Be able to book rooms at Hilton" date="January 2023" language="ASP.Net" />
+                        <ProjectCards img={MiniMikimix} title="Mini Mikimix" description="Manage and record orders" date="January 2024" language="Java" />
 
-                <div className='slider-div'>
-                    <Slider />
+                    </div>
                 </div>
 
             </div>
