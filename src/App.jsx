@@ -7,13 +7,14 @@ import Facebook from '/src/assets/facebook.png';
 import Instagram from '/src/assets/instagram.png'
 import MenuBtn from '/src/assets/icons8-menu-50.png'
 import cv from '/src/assets/Gerlyn-Tan-CV.pdf';
-import ProjectCards from '/src/ProjectCards.jsx';
+import ProjectCards from '/src/components/ProjectCards.jsx';
 import Codev from '/src/assets/codev.png';
 import CvSUWeb from '/src/assets/CvSU-Website.png';
 import RecordsManagement from '/src/assets/student records management/1.png';
 import AlumniTracker from '/src/assets/alumni tracking/1.png';
 import HotelReserve from '/src/assets/hotel reservation/1.png';
 import MiniMikimix from '/src/assets/mini mikimix/1.png';
+import Slider from '/src/components/Slider.jsx';
 
 
 function App() {
@@ -156,7 +157,12 @@ function App() {
                             <ProjectCards img={AlumniTracker} title="Alumni Tracking System" description="Tracking alumni and recording their information" date="January 2024" language="HTML/CSS, PHP" />
                             <ProjectCards img={HotelReserve} title="Hotel Reservation" description="Be able to book rooms at Hilton" date="January 2023" language="ASP.Net" />
                             <ProjectCards img={MiniMikimix} title="Mini Mikimix" description="Manage and record orders" date="January 2024" language="Java" />
+                            
                         </div>
+                </div>
+
+                <div className='slider-div'>
+                    <Slider />
                 </div>
 
             </div>
