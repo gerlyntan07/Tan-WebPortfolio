@@ -13,11 +13,48 @@ import CvSUWeb from '/src/assets/CvSU-Website.png';
 import RecordsManagement from '/src/assets/student records management/1.png';
 import AlumniTracker from '/src/assets/alumni tracking/1.png';
 import HotelReserve from '/src/assets/hotel reservation/1.png';
-import MiniMikimix from '/src/assets/mini mikimix/1.png';
+import MiniMikimixCover from '/src/assets/mini mikimix/1.png';
 import StudentRecordsSlider from '/src/components/StudentRecordsSlider.jsx';
+import AlumniTracking from '/src/components/AlumniTracking.jsx';
+import HotelReservation from '/src/components/HotelReservation.jsx';
+import MiniMikimix from '/src/components/MiniMikimix.jsx';
 
 
 function App() {
+    const sliderContainer = useRef(null);
+    const studentRecsSlider = useRef(null);
+    const alumniTrackingSlider = useRef(null);
+    const bodyContainer = useRef(null);
+    const HotelReservationSlider = useRef(null);
+    const MiniMikimixSlider = useRef(null);
+
+    function openStudentRecords(){
+        sliderContainer.current.style.display = "flex";
+        studentRecsSlider.current.style.display = "flex";
+    }
+
+    function openAlumniTracking(){
+        sliderContainer.current.style.display = "flex";
+        alumniTrackingSlider.current.style.display = "flex";
+    }
+
+    function openHotelReservation(){
+        sliderContainer.current.style.display = "flex";
+        HotelReservationSlider.current.style.display = "flex";
+    }
+
+    function openMiniMikimix(){
+        sliderContainer.current.style.display = "flex";
+        MiniMikimixSlider.current.style.display = "flex";
+    }
+
+    function closeSlider(){
+        sliderContainer.current.style.display = "none";
+        studentRecsSlider.current.style.display = "none";
+        alumniTrackingSlider.current.style.display = "none";
+        HotelReservationSlider.current.style.display = "none";
+        MiniMikimixSlider.current.style.display = "none";
+    }
 
     function gotoCodev() {
         window.open('https://gerlyntan07.github.io/codev/', '_blank');
@@ -42,10 +79,28 @@ function App() {
 
     return (
         <>
-            <div id='body'>
+            <div id='body' ref={bodyContainer}>
                 {/* POPUP IMAGE SLIDER */}
-                <div className="image-slider">
-                    <StudentRecordsSlider />
+                <div className="image-slider" ref={sliderContainer}>
+                    <div id="studentRecs-container" ref={studentRecsSlider}>
+                        <button id='close-carousel' onClick={closeSlider}>x</button>
+                        <StudentRecordsSlider />
+                    </div>
+
+                    <div id="alumniTracking-container" ref={alumniTrackingSlider}>
+                        <button id='close-carousel' onClick={closeSlider}>x</button>
+                        <AlumniTracking />
+                    </div>
+
+                    <div id="hotelReservation-container" ref={HotelReservationSlider}>
+                        <button id='close-carousel' onClick={closeSlider}>x</button>
+                        <HotelReservation />
+                    </div>
+
+                    <div id="miniMikimix-container" ref={MiniMikimixSlider}>
+                        <button id='close-carousel' onClick={closeSlider}>x</button>
+                        <MiniMikimix />
+                    </div>
                 </div>
 
                 {/* POPUP MENU */}
@@ -159,10 +214,10 @@ function App() {
                     <div className="projects-bot">
                         <ProjectCards img={Codev} viewOn={gotoCodev} title="Codev IT Company" description="Marketing the services offered by an IT company" date="November 2023" language="HTML/CSS" />
                         <ProjectCards img={CvSUWeb} viewOn={gotoCvSUWeb} title="CvSU Website" description="Landing page for CvSU - Bacoor City campus website" date="October 2023" language="HTML/CSS" />
-                        <ProjectCards img={RecordsManagement} title="Student Records" description="System for course and grades management" date="June 2024" language="HTML/CSS, JavaScript, PHP" />
-                        <ProjectCards img={AlumniTracker} title="Alumni Tracking System" description="Tracking alumni and recording their information" date="January 2024" language="HTML/CSS, PHP" />
-                        <ProjectCards img={HotelReserve} title="Hotel Reservation" description="Be able to book rooms at Hilton" date="January 2023" language="ASP.Net" />
-                        <ProjectCards img={MiniMikimix} title="Mini Mikimix" description="Manage and record orders" date="January 2024" language="Java" />
+                        <ProjectCards img={RecordsManagement} viewOn={openStudentRecords} title="Student Records" description="System for course and grades management" date="June 2024" language="HTML/CSS, JavaScript, PHP" />
+                        <ProjectCards img={AlumniTracker} viewOn={openAlumniTracking} title="Alumni Tracking System" description="Tracking alumni and recording their information" date="January 2024" language="HTML/CSS, PHP" />
+                        <ProjectCards img={HotelReserve} viewOn={openHotelReservation} title="Hotel Reservation" description="Be able to book rooms at Hilton" date="January 2023" language="ASP.Net" />
+                        <ProjectCards img={MiniMikimixCover} viewOn={openMiniMikimix} title="Mini Mikimix" description="Manage and record orders" date="January 2024" language="Java" />
 
                     </div>
                 </div>

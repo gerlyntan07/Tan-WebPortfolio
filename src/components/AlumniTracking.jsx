@@ -1,16 +1,15 @@
 import Carousel from 'react-bootstrap/Carousel';
 import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
-import img1 from '/src/assets/student records management/1.png';
-import img2 from '/src/assets/student records management/2.png';
-import img3 from '/src/assets/student records management/3.png';
-import img4 from '/src/assets/student records management/4.png';
-import img5 from '/src/assets/student records management/5.png';
-import img6 from '/src/assets/student records management/6.png';
-import img7 from '/src/assets/student records management/7.png';
-import img8 from '/src/assets/student records management/8.png';
+import img1 from '/src/assets/alumni tracking/1.png';
+import img2 from '/src/assets/alumni tracking/2.png';
+import img3 from '/src/assets/alumni tracking/3.png';
+import img4 from '/src/assets/alumni tracking/4.png';
+import img5 from '/src/assets/alumni tracking/5.png';
+import img6 from '/src/assets/alumni tracking/6.png';
+import img7 from '/src/assets/alumni tracking/7.png';
+import img8 from '/src/assets/alumni tracking/8.png';
 
-
-function StudentRecordsSlider() {
+function AlumniTracking() {
     return (
             <Carousel className='carousel'>
                 <Carousel.Item>
@@ -42,4 +41,4 @@ function StudentRecordsSlider() {
     );
 }
 
-export default StudentRecordsSlider;
+export default AlumniTracking;

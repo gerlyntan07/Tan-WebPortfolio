@@ -234,7 +234,6 @@ h2{
 .proj-cards{
     width: 300px;
     height: 250px;
-    background-color: lightblue;
     display: inline-block;
     margin: 30px 20px;
     text-align: left;
@@ -320,8 +319,8 @@ h2{
     margin: 0;
 }
 #body .image-slider{
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.726);
+    display: none;
+    background-color: rgba(0, 0, 0, 0.801);
     height: 100%;
     position: fixed;
     width: 100%;
@@ -331,15 +330,24 @@ h2{
     align-items: center;
     justify-content: center;
 }
-#carousel-div{
-    display: flex;
+#studentRecs-container, #alumniTracking-container, #hotelReservation-container{
+    display: none;
     width: 90%;
     height: 100%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
 }
-#carousel-div .carousel{
+#miniMikimix-container{
+    display: none;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+#studentRecs-container .carousel, #alumniTracking-container .carousel, #hotelReservation-container .carousel, #miniMikimix-container .carousel{
     width: 90%;
     align-items: center;
     justify-content: center;
@@ -349,9 +357,16 @@ h2{
     align-self: flex-end;
     justify-self: start;
     color: white;
-    font: 600 25px montserrat;
+    font: 500 20px montserrat;
     background-color: transparent;
     border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgb(83, 83, 83);
+}
+#close-carousel:hover{
+    background-color: rgb(94, 94, 94);
 }
 /* SMARTPHONE */
 @media screen and (max-width: 767px) {
@@ -515,6 +530,19 @@ h2{
     }
     .projects-bot{
         margin-top: 10px;
+    }
+    #studentRecs-container, #alumniTracking-container, #hotelReservation-container{
+        width: 100%;
+    }
+    #miniMikimix-container{
+        width: 95%;
+    }
+    #close-carousel{
+        font-size: 18px;
+        width: 23px;
+        height: 23px;
+        margin-bottom: 10px;
+        margin-right: 0px;
     }
 }
 
