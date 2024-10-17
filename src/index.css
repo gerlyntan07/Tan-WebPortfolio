@@ -247,6 +247,7 @@ h2{
     height: 100%;
     align-items: center;
     justify-content: center;
+    transition: .5s ease;
 }
 .projCover{
     width: 100%;
@@ -295,6 +296,9 @@ h2{
 }
 .proj-cards:hover .projCards-title-desc{
     height: 100%;
+}
+.proj-cards:hover .projCards-top{
+    transform: scale(1.05);
 }
 .viewProj{
     margin-top: 15px;
@@ -542,7 +546,7 @@ h2{
         width: 23px;
         height: 23px;
         margin-bottom: 10px;
-        margin-right: 0px;
+        margin-right: 10px;
     }
 }
 
@@ -550,6 +554,10 @@ h2{
 @media screen and (min-width: 767px) and (max-width: 1023px) {
     .popup-menu{
         display: none;
+    }
+    #hero{
+        height: max-content;
+        padding: 150px 0px;
     }
     header li{
         margin: 0px 23px;

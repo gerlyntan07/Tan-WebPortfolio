@@ -18,6 +18,7 @@ import StudentRecordsSlider from '/src/components/StudentRecordsSlider.jsx';
 import AlumniTracking from '/src/components/AlumniTracking.jsx';
 import HotelReservation from '/src/components/HotelReservation.jsx';
 import MiniMikimix from '/src/components/MiniMikimix.jsx';
+import ContactForm from '/src/components/ContactForm.jsx';
 
 
 function App() {
@@ -166,7 +167,7 @@ function App() {
                     </div>
 
                     <div className='hero-img'>
-                        <img src={HeroImg} className='hero' alt="hero image" />
+                        <img src={HeroImg} className='hero' alt="hero image" />                    
                     </div>
                 </div>
 
@@ -218,8 +219,8 @@ function App() {
                         <ProjectCards img={AlumniTracker} viewOn={openAlumniTracking} title="Alumni Tracking System" description="Tracking alumni and recording their information" date="January 2024" language="HTML/CSS, PHP" />
                         <ProjectCards img={HotelReserve} viewOn={openHotelReservation} title="Hotel Reservation" description="Be able to book rooms at Hilton" date="January 2023" language="ASP.Net" />
                         <ProjectCards img={MiniMikimixCover} viewOn={openMiniMikimix} title="Mini Mikimix" description="Manage and record orders" date="January 2024" language="Java" />
-
                     </div>
+                    <ContactForm />
                 </div>
 
             </div>
