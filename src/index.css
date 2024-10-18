@@ -372,6 +372,118 @@ h2{
 #close-carousel:hover{
     background-color: rgb(94, 94, 94);
 }
+
+/* CONTACT SECTION */
+#contact{
+    width: 100%;
+    background-color: var(--sectionClrLight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35rem;
+    margin: 140px 0px 150px 0px;
+}
+
+#contact .contact-wrapper{
+    width: 65%;
+    background-color: white;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.171);
+    border-radius: 10px;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.contact-top .contact-desc{
+    font: 400 18px montserrat;
+}
+#contact .contact-top{
+    margin-bottom: 20px;
+    width: 55%;
+}
+#contact .contact-bot{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+}
+.contact-bot .contactFormContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+    width: 70%;
+}
+.contactFormContainer .contactLbl{
+    font: 500 16px montserrat;
+}
+.contactFormContainer .contactInput{
+    font: 400 16px montserrat;
+    color: rgba(0, 0, 0, 0.589);
+    outline: none;
+    padding: 10px 10px;
+    border: 2px solid rgb(236, 236, 236);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.contactFormContainer .contactInput-txtArea{
+    font: 400 16px montserrat;
+    color: rgba(0, 0, 0, 0.589);
+    outline: none;
+    padding: 10px 10px;
+    border: 2px solid rgb(236, 236, 236);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    resize: none;
+    height: 200px;
+    width: 100%;
+}
+.contactFormContainer .submitContactForm{
+    font: 500 15px montserrat;
+    background-color: var(--lightBrown);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 60px;
+    border-radius: 20px;
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    border: none;
+    align-self: center;
+}
+
+/* FOOTER SECTION */
+#footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+#footer .footer-logo{
+    width: 100px;
+}
+#footer .footer-tagline{
+    margin: 0;
+    font: 400 italic 23px montserrat;
+}
+span{
+    color: var(--darkBrown);
+    font: 700 italic 25px montserrat;
+}
+#footer .copyright{
+    font: 400 13px montserrat;
+    color: var(--sectionClrDark);
+    margin-top: 10px;
+}
 /* SMARTPHONE */
 @media screen and (max-width: 767px) {
     .popup-menu{
@@ -547,6 +659,24 @@ h2{
         height: 23px;
         margin-bottom: 10px;
         margin-right: 10px;
+    }
+    #contact .contact-wrapper{
+        width: 90%;
+    }
+    #contact .contact-desc{
+        font-size: 16px;
+    }
+    #contact .contact-top{
+        width: 80%;
+    }
+    .contact-bot .contactFormContainer{
+        width: 85%;
+    }
+    .contactFormContainer .contactLbl{
+        font-size: 15px;
+    }
+    .contactFormContainer .contactInput, .contactFormContainer .contactInput-txtArea{
+        font-size: 15px;
     }
 }
 

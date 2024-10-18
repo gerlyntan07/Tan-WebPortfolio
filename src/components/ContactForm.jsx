@@ -29,14 +29,14 @@ export const ContactForm = () => {
     };
 
     return (
-        <form ref={form} onSubmit={sendEmail}>
-            <label>Name</label>
-            <input type="text" value={name} name="from_name" placeholder='Your name' onChange={(e) => setName(e.target.value)} />
-            <label>Email</label>
-            <input type="email" value={email} name="from_email" placeholder='Your email' onChange={(e) => setEmail(e.target.value)} />
-            <label>Message</label>
-            <textarea name="message" value={msg} onChange={(e) => setMsg(e.target.value)} />
-            <input type="submit" value="Send" />
+        <form ref={form} onSubmit={sendEmail} className='contactFormContainer'>
+            <label className='contactLbl'>Name</label>
+            <input className='contactInput' type="text" value={name} name="from_name" placeholder='Your name' onChange={(e) => setName(e.target.value)} />
+            <label className='contactLbl'>Email</label>
+            <input className='contactInput' type="email" value={email} name="from_email" placeholder='Your email' onChange={(e) => setEmail(e.target.value)} />
+            <label className='contactLbl'>Message</label>
+            <textarea className='contactInput-txtArea' name="message" value={msg} onChange={(e) => setMsg(e.target.value)} />
+            <input className='submitContactForm' type="submit" value="SUBMIT" />
         </form>
 
     );

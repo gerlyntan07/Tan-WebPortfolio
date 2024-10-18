@@ -19,6 +19,7 @@ import AlumniTracking from '/src/components/AlumniTracking.jsx';
 import HotelReservation from '/src/components/HotelReservation.jsx';
 import MiniMikimix from '/src/components/MiniMikimix.jsx';
 import ContactForm from '/src/components/ContactForm.jsx';
+import GTLogo from '/src/assets/portfolio-logo.png';
 
 
 function App() {
@@ -29,27 +30,27 @@ function App() {
     const HotelReservationSlider = useRef(null);
     const MiniMikimixSlider = useRef(null);
 
-    function openStudentRecords(){
+    function openStudentRecords() {
         sliderContainer.current.style.display = "flex";
         studentRecsSlider.current.style.display = "flex";
     }
 
-    function openAlumniTracking(){
+    function openAlumniTracking() {
         sliderContainer.current.style.display = "flex";
         alumniTrackingSlider.current.style.display = "flex";
     }
 
-    function openHotelReservation(){
+    function openHotelReservation() {
         sliderContainer.current.style.display = "flex";
         HotelReservationSlider.current.style.display = "flex";
     }
 
-    function openMiniMikimix(){
+    function openMiniMikimix() {
         sliderContainer.current.style.display = "flex";
         MiniMikimixSlider.current.style.display = "flex";
     }
 
-    function closeSlider(){
+    function closeSlider() {
         sliderContainer.current.style.display = "none";
         studentRecsSlider.current.style.display = "none";
         alumniTrackingSlider.current.style.display = "none";
@@ -167,7 +168,7 @@ function App() {
                     </div>
 
                     <div className='hero-img'>
-                        <img src={HeroImg} className='hero' alt="hero image" />                    
+                        <img src={HeroImg} className='hero' alt="hero image" />
                     </div>
                 </div>
 
@@ -220,9 +221,27 @@ function App() {
                         <ProjectCards img={HotelReserve} viewOn={openHotelReservation} title="Hotel Reservation" description="Be able to book rooms at Hilton" date="January 2023" language="ASP.Net" />
                         <ProjectCards img={MiniMikimixCover} viewOn={openMiniMikimix} title="Mini Mikimix" description="Manage and record orders" date="January 2024" language="Java" />
                     </div>
-                    <ContactForm />
                 </div>
 
+                <div id="contact">
+                    <div className="contact-wrapper">
+                        <div className="contact-top">
+                            <h2>CONTACT ME</h2>
+                            <p className='contact-desc'>Thanks for taking the time to reach this part. How may I help you?</p>
+                        </div>
+
+                        <div className="contact-bot">
+                            <ContactForm />
+                        </div>
+                    </div>
+                </div>
+
+                <footer id='footer'>
+                    <img className='footer-logo' src={GTLogo} alt="" />
+                    <p className='footer-tagline'><span>G</span>rowing Talent,</p>
+                    <p className='footer-tagline'><span>T</span>urning Ideas into Reality</p>
+                    <p className='copyright'>Copyright &copy; Gerlyn Tan</p>
+                </footer>
             </div>
         </>
     );
