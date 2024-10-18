@@ -475,7 +475,7 @@ h2{
     margin: 0;
     font: 400 italic 23px montserrat;
 }
-span{
+#footer span{
     color: var(--darkBrown);
     font: 700 italic 25px montserrat;
 }
