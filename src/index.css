@@ -13,9 +13,7 @@
     --sectionClrDark: #3E3E3E;
     --sectionContainerDark: #222222;
     --popupMenu: #AC9D93;
-}
-#body{
-    width: 100%;
+    --darkBackground: #1b1b1b;
 }
 #nav{
     width: 100%;
@@ -26,10 +24,68 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 #body{
+    width: 100%;
     display: flex;
     flex-direction: column;
+}
+/* DARKMODE AND LIGHTMODE */
+.darkHeader{
+    box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.308);
+    background: var(--darkBackground);
+}
+.darkTextColor{
+    color: rgb(228, 228, 228);
+}
+.darkBody{
+    background: var(--darkBackground);
+}
+.darkLinks{
+    filter: invert(100%);
+}
+.darkProjCards{
+    border: 1px solid white;
+}
+.lightProjCards{
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.329);
+}
+.abtContainerLight{
+    background-color: white;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.171);
+}
+.contactWrapperLight{
+    background-color: white;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.171);
+}
+.darkContainer{
+    background: var(--sectionContainerDark);
+    box-shadow: 0px 0px 4px rgb(255, 255, 255);
+}
+.toggleLightBrown{
+    color: var(--lightBrown);
+}
+.lightContactInput{
+    color: rgba(0, 0, 0, 0.589);
+    border: 2px solid rgb(236, 236, 236);
+}
+.darkContactInput{
+    color: rgb(206, 206, 206);
+    border: 2px solid rgb(109, 109, 109);
+    background-color: var(--sectionClrDark);
+}
+.lightCopyright{
+    color: var(--sectionClrDark);
+}
+.darkCopyright{
+    color: rgb(165, 165, 165);
+}
+.lightPopupMenuBG{
+    background-color: var(--popupMenu);
+}
+.darkPopupMenuBG{
+    background-color: var(--sectionClrDark);
 }
 /*HEADER*/
 header{
@@ -40,7 +96,7 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.384);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.384);
     background-color: white;
 }
 header .nav-btn ul{
@@ -62,15 +118,27 @@ header li{
     cursor: pointer;
     display: inline-block;
 }
+.lightBtn, .darkBtn{
+    margin-right: 50px;
+    border: none;
+    background-color: transparent;
+}
 header li a{
     color: black;
     text-decoration: none;
     margin: 0;
 }
+.lightBtn{
+    display: none;
+}
 .darkmode-icon{
-    max-width: 20px;
-    margin-right: 50px;
+    width: 20px;
     cursor: pointer;
+}
+.lightMode-icon{
+    width: 30px;
+    cursor: pointer;
+
 }
 .gt-logo{
     max-width: 35px;
@@ -152,10 +220,8 @@ span{
     height: 21rem;
     margin: 50px 0px;
 }
-.abt-container {
-    width: 80%;
-    background-color: white;
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.171);
+#abt-container {
+    width: 80%;    
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -239,7 +305,6 @@ h2{
     text-align: left;
     position: relative;
     border-radius: 20px;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.329);
     z-index: 1;
 }
 .projCards-top{
@@ -270,7 +335,7 @@ h2{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(#52391bde 5%, #000000 100%);
+    background: #3b3b3be5;
     transition: .5s ease;
     border-radius: 20px;
     z-index: 1;
@@ -384,10 +449,8 @@ h2{
     margin: 140px 0px 150px 0px;
 }
 
-#contact .contact-wrapper{
+#contact #contact-wrapper{
     width: 65%;
-    background-color: white;
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.171);
     border-radius: 10px;
     padding: 50px 0px;
     display: flex;
@@ -423,20 +486,16 @@ h2{
 }
 .contactFormContainer .contactInput{
     font: 400 16px montserrat;
-    color: rgba(0, 0, 0, 0.589);
     outline: none;
-    padding: 10px 10px;
-    border: 2px solid rgb(236, 236, 236);
+    padding: 10px 15px;
     border-radius: 5px;
     margin-bottom: 30px;
     width: 100%;
 }
 .contactFormContainer .contactInput-txtArea{
     font: 400 16px montserrat;
-    color: rgba(0, 0, 0, 0.589);
     outline: none;
     padding: 10px 10px;
-    border: 2px solid rgb(236, 236, 236);
     border-radius: 5px;
     margin-bottom: 30px;
     resize: none;
@@ -481,14 +540,12 @@ h2{
 }
 #footer .copyright{
     font: 400 13px montserrat;
-    color: var(--sectionClrDark);
     margin-top: 10px;
 }
 /* SMARTPHONE */
 @media screen and (max-width: 767px) {
     .popup-menu{
         display: flex;
-        background-color: var(--popupMenu);
         height: 100%;
         position: fixed;
         width: 0%;
@@ -503,6 +560,9 @@ h2{
     }
     .popup-navBtn ul li a{
         text-decoration: none;
+    }
+    .popup-navBtn ul{
+        padding: 0;
     }
     .popup-container{
         display: flex;
@@ -520,8 +580,18 @@ h2{
     }
     .darkmode-popup{
         height: 25px;
-        margin-left: 30px;
         filter: invert(100%);
+    }
+    .darkBtnPopup, .lightBtnPopup{
+        background-color: transparent;
+        border: none;
+        margin-left: 30px;
+    }
+    .lightBtnPopup{
+        display: none;
+    }
+    .lightMode-popup{
+        width: 35px;
     }
     .gt-logo{
         margin-left: 25px;
@@ -604,7 +674,7 @@ h2{
         margin: 50px 0px;
         height: 45rem;
     }
-    .abt-container{
+    #abt-container{
         width: 90%;
         flex-direction: column;
         align-items: center;
@@ -660,7 +730,7 @@ h2{
         margin-bottom: 10px;
         margin-right: 10px;
     }
-    #contact .contact-wrapper{
+    #contact #contact-wrapper{
         width: 90%;
     }
     #contact .contact-desc{
@@ -677,6 +747,24 @@ h2{
     }
     .contactFormContainer .contactInput, .contactFormContainer .contactInput-txtArea{
         font-size: 15px;
+    }
+    #footer .footer-logo{
+        width: 80px;
+    }
+    #footer .footer-tagline{
+        font-size: 20px;
+    }
+    #footer .copyright{
+        font-size: 12px;
+    }
+    .lightBtn{
+        display: none;
+    }
+    .lightMode-icon{
+        display: none;
+    }
+    .darkBtn{
+        display: none;
     }
 }
 
@@ -709,6 +797,9 @@ h2{
     }
     .projects-bot{
         width: 90%;
+    }
+    #contact .contact-wrapper{
+        width: 80%;
     }
 }
 
