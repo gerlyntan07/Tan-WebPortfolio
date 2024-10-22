@@ -116,21 +116,25 @@ function App() {
     function openStudentRecords() {
         sliderContainer.current.style.display = "flex";
         studentRecsSlider.current.style.display = "flex";
+        document.body.style.overflow = 'hidden';
     }
 
     function openAlumniTracking() {
         sliderContainer.current.style.display = "flex";
         alumniTrackingSlider.current.style.display = "flex";
+        document.body.style.overflow = 'hidden';
     }
 
     function openHotelReservation() {
         sliderContainer.current.style.display = "flex";
         HotelReservationSlider.current.style.display = "flex";
+        document.body.style.overflow = 'hidden';
     }
 
     function openMiniMikimix() {
         sliderContainer.current.style.display = "flex";
         MiniMikimixSlider.current.style.display = "flex";
+        document.body.style.overflow = 'hidden';
     }
 
     function closeSlider() {
@@ -139,6 +143,8 @@ function App() {
         alumniTrackingSlider.current.style.display = "none";
         HotelReservationSlider.current.style.display = "none";
         MiniMikimixSlider.current.style.display = "none";
+
+        document.body.style.overflow = 'auto';
     }
 
     function gotoCodev() {
@@ -291,7 +297,7 @@ function App() {
                     </div>
                 </div>
 
-                {/* HEADER MENU */}
+                {/* PROJECTS SECTION */}
                 <div id="projects">
                     <div className="projects-top">
                         <h2 className={`${darkMode ? 'darkTextColor' : ''}`}>PROJECTS</h2>
@@ -308,6 +314,7 @@ function App() {
                     </div>
                 </div>
 
+                { /* CONTACT SECTION */ }
                 <div id="contact" ref={contactRef}>
                     <div id="contact-wrapper" className={`contactWrapperLight ${darkMode ? 'darkContainer' : 'contactWrapperLight'}`}>
                         <div className="contact-top">
