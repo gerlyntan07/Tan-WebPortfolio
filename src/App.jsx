@@ -48,7 +48,7 @@ function App() {
     const toolListRef2 = useRef(null);
     const contactRef = useRef(null);
 
-    function setDarkMode(){
+    const setDarkMode = () => {
         setDark(true);
         darkIconBtn.current.style.display = 'none';
         lightIconBtn.current.style.display = 'flex';
@@ -82,7 +82,7 @@ function App() {
         
     }
 
-    function setLightMode(){
+    const setLightMode = () => {
         setDark(false);
         darkIconBtn.current.style.display = 'flex';
         lightIconBtn.current.style.display = 'none';
@@ -113,31 +113,31 @@ function App() {
         })
     }
 
-    function openStudentRecords() {
+    const openStudentRecords = () => {
         sliderContainer.current.style.display = "flex";
         studentRecsSlider.current.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
 
-    function openAlumniTracking() {
+    const openAlumniTracking = () =>{
         sliderContainer.current.style.display = "flex";
         alumniTrackingSlider.current.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
 
-    function openHotelReservation() {
+    const openHotelReservation = () => {
         sliderContainer.current.style.display = "flex";
         HotelReservationSlider.current.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
 
-    function openMiniMikimix() {
+    const openMiniMikimix = () => {
         sliderContainer.current.style.display = "flex";
         MiniMikimixSlider.current.style.display = "flex";
         document.body.style.overflow = 'hidden';
     }
 
-    function closeSlider() {
+    const closeSlider = () => {
         sliderContainer.current.style.display = "none";
         studentRecsSlider.current.style.display = "none";
         alumniTrackingSlider.current.style.display = "none";
@@ -147,22 +147,22 @@ function App() {
         document.body.style.overflow = 'auto';
     }
 
-    function gotoCodev() {
+    const gotoCodev = () =>{
         window.open('https://gerlyntan07.github.io/codev/', '_blank');
     }
-    function gotoCvSUWeb() {
+    const gotoCvSUWeb = () => {
         window.open('https://gerlyntan07.github.io/group1_cvsuwebsite/', '_blank');
     }
     // Using useRef to access the DOM element
     const popupMenuRef = useRef(null);
 
-    function openMenu() {
+    const openMenu = () => {
         if (popupMenuRef.current) {
             popupMenuRef.current.style.width = '100%';
         }
     }
 
-    function closeMenu() {
+    const closeMenu = () =>{
         if (popupMenuRef.current) {
             popupMenuRef.current.style.width = '0%';
         }

@@ -12,6 +12,14 @@ export const ContactForm = ({darkMode}) => {
     const sendEmail = (e) => {
         e.preventDefault();
 
+        if(!name || !email || !msg){
+            toast.error('Kindly fill in all fields', {
+                position: 'top-center',
+                autoClose: 3000,
+            });
+            return;
+        }
+                
         emailjs
             .sendForm('service_lvaypj2', 'template_n1qgo2v', form.current, {
                 publicKey: 'Z9nUoyrtbdrLWu_kT',
