@@ -205,10 +205,10 @@ function App() {
 
                         <div className='popup-navBtn'>
                             <ul>
-                                <li><Link to='hero' spy={true} smooth={true} duration={700} onClick={closeMenu}>Home</Link></li>
-                                <li><Link to='about' offset={-70} spy={true} smooth={true} duration={700} onClick={closeMenu}>About</Link></li>
-                                <li><Link to='projects' offset={-70} spy={true} smooth={true} duration={700} onClick={closeMenu}>Projects</Link></li>
-                                <li><Link to='contact' offset={-150} spy={true} smooth={true} duration={700} onClick={closeMenu}>Contact</Link></li>
+                                <li className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`}><Link to='hero' spy={true} smooth={true} duration={700} onClick={closeMenu}>Home</Link></li>
+                                <li className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`}><Link to='about' offset={-70} spy={true} smooth={true} duration={700} onClick={closeMenu}>About</Link></li>
+                                <li className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`}><Link to='projects' offset={-70} spy={true} smooth={true} duration={700} onClick={closeMenu}>Projects</Link></li>
+                                <li className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`}><Link to='contact' offset={-150} spy={true} smooth={true} duration={700} onClick={closeMenu}>Contact</Link></li>
                             </ul>
                         </div>
                     </div>

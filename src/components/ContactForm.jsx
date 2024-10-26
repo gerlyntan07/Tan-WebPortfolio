@@ -12,9 +12,10 @@ export const ContactForm = ({darkMode}) => {
     const sendEmail = (e) => {
         e.preventDefault();
 
+
         if(!name || !email || !msg){
             toast.error('Kindly fill in all fields', {
-                position: 'top-center',
+                position: 'bottom-right',
                 autoClose: 3000,
             });
             return;
@@ -54,7 +55,7 @@ export const ContactForm = ({darkMode}) => {
                 <textarea className={`contactInput-txtArea ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} name="message" value={msg} onChange={(e) => setMsg(e.target.value)} />
                 <input className='submitContactForm' type="submit" value="SUBMIT" />
             </form>
-            <ToastContainer />
+            <ToastContainer theme={darkMode ? 'dark' : 'light'} newestOnTop={true} hideProgressBar={false} />
         </>
     );
 };
