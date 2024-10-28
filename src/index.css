@@ -318,7 +318,6 @@ h2{
     position: relative;
     border-radius: 20px;
     z-index: 1;
-    overflow: hidden;
 }
 .projCards-top{
     width: 100%;
