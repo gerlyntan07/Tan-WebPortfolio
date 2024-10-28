@@ -10,6 +10,7 @@ function ProjectCards({ img, title, description, date, language, viewOn, darkMod
                     <button className="viewProj" onClick={viewOn}>View Project</button>
                 </div>
             </div>
+            
             <div className="projCards-bot">
                 {/* Add darkTextColor class conditionally */}
                 <p className={`proj-info ${darkMode ? 'darkTextColor' : ''}`}>{date}</p>

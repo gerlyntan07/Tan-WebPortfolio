@@ -49,7 +49,7 @@
     border: 1px solid white;
 }
 .lightProjCards{
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.329);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.521);
 }
 .abtContainerLight{
     background-color: white;
@@ -317,8 +317,6 @@ h2{
     text-align: left;
     position: relative;
     border-radius: 20px;
-    z-index: 1;
-    overflow: hidden;
 }
 .projCards-top{
     width: 100%;
@@ -377,7 +375,7 @@ h2{
     height: 100%;
 }
 .proj-cards:hover .projCover{
-    transform: scale(1.1);
+    filter: blur(3px);
 }
 .viewProj{
     margin-top: 15px;
