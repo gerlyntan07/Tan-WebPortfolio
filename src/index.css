@@ -318,6 +318,7 @@ h2{
     position: relative;
     border-radius: 20px;
     z-index: 1;
+    overflow: hidden;
 }
 .projCards-top{
     width: 100%;
@@ -331,6 +332,7 @@ h2{
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
+    transition: .5s ease;
 }
 .projCards-bot{
     display: block;
@@ -360,14 +362,14 @@ h2{
 }
 .projTitle{
     color: white;
-    font: 600 18px montserrat;
+    font: 700 18px montserrat;
     width: 90%;
     text-align: center;
     margin: 0;
 }
 .projDesc{
     color: white;
-    font: 300 16px montserrat;
+    font: 500 16px montserrat;
     width: 80%;
     text-align: center;
 }
@@ -375,7 +377,7 @@ h2{
     height: 100%;
 }
 .proj-cards:hover .projCover{
-    filter: blur(3px);
+    transform: scale(1.1);
 }
 .viewProj{
     margin-top: 15px;
@@ -390,7 +392,7 @@ h2{
 }
 .viewProj:hover{
     background-color: transparent;
-    border: 2px solid var(--darkBrown);
+    border: 2px solid white;
 }
 .projCards-bot{
     margin-top: 5px;
