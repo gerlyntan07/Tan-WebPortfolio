@@ -55,7 +55,7 @@ export const ContactForm = ({darkMode}) => {
                 <textarea className={`contactInput-txtArea ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} name="message" value={msg} onChange={(e) => setMsg(e.target.value)} />
                 <input className='submitContactForm' type="submit" value="SUBMIT" />
             </form>
-            <ToastContainer theme={darkMode ? 'dark' : 'light'} newestOnTop={true} hideProgressBar={false} />
+            <ToastContainer theme={darkMode ? 'dark' : 'light'} newestOnTop={true} hideProgressBar={true} />
         </>
     );
 };

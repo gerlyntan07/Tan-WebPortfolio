@@ -9,7 +9,6 @@ import img6 from '/src/assets/student records management/6.png';
 import img7 from '/src/assets/student records management/7.png';
 import img8 from '/src/assets/student records management/8.png';
 
-
 function StudentRecordsSlider() {
     return (
             <Carousel className='carousel'>

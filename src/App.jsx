@@ -31,22 +31,16 @@ function App() {
     const sliderContainer = useRef(null);
     const studentRecsSlider = useRef(null);
     const alumniTrackingSlider = useRef(null);
-    const bodyContainer = useRef(null);
     const HotelReservationSlider = useRef(null);
     const MiniMikimixSlider = useRef(null);
     const darkIconBtn = useRef(null);
     const lightIconBtn = useRef(null);
     const darkIconBtnPopup = useRef(null);
     const lightIconBtnPopup = useRef(null);
-    const headerRef = useRef(null);
     const heroTextRef = useRef(null);
-    const heroNameRef = useRef(null);
     const linkRef = useRef(null);
-    const aboutRef = useRef(null);
-    const aboutLineRef = useRef(null);
     const toolListRef1 = useRef(null);
     const toolListRef2 = useRef(null);
-    const contactRef = useRef(null);
 
     const setDarkMode = () => {
         setDark(true);
@@ -54,12 +48,6 @@ function App() {
         lightIconBtn.current.style.display = 'flex';
         darkIconBtnPopup.current.style.display = 'none';
         lightIconBtnPopup.current.style.display = 'flex';
-        headerRef.current.classList.add('darkHeader');
-        bodyContainer.current.classList.add('darkBody');
-        heroNameRef.current.style.color = 'var(--lightBrown)';
-        aboutRef.current.style.background = 'var(--sectionClrDark)';
-        aboutLineRef.current.style.background = 'var(--sectionClrDark)';
-        contactRef.current.style.background = 'var(--sectionClrDark)';
 
         const elements = heroTextRef.current.querySelectorAll('.hero-des');
         elements.forEach((el) => {
@@ -88,12 +76,6 @@ function App() {
         lightIconBtn.current.style.display = 'none';
         darkIconBtnPopup.current.style.display = 'flex';
         lightIconBtnPopup.current.style.display = 'none';
-        headerRef.current.classList.remove('darkHeader');
-        bodyContainer.current.classList.remove('darkBody');
-        heroNameRef.current.style.color = 'var(--darkBrown)';
-        aboutRef.current.style.background = 'var(--sectionClrLight)';
-        aboutLineRef.current.style.background = 'var(--sectionClrLight)';
-        contactRef.current.style.background = 'var(--sectionClrLight)';
 
         const elements = heroTextRef.current.querySelectorAll('.hero-des');
         elements.forEach((el) => {
@@ -170,7 +152,7 @@ function App() {
 
     return (
         <>
-            <div id='body' ref={bodyContainer}>
+            <div className={`bodyContainer ${darkMode ? 'darkBody' : ''}`}>
                 {/* POPUP IMAGE SLIDER */}
                 <div className="image-slider" ref={sliderContainer}>
                     <div id="studentRecs-container" ref={studentRecsSlider}>
@@ -195,7 +177,7 @@ function App() {
                 </div>
 
                 {/* POPUP MENU */}
-                <div className={`popup-menu ${darkMode ? 'darkPopupMenuBG' : 'lightPopupMenuBG'}`} id='popupMenu' ref={popupMenuRef}>
+                <div className={`popup-menu ${darkMode ? 'toggleDarkSection' : 'lightPopupMenuBG'}`} id='popupMenu' ref={popupMenuRef}>
                     <div className="popup-container">
                         <div className='popup-top'>
                             <button ref={darkIconBtnPopup} className='darkBtnPopup' onClick={setDarkMode}><img className='darkmode-popup' src={DarkMode} alt="dark mode" /></button>
@@ -216,7 +198,7 @@ function App() {
 
                 {/* HEADER MENU */}
                 <div id="nav">
-                    <header ref={headerRef}>
+                    <header className={`header ${darkMode ? 'darkHeader' : ''}`}>
                         <div>
                             <img className='gt-logo' src={Logo} alt="logo" />
                         </div>
@@ -244,7 +226,7 @@ function App() {
                 <div id='hero'>
                     <div className='hero-text' ref={heroTextRef}>
                         <p className='hero-des'>Say <span>hello</span> to my <span>world</span>! I am</p>
-                        <h1 ref={heroNameRef}>GERLYN TAN</h1>
+                        <h1 className={`heroName ${darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}`}>GERLYN TAN</h1>
                         <p className='hero-des'>A passionate Computer Science student dedicated to building appealing, creative, and user-friendly projects. Let’s craft your ideas into reality!</p>
 
                         <div className='hero-btn-links'>
@@ -264,7 +246,7 @@ function App() {
                 </div>
 
                 {/* ABOUT SECTION */}
-                <div id="about" ref={aboutRef}>
+                <div id="about" className={darkMode ? 'toggleDarkSection' : 'toggleLightSection'}>
                     <div id="abt-container" className={`abtContainerLight ${darkMode ? 'darkContainer' : ''}`}>
                         <div className="abt-content">
                             <p className={`abt-skill ${darkMode ? 'darkTextColor' : ''}`}>FRONT-END DEVELOPMENT</p>
@@ -280,7 +262,7 @@ function App() {
                             </ul>
                         </div>
 
-                        <div className="line-separator" ref={aboutLineRef}>&nbsp;</div>
+                        <div className={`line-separator ${darkMode ? 'toggleDarkSection' : 'toggleLightSection'}`}>&nbsp;</div>
 
                         <div className="abt-content">
                             <p className={`abt-skill ${darkMode ? 'darkTextColor' : ''}`}>UI DESIGN</p>
@@ -305,17 +287,17 @@ function App() {
                     </div>
 
                     <div className="projects-bot">
-                        <ProjectCards img={Codev} viewOn={gotoCodev} title="Codev IT Company" description="Marketing the services offered by an IT company" date="November 2023" language="HTML/CSS" darkMode={darkMode} />
-                        <ProjectCards img={CvSUWeb} viewOn={gotoCvSUWeb} title="CvSU Website" description="Landing page for CvSU - Bacoor City campus website" date="October 2023" language="HTML/CSS" darkMode={darkMode} />
-                        <ProjectCards img={RecordsManagement} viewOn={openStudentRecords} title="Student Records" description="System for course and grades management" date="June 2024" language="HTML/CSS, JavaScript, PHP" darkMode={darkMode} />
-                        <ProjectCards img={AlumniTracker} viewOn={openAlumniTracking} title="Alumni Tracking System" description="Tracking alumni and recording their information" date="January 2024" language="HTML/CSS, PHP" darkMode={darkMode} />
-                        <ProjectCards img={HotelReserve} viewOn={openHotelReservation} title="Hotel Reservation" description="Be able to book rooms at Hilton" date="January 2023" language="ASP.Net" darkMode={darkMode} />
-                        <ProjectCards img={MiniMikimixCover} viewOn={openMiniMikimix} title="Mini Mikimix" description="Manage and record orders" date="January 2024" language="Java" darkMode={darkMode} />
+                        <ProjectCards img={Codev} viewOn={gotoCodev} title="Codev IT Company" description="Designed and developed a professional website for a hypothetical IT company, focusing on modern UI/UX principles to showcase services and team expertise." date="November 2023" language="HTML/CSS" darkMode={darkMode} />
+                        <ProjectCards img={CvSUWeb} viewOn={gotoCvSUWeb} title="CvSU Website" description="Created a responsive and user-friendly website for Cavite State University, emphasizing clear navigation for students and faculty." date="October 2023" language="HTML/CSS" darkMode={darkMode} />
+                        <ProjectCards img={RecordsManagement} viewOn={openStudentRecords} title="Student Records" description="Developed a secure, efficient system to manage and retrieve student records, and enhancing data organization." date="June 2024" language="HTML/CSS, JavaScript, PHP" darkMode={darkMode} />
+                        <ProjectCards img={AlumniTracker} viewOn={openAlumniTracking} title="Alumni Tracking System" description="Built a platform for tracking alumni, enabling networking, and institutional engagement with graduates." date="January 2024" language="HTML/CSS, PHP" darkMode={darkMode} />
+                        <ProjectCards img={HotelReserve} viewOn={openHotelReservation} title="Hotel Reservation" description="Designed a reservation system for Hilton Hotel, allowing users to book rooms, view amenities, and manage their stay preferences with ease." date="January 2023" language="ASP.Net" darkMode={darkMode} />
+                        <ProjectCards img={MiniMikimixCover} viewOn={openMiniMikimix} title="Mini Mikimix" description="Created an order and capital management solution for Mini Mikimix, optimizing order tracking, and financial management." date="January 2024" language="Java" darkMode={darkMode} />
                     </div>
                 </div>
 
                 { /* CONTACT SECTION */ }
-                <div id="contact" ref={contactRef}>
+                <div id="contact" className={darkMode ? 'toggleDarkSection' : 'toggleLightSection'}>
                     <div id="contact-wrapper" className={`contactWrapperLight ${darkMode ? 'darkContainer' : 'contactWrapperLight'}`}>
                         <div className="contact-top">
                             <h2 className={`${darkMode ? 'darkTextColor' : ''}`}>CONTACT ME</h2>
