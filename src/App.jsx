@@ -251,14 +251,14 @@ function App() {
                         <div className="abt-content">
                             <p className={`abt-skill ${darkMode ? 'darkTextColor' : ''}`}>FRONT-END DEVELOPMENT</p>
                             <p className={`skill-desc ${darkMode ? 'darkTextColor' : ''}`}>I always get the role of a front-end developer in group projects. I like to code things from scratch, and I enjoy crafting ideas to life.</p>
-                            <p className={`abt-tools ${darkMode ? 'toggleLightBrown' : ''}`}>Language and Dev Tools:</p>
+                            <p className={`abt-tools ${darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}`}>Language and Dev Tools:</p>
 
                             <ul className='tools-list' ref={toolListRef1}>
-                                <li className='toolsList'>HTML</li>
-                                <li className='toolsList'>CSS</li>
-                                <li className='toolsList'>JavaScript</li>
-                                <li className='toolsList'>React</li>
-                                <li className='toolsList'>VS Code</li>
+                                <li className='toolsList'><img src="/src/assets/icons8-html-60.png" alt="" />HTML</li>
+                                <li className='toolsList'><img src="/src/assets/icons8-css-60.png" alt="" />CSS</li>
+                                <li className='toolsList'><img src="/src/assets/icons8-javascript-60.png" alt="" />JavaScript</li>
+                                <li className='toolsList'><img src="/src/assets/icons8-react-js-60.png" alt="" />React</li>
+                                <li className='toolsList'><img src="/src/assets/icons8-vs-code-60.png" alt="" />VS Code</li>
                             </ul>
                         </div>
 
@@ -267,13 +267,13 @@ function App() {
                         <div className="abt-content">
                             <p className={`abt-skill ${darkMode ? 'darkTextColor' : ''}`}>UI DESIGN</p>
                             <p className={`skill-desc ${darkMode ? 'darkTextColor' : ''}`}>Arts is one thing I have been fond of doing since I was a kid. I love playing with colors and making simple yet appealing designs.</p>
-                            <p className={`abt-tools ${darkMode ? 'toggleLightBrown' : ''}`}>Design Tools:</p>
+                            <p className={`abt-tools ${darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}`}>Design Tools:</p>
 
                             <ul className='tools-list' ref={toolListRef2}>
-                                <li className='toolsList'>Figma</li>
-                                <li className='toolsList'>Canva</li>
-                                <li className='toolsList'>Inkscape</li>
-                                <li className='toolsList'>Pen & Paper</li>
+                                <li className='toolsList'><img src="/src/assets/icons8-figma-60.png" alt="" />Figma</li>
+                                <li className='toolsList'><img src="/src/assets/icons8-canva-60.png" alt="" />Canva</li>
+                                <li className='toolsList'><img src="/src/assets/icons8-inkscape-60.png" alt="" />Inkscape</li>
+                                <li className='toolsList'><img src="/src/assets/icons8-drawing-60.png" alt="" />Pen & Paper</li>
                             </ul>
                         </div>
                     </div>
