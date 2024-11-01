@@ -23,6 +23,15 @@ import ContactForm from '/src/components/ContactForm.jsx';
 import GTLogo from '/src/assets/portfolio-logo.png';
 import lightMode from '/src/assets/icons8-light-mode-50.png';
 import { Link } from 'react-scroll';
+import htmlIcon from '/src/assets/icons8-html-60.png';
+import canvaIcon from '/src/assets/icons8-canva-60.png';
+import cssIcon from '/src/assets/icons8-css-60.png';
+import drawingIcon from '/src/assets/icons8-drawing-60.png';
+import figmaIcon from '/src/assets/icons8-figma-60.png';
+import inkscapeIcon from '/src/assets/icons8-inkscape-60.png';
+import jsIcon from '/src/assets/icons8-javascript-60.png';
+import reactIcon from '/src/assets/icons8-react-js-60.png';
+import vsCodeIcon from '/src/assets/icons8-vs-code-60.png';
 
 
 function App() {
@@ -254,11 +263,11 @@ function App() {
                             <p className={`abt-tools ${darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}`}>Language and Dev Tools:</p>
 
                             <ul className='tools-list' ref={toolListRef1}>
-                                <li className='toolsList'><img src="/src/assets/icons8-html-60.png" alt="" />HTML</li>
-                                <li className='toolsList'><img src="/src/assets/icons8-css-60.png" alt="" />CSS</li>
-                                <li className='toolsList'><img src="/src/assets/icons8-javascript-60.png" alt="" />JavaScript</li>
-                                <li className='toolsList'><img src="/src/assets/icons8-react-js-60.png" alt="" />React</li>
-                                <li className='toolsList'><img src="/src/assets/icons8-vs-code-60.png" alt="" />VS Code</li>
+                                <li className='toolsList'><img src={htmlIcon} alt="HTML Icon" />HTML</li>
+                                <li className='toolsList'><img src={cssIcon} alt="CSS Icon" />CSS</li>
+                                <li className='toolsList'><img src={jsIcon} alt="JavaScript Icon" />JavaScript</li>
+                                <li className='toolsList'><img src={reactIcon} alt="React JS Icon" />React</li>
+                                <li className='toolsList'><img src={vsCodeIcon} alt="VS Code Icon" />VS Code</li>
                             </ul>
                         </div>
 
@@ -270,10 +279,10 @@ function App() {
                             <p className={`abt-tools ${darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}`}>Design Tools:</p>
 
                             <ul className='tools-list' ref={toolListRef2}>
-                                <li className='toolsList'><img src="/src/assets/icons8-figma-60.png" alt="" />Figma</li>
-                                <li className='toolsList'><img src="/src/assets/icons8-canva-60.png" alt="" />Canva</li>
-                                <li className='toolsList'><img src="/src/assets/icons8-inkscape-60.png" alt="" />Inkscape</li>
-                                <li className='toolsList'><img src="/src/assets/icons8-drawing-60.png" alt="" />Pen & Paper</li>
+                                <li className='toolsList'><img src={figmaIcon} alt="Figma Icon" />Figma</li>
+                                <li className='toolsList'><img src={canvaIcon} alt="Canva icon" />Canva</li>
+                                <li className='toolsList'><img src={inkscapeIcon} alt="Inkscape Icon" />Inkscape</li>
+                                <li className='toolsList'><img src={drawingIcon} alt="Drawing Icon" />Pen & Paper</li>
                             </ul>
                         </div>
                     </div>
