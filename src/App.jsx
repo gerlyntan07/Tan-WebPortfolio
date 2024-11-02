@@ -196,10 +196,10 @@ function App() {
 
                         <div className='popup-navBtn'>
                             <ul>
-                                <li className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`}><Link to='hero' spy={true} smooth={true} duration={700} onClick={closeMenu}>Home</Link></li>
-                                <li className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`}><Link to='about' offset={-70} spy={true} smooth={true} duration={700} onClick={closeMenu}>About</Link></li>
-                                <li className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`}><Link to='projects' offset={-70} spy={true} smooth={true} duration={700} onClick={closeMenu}>Projects</Link></li>
-                                <li className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`}><Link to='contact' offset={-150} spy={true} smooth={true} duration={700} onClick={closeMenu}>Contact</Link></li>
+                                <li><Link className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`} to='hero' spy={true} smooth={true} duration={700} onClick={closeMenu}>Home</Link></li>
+                                <li><Link className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`} to='about' offset={-70} spy={true} smooth={true} duration={700} onClick={closeMenu}>About</Link></li>
+                                <li><Link className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`} to='projects' offset={-70} spy={true} smooth={true} duration={700} onClick={closeMenu}>Projects</Link></li>
+                                <li><Link className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`} to='contact' offset={-150} spy={true} smooth={true} duration={700} onClick={closeMenu}>Contact</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -321,8 +321,8 @@ function App() {
 
                 <footer id='footer'>
                     <img className='footer-logo' src={GTLogo} alt="" />
-                    <p className={`footer-tagline ${darkMode ? 'darkTextColor' : ''}`}><span>G</span>rowing Talent,</p>
-                    <p className={`footer-tagline ${darkMode ? 'darkTextColor' : ''}`}><span>T</span>urning Ideas into Reality</p>
+                    <p className={`footer-tagline ${darkMode ? 'darkTextColor' : ''}`}><span className={darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}>G</span>rowing Talent,</p>
+                    <p className={`footer-tagline ${darkMode ? 'darkTextColor' : ''}`}><span className={darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}>T</span>urning Ideas into Reality</p>
                     <p className={`copyright ${darkMode ? 'darkCopyright' : 'lightCopyright'}`}>Copyright &copy; 2024 Gerlyn Tan</p>
                 </footer>
             </div>
