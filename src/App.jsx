@@ -32,7 +32,15 @@ import inkscapeIcon from '/src/assets/icons8-inkscape-60.png';
 import jsIcon from '/src/assets/icons8-javascript-60.png';
 import reactIcon from '/src/assets/icons8-react-js-60.png';
 import vsCodeIcon from '/src/assets/icons8-vs-code-60.png';
-
+import va1 from '/src/assets/artworks/1.jpg';
+import va2 from '/src/assets/artworks/2.jpg';
+import va3 from '/src/assets/artworks/3.jpg';
+import va4 from '/src/assets/artworks/4.jpg';
+import va5 from '/src/assets/artworks/5.jpg';
+import va6 from '/src/assets/artworks/6.jpg';
+import va7 from '/src/assets/artworks/7.jpg';
+import va8 from '/src/assets/artworks/8.jpg';
+import va9 from '/src/assets/artworks/9.jpg';
 
 function App() {
     const [darkMode, setDark] = useState(false);
@@ -76,7 +84,7 @@ function App() {
         elements3.forEach((el3) => {
             el3.classList.add('darkTextColor')
         })
-        
+
     }
 
     const setLightMode = () => {
@@ -110,7 +118,7 @@ function App() {
         document.body.style.overflow = 'hidden';
     }
 
-    const openAlumniTracking = () =>{
+    const openAlumniTracking = () => {
         sliderContainer.current.style.display = "flex";
         alumniTrackingSlider.current.style.display = "flex";
         document.body.style.overflow = 'hidden';
@@ -138,7 +146,7 @@ function App() {
         document.body.style.overflow = 'auto';
     }
 
-    const gotoCodev = () =>{
+    const gotoCodev = () => {
         window.open('https://gerlyntan07.github.io/codev/', '_blank');
     }
     const gotoCvSUWeb = () => {
@@ -153,7 +161,7 @@ function App() {
         }
     }
 
-    const closeMenu = () =>{
+    const closeMenu = () => {
         if (popupMenuRef.current) {
             popupMenuRef.current.style.width = '0%';
         }
@@ -256,6 +264,56 @@ function App() {
 
                 {/* ABOUT SECTION */}
                 <div id="about" className={darkMode ? 'toggleDarkSection' : 'toggleLightSection'}>
+
+                    <div id="preCollege">
+                        <div className="preCollege-desc-container">
+                            <p className={`preCollege-desc ${darkMode ? 'darkTextColor' : ''}`}>Before becoming an aspiring developer, I once dreamt of becoming a great</p>
+                            <p className={`vArtist-span ${darkMode ? 'darkTextColor' : ''}`}>artist</p>
+                        </div>
+
+                        <div className={`visualArts-gallery ${darkMode ? 'darkContainer' : 'abtContainerLight'}`}>
+                            <div className="va-column">
+                                <div className="va-photo">
+                                    <img src={va1} alt="" />
+                                </div>
+                                <div className="va-photo">
+                                    <img src={va4} alt="" />
+                                </div>
+                                <div className="va-photo">
+                                    <img src={va9} alt="" />
+                                </div>
+                            </div>
+
+                            <div className="va-column">
+                                <div className="va-photo">
+                                    <img src={va8} alt="" />
+                                </div>
+                                <div className="va-photo">
+                                    <img src={va5} alt="" />
+                                </div>
+                                <div className="va-photo">
+                                    <img src={va2} alt="" />
+                                </div>
+                            </div>
+
+                            <div className="va-column">
+                                <div className="va-photo">
+                                    <img src={va3} alt="" />
+                                </div>
+                                <div className="va-photo">
+                                    <img src={va6} alt="" />
+                                </div>
+                                <div className="va-photo">
+                                    <img src={va7} alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id='skillsIntro'>
+                        <p>I now found a new happiness in developing, creating, and building computer graphics, software, and application. I am happy to use my years of experience in arts in this field.</p>
+                    </div>
+
                     <div id="abt-container" className={`abtContainerLight ${darkMode ? 'darkContainer' : ''}`}>
                         <div className="abt-content">
                             <p className={`abt-skill ${darkMode ? 'darkTextColor' : ''}`}>FRONT-END DEVELOPMENT</p>
@@ -288,6 +346,8 @@ function App() {
                     </div>
                 </div>
 
+
+
                 {/* PROJECTS SECTION */}
                 <div id="projects">
                     <div className="projects-top">
@@ -305,7 +365,7 @@ function App() {
                     </div>
                 </div>
 
-                { /* CONTACT SECTION */ }
+                { /* CONTACT SECTION */}
                 <div id="contact" className={darkMode ? 'toggleDarkSection' : 'toggleLightSection'}>
                     <div id="contact-wrapper" className={`contactWrapperLight ${darkMode ? 'darkContainer' : 'contactWrapperLight'}`}>
                         <div className="contact-top">

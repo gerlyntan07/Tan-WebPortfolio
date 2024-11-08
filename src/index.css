@@ -9,7 +9,7 @@
 :root{
     --darkBrown: #A67538;
     --lightBrown: #CB995B;
-    --sectionClrLight: #EDE6DD;
+    --sectionClrLight: #e4dcd2;
     --sectionClrDark: #3E3E3E;
     --sectionContainerDark: #222222;
     --popupMenu: #a89c93;
@@ -99,7 +99,9 @@
 .darkNavBtnBG{
     background-color: #4e4e4e;
 }
-
+.lightGalleryBG{
+    background-color: white;
+}
 /* DARKMODE AND LIGHTMODE */
 /*HEADER*/
 header{
@@ -236,8 +238,55 @@ span{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 18rem;
-    margin: 50px 0px;
+    flex-direction: column;
+    height: max-content;
+    margin: 0px 0px;
+    padding:  3rem 0rem;
+}
+#preCollege{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin-bottom: 5rem;
+}
+.preCollege-desc-container{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.preCollege-desc{
+    font: 300 20px poltawski;
+}
+.vArtist-span{
+    font: 600 4rem montserrat;
+    transform: scaleX(1.5);
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: -1rem;
+}
+.visualArts-gallery{
+    display: flex;
+    width: 60%;
+    gap: 15px;
+    padding: 2rem;
+    border-radius: 15px;
+}
+.va-column{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+.va-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s ease;
 }
 #abt-container {
     width: 80%;    
@@ -706,10 +755,6 @@ h2{
         align-self: center;
         margin-right: 0px;
     }
-    #about{
-        margin: 50px 0px;
-        height: 50rem;
-    }
     #abt-container{
         width: 90%;
         flex-direction: column;
@@ -807,6 +852,41 @@ h2{
     .darkBtn{
         display: none;
     }
+    #preCollege{        
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    .preCollege-desc-container{
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .preCollege-desc{
+        font: 300 17px poltawski;
+        text-align: center;
+        margin: 0;
+    }
+    .vArtist-span{
+        font: 600 3rem montserrat;
+        transform: scaleX(1.5);
+        writing-mode: horizontal-tb;
+        text-orientation: upright;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+    }
+    .visualArts-gallery{
+        width: 100%;
+        padding: 1rem;
+        flex-direction: column;
+    }
+    .va-column{
+        text-align: center;
+    }
+    .va-photo img{
+        width: 85%;
+    }
 }
 
 /* TABLET */
@@ -829,10 +909,6 @@ h2{
     }
     .hero-text{
         max-width: 25rem;
-    }
-    #about{
-        margin: 50px 0px;
-        height: 38rem;
     }
     #abt-container{
         width: 90%;
@@ -866,6 +942,37 @@ h2{
     }
     #contact #contact-wrapper{
         width: 80%;
+    }
+    #preCollege{        
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+    }
+    .preCollege-desc-container{
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .preCollege-desc{
+        font: 300 18px poltawski;
+        text-align: center;
+        margin: 0;
+    }
+    .vArtist-span{
+        font: 600 3rem montserrat;
+        transform: scaleX(1.5);
+        writing-mode: horizontal-tb;
+        text-orientation: upright;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+    }
+    .visualArts-gallery{
+        width: 100%;
+        padding: 2rem;
+    }
+    .va-column{
+        text-align: center;
     }
 }
 
