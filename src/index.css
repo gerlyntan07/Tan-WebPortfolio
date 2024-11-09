@@ -249,7 +249,7 @@ span{
     justify-content: space-between;
     align-items: center;
     width: 70%;
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
 }
 .preCollege-desc-container{
     width: 20%;
@@ -258,7 +258,7 @@ span{
     align-items: start;
 }
 .preCollege-desc{
-    font: 300 20px poltawski;
+    font: 300 23px poltawski;
 }
 .vArtist-span{
     font: 600 4rem montserrat;
@@ -287,6 +287,14 @@ span{
     height: 100%;
     object-fit: cover;
     transition: .3s ease;
+}
+#skillsIntro{
+    width: 60%;
+    
+    text-align: center;
+}
+.skillsIntro-txt{
+    font: 300 23px poltawski;
 }
 #abt-container {
     width: 80%;    
@@ -887,6 +895,12 @@ h2{
     .va-photo img{
         width: 85%;
     }
+    #skillsIntro{
+        width: 75%;
+    }
+    .skillsIntro-txt{
+        font: 300 17px poltawski;
+    }
 }
 
 /* TABLET */
@@ -973,6 +987,12 @@ h2{
     }
     .va-column{
         text-align: center;
+    }
+    #skillsIntro{
+        width: 75%;
+    }
+    .skillsIntro-txt{
+        font: 300 18px poltawski;
     }
 }
 

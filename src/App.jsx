@@ -311,7 +311,7 @@ function App() {
                     </div>
 
                     <div id='skillsIntro'>
-                        <p>I now found a new happiness in developing, creating, and building computer graphics, software, and application. I am happy to use my years of experience in arts in this field.</p>
+                        <p className={`skillsIntro-txt ${darkMode ? 'darkTextColor' : ''}`}>I now found new challenge in developing, creating, and building computer graphics, software, and applications. I am happy to use my years of experience in the arts in this field.</p>
                     </div>
 
                     <div id="abt-container" className={`abtContainerLight ${darkMode ? 'darkContainer' : ''}`}>
