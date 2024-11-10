@@ -11,15 +11,6 @@ export const ContactForm = ({darkMode}) => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-
-
-        if(!name || !email || !msg){
-            toast.error('Kindly fill in all fields', {
-                position: 'bottom-right',
-                autoClose: 3000,
-            });
-            return;
-        }
                 
         emailjs
             .sendForm('service_lvaypj2', 'template_n1qgo2v', form.current, {
@@ -27,9 +18,9 @@ export const ContactForm = ({darkMode}) => {
             })
             .then(
                 () => {
-                    toast.success('Email sent successfully!', {
-                        position: 'bottom-right',
-                        autoClose: 3000, // Close after 3 seconds
+                    toast.success('Message sent! I will get back to you through the email account you sent as soon as possible.', {
+                        position: 'top-center',
+                        autoClose: 5000, // Close after 3 seconds
                     });
                     setName('');
                     setEmail('');
@@ -48,11 +39,11 @@ export const ContactForm = ({darkMode}) => {
         <>
             <form ref={form} onSubmit={sendEmail} className='contactFormContainer'>
                 <label className={`contactLbl ${darkMode ? 'darkTextColor': ''}`}>Name</label>
-                <input className={`contactInput ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} type="text" value={name} name="from_name" placeholder='Your name' onChange={(e) => setName(e.target.value)} />
+                <input className={`contactInput ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} type="text" value={name} name="from_name" placeholder='Your name' onChange={(e) => setName(e.target.value)} required />
                 <label className={`contactLbl ${darkMode ? 'darkTextColor': ''}`}>Email</label>
-                <input className={`contactInput ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} type="email" value={email} name="from_email" placeholder='Your email' onChange={(e) => setEmail(e.target.value)} />
+                <input className={`contactInput ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} type="email" value={email} name="from_email" placeholder='Your email' onChange={(e) => setEmail(e.target.value)} required />
                 <label className={`contactLbl ${darkMode ? 'darkTextColor': ''}`}>Message</label>
-                <textarea className={`contactInput-txtArea ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} name="message" value={msg} onChange={(e) => setMsg(e.target.value)} />
+                <textarea className={`contactInput-txtArea ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} name="message" value={msg} onChange={(e) => setMsg(e.target.value)} required />
                 <input className='submitContactForm' type="submit" value="SUBMIT" />
             </form>
             <ToastContainer theme={darkMode ? 'dark' : 'light'} newestOnTop={true} hideProgressBar={true} />
