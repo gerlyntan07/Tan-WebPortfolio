@@ -333,7 +333,7 @@ function App() {
 
                         <div className="abt-content">
                             <p className={`abt-skill ${darkMode ? 'darkTextColor' : ''}`}>UI DESIGN</p>
-                            <p className={`skill-desc ${darkMode ? 'darkTextColor' : ''}`}>Arts is one thing I have been fond of doing since I was a kid. I love playing with colors and making simple yet appealing designs.</p>
+                            <p className={`skill-desc ${darkMode ? 'darkTextColor' : ''}`}>Art is one thing I have been fond of doing since I was a kid. I love playing with colors and making simple yet appealing designs.</p>
                             <p className={`abt-tools ${darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}`}>Design Tools:</p>
 
                             <ul className='tools-list' ref={toolListRef2}>
