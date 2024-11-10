@@ -41,6 +41,7 @@ import va6 from '/src/assets/artworks/6.jpg';
 import va7 from '/src/assets/artworks/7.jpg';
 import va8 from '/src/assets/artworks/8.jpg';
 import va9 from '/src/assets/artworks/9.jpg';
+import { Helmet } from 'react-helmet-async';
 
 function App() {
     const [darkMode, setDark] = useState(false);
@@ -167,8 +168,35 @@ function App() {
         }
     }
 
+    {/* SEO */}
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Gerlyn Tan",
+        "jobTitle": "Front-End Developer",
+        "url": "https://tan-web-portfolio.vercel.app",
+        "image": "https://tan-web-portfolio.vercel.app/path-to-your-image.jpg",
+        "sameAs": [
+            "https://github.com/gerlyntan07",
+            "https://www.facebook.com/gerlyn.tan.50",
+            "https://www.instagram.com/mehehehe__/"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance"
+        },
+        "description": "Portfolio of a front-end developer and UI designer specializing in React.js."
+    };
+
     return (
         <>
+            <Helmet>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+                />
+            </Helmet>
+
             <div className={`bodyContainer ${darkMode ? 'darkBody' : ''}`}>
                 {/* POPUP IMAGE SLIDER */}
                 <div className="image-slider" ref={sliderContainer}>
@@ -274,37 +302,37 @@ function App() {
                         <div className={`visualArts-gallery ${darkMode ? 'darkContainer' : 'abtContainerLight'}`}>
                             <div className="va-column">
                                 <div className="va-photo">
-                                    <img src={va1} alt="" />
+                                    <img src={va1} alt="artwork 1" />
                                 </div>
                                 <div className="va-photo">
-                                    <img src={va4} alt="" />
+                                    <img src={va4} alt="artwork 2" />
                                 </div>
                                 <div className="va-photo">
-                                    <img src={va9} alt="" />
-                                </div>
-                            </div>
-
-                            <div className="va-column">
-                                <div className="va-photo">
-                                    <img src={va8} alt="" />
-                                </div>
-                                <div className="va-photo">
-                                    <img src={va5} alt="" />
-                                </div>
-                                <div className="va-photo">
-                                    <img src={va2} alt="" />
+                                    <img src={va9} alt="artwork 3" />
                                 </div>
                             </div>
 
                             <div className="va-column">
                                 <div className="va-photo">
-                                    <img src={va3} alt="" />
+                                    <img src={va8} alt="artwork 4" />
                                 </div>
                                 <div className="va-photo">
-                                    <img src={va6} alt="" />
+                                    <img src={va5} alt="artwork 5" />
                                 </div>
                                 <div className="va-photo">
-                                    <img src={va7} alt="" />
+                                    <img src={va2} alt="artwork 6" />
+                                </div>
+                            </div>
+
+                            <div className="va-column">
+                                <div className="va-photo">
+                                    <img src={va3} alt="artwork 7" />
+                                </div>
+                                <div className="va-photo">
+                                    <img src={va6} alt="artwork 8" />
+                                </div>
+                                <div className="va-photo">
+                                    <img src={va7} alt="artwork 9" />
                                 </div>
                             </div>
                         </div>
@@ -380,7 +408,7 @@ function App() {
                 </div>
 
                 <footer id='footer'>
-                    <img className='footer-logo' src={GTLogo} alt="" />
+                    <img className='footer-logo' src={GTLogo} alt="Developer Logo" />
                     <p className={`footer-tagline ${darkMode ? 'darkTextColor' : ''}`}><span className={darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}>G</span>rowing Talent,</p>
                     <p className={`footer-tagline ${darkMode ? 'darkTextColor' : ''}`}><span className={darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}>T</span>urning Ideas into Reality</p>
                     <p className={`copyright ${darkMode ? 'darkCopyright' : 'lightCopyright'}`}>Copyright &copy; 2024 Gerlyn Tan</p>
