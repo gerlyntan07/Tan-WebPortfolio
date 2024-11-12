@@ -175,7 +175,7 @@ function App() {
         "name": "Gerlyn Tan",
         "jobTitle": "Front-End Developer",
         "url": "https://tan-web-portfolio.vercel.app",
-        "image": "https://tan-web-portfolio.vercel.app/hero-pic.png",
+        "image": "/src/assets/hero-pic.png",
         "sameAs": [
             "https://github.com/gerlyntan07",
             "https://www.facebook.com/gerlyn.tan.50",
@@ -193,12 +193,12 @@ function App() {
             <Helmet>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
                 <title>Gerlyn Tan | Portfolio</title>
-                <meta name="description" content="Portfolio of a front-end developer and UI designer specializing in React.js." />
                 <meta name="robots" content="index, follow" />
                 <meta property="og:image" content={HeroImg} />
+                <meta property="og:url" content="https://tan-web-portfolio.vercel.app/" />
                 <meta property="og:title" content="Gerlyn Tan | Front-End Developer" />
+                <meta property="og:image" content={HeroImg} />
                 <meta property="og:description" content="Portfolio of a skilled Front-End Developer and UI Designer with expertise in React.js." />
-
             </Helmet>
 
             <div className={`bodyContainer ${darkMode ? 'darkBody' : ''}`}>
