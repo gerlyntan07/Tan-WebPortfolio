@@ -175,7 +175,7 @@ function App() {
         "name": "Gerlyn Tan",
         "jobTitle": "Front-End Developer",
         "url": "https://tan-web-portfolio.vercel.app",
-        "image": "/src/assets/hero-pic.png",
+        "image": "hero-pic.png",
         "sameAs": [
             "https://github.com/gerlyntan07",
             "https://www.facebook.com/gerlyn.tan.50",
@@ -197,7 +197,6 @@ function App() {
                 <meta property="og:image" content={HeroImg} />
                 <meta property="og:url" content="https://tan-web-portfolio.vercel.app/" />
                 <meta property="og:title" content="Gerlyn Tan | Front-End Developer" />
-                <meta property="og:image" content={HeroImg} />
                 <meta property="og:description" content="Portfolio of a skilled Front-End Developer and UI Designer with expertise in React.js." />
             </Helmet>
 
