@@ -192,7 +192,7 @@ function App() {
         <>
             <Helmet>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-                <title>Gerlyn Tan | Portfolio</title>
+                <title>Gerlyn Tan | Web Portfolio</title>
                 <meta name="description" content="Portfolio of a front-end developer and UI designer specializing in React.js." />
                 <meta name="robots" content="index, follow" />
             </Helmet>
