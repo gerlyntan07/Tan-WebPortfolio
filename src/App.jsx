@@ -195,6 +195,7 @@ function App() {
                 <title>Gerlyn Tan | Portfolio</title>
                 <meta name="description" content="Portfolio of a front-end developer and UI designer specializing in React.js." />
                 <meta name="robots" content="index, follow" />
+                <meta property="og:image" content={HeroImg} />
             </Helmet>
 
             <div className={`bodyContainer ${darkMode ? 'darkBody' : ''}`}>
