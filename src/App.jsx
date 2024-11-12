@@ -175,7 +175,7 @@ function App() {
         "name": "Gerlyn Tan",
         "jobTitle": "Front-End Developer",
         "url": "https://tan-web-portfolio.vercel.app",
-        "image": "https://tan-web-portfolio.vercel.app/path-to-your-image.jpg",
+        "image": "https://tan-web-portfolio.vercel.app/hero-pic.png",
         "sameAs": [
             "https://github.com/gerlyntan07",
             "https://www.facebook.com/gerlyn.tan.50",
