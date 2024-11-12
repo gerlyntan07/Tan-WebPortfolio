@@ -33,7 +33,7 @@
 }
 /* DARKMODE AND LIGHTMODE */
 .darkHeader{
-    box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.308);
+    box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.144);
     background: var(--darkBackground);
 }
 .darkTextColor{
@@ -106,13 +106,13 @@
 /*HEADER*/
 header{
     width: 100%;
-    height: 50px;
+    height: 80px;
     display: flex;
     position: fixed;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.384);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.103);
     background-color: white;
 }
 header .nav-btn ul{
@@ -130,10 +130,9 @@ header li{
     font: 400 18px montserrat;
     text-decoration: none;
     list-style-type: none;
-    margin: 0px 30px;
+    margin: 0px 40px;    
     cursor: pointer;
     display: inline-block;
-    text-transform: uppercase;
     transition: .3s ease;
 }
 .nav-btn li:hover{
@@ -213,7 +212,7 @@ span{
 }
 .hero-btn-links .dl-cv{
     font: 500 15px montserrat;
-    background-color: var(--lightBrown);
+    background-color: var(--darkBrown);
     display: flex;
     text-align: center;
     align-items: center;
@@ -223,14 +222,19 @@ span{
     color: white;
     margin-right: 15px;
     text-decoration: none;
+    transition: .5s ease;
 }
 .dl-cv:hover{
     background-color: #c09055;
-    transition: .2s ease;
+    transform: scaleX(1.1);
 }
 .link-icon{
     width: 30px;
     margin: 0px 5px;
+    transition: .3s ease;
+}
+.link-icon:hover{
+    transform: scale(1.2);
 }
 /*ABOUT SECTION*/
 #about{
@@ -587,7 +591,7 @@ h2{
 }
 .contactFormContainer .submitContactForm{
     font: 500 15px montserrat;
-    background-color: var(--lightBrown);
+    background-color: var(--darkBrown);
     display: flex;
     text-align: center;
     align-items: center;
@@ -599,6 +603,11 @@ h2{
     text-decoration: none;
     border: none;
     align-self: center;
+    transition: .5s ease;
+}
+.contactFormContainer .submitContactForm:hover{
+    background-color: #c09055;
+    transform: scaleX(1.1);
 }
 
 /* FOOTER SECTION */
@@ -685,6 +694,8 @@ h2{
     }
     header{
         height: auto;
+        padding: 10px 0px;
+        justify-content: space-between;
     }
     header .nav-btn{
         display: none;

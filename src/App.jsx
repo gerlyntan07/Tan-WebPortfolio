@@ -254,7 +254,7 @@ function App() {
                         <div className='nav-btn'>
                             <ul>
                                 <li><Link to='hero' spy={true} smooth={true} duration={700} className={`${darkMode ? 'darkTextColor' : ''}`}>Home</Link></li>
-                                <li><Link to='about' offset={-250} spy={true} smooth={true} duration={700} className={`${darkMode ? 'darkTextColor' : ''}`}>About</Link></li>
+                                <li><Link to='about' offset={-100} spy={true} smooth={true} duration={700} className={`${darkMode ? 'darkTextColor' : ''}`}>About</Link></li>
                                 <li><Link to='projects' offset={-100} spy={true} smooth={true} duration={700} href="#projects" className={`${darkMode ? 'darkTextColor' : ''}`}>Projects</Link></li>
                                 <li><Link to='contact' offset={-200} spy={true} smooth={true} duration={700} className={`${darkMode ? 'darkTextColor' : ''}`}>Contact</Link></li>
                             </ul>
