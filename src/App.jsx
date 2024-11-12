@@ -175,7 +175,7 @@ function App() {
         "name": "Gerlyn Tan",
         "jobTitle": "Front-End Developer",
         "url": "https://tan-web-portfolio.vercel.app",
-        "image": "hero-pic.png",
+        "image": "https://tan-web-portfolio.vercel.app/src/assets/portfolio-logo.png",
         "sameAs": [
             "https://github.com/gerlyntan07",
             "https://www.facebook.com/gerlyn.tan.50",
@@ -194,7 +194,7 @@ function App() {
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
                 <title>Gerlyn Tan | Portfolio</title>
                 <meta name="robots" content="index, follow" />
-                <meta property="og:image" content={HeroImg} />
+                <meta property="og:image" content="https://tan-web-portfolio.vercel.app/src/assets/portfolio-logo.png" />
                 <meta property="og:url" content="https://tan-web-portfolio.vercel.app/" />
                 <meta property="og:title" content="Gerlyn Tan | Front-End Developer" />
                 <meta property="og:description" content="Portfolio of a skilled Front-End Developer and UI Designer with expertise in React.js." />
