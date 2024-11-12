@@ -196,6 +196,9 @@ function App() {
                 <meta name="description" content="Portfolio of a front-end developer and UI designer specializing in React.js." />
                 <meta name="robots" content="index, follow" />
                 <meta property="og:image" content={HeroImg} />
+                <meta property="og:title" content="Gerlyn Tan | Front-End Developer" />
+                <meta property="og:description" content="Portfolio of a skilled Front-End Developer and UI Designer with expertise in React.js." />
+
             </Helmet>
 
             <div className={`bodyContainer ${darkMode ? 'darkBody' : ''}`}>
@@ -246,7 +249,7 @@ function App() {
                 <div id="nav">
                     <header className={`header ${darkMode ? 'darkHeader' : ''}`}>
                         <div>
-                            <img className='gt-logo' src={Logo} alt="logo" />
+                            <img className='gt-logo' src={Logo} alt="Gerlyn Tan Logo" />
                         </div>
 
                         <div className='nav-btn'>
@@ -262,7 +265,7 @@ function App() {
                             <button ref={darkIconBtn} className='darkBtn' onClick={setDarkMode}><img className='darkmode-icon' src={DarkMode} alt="dark mode" /></button>
                             <button ref={lightIconBtn} className='lightBtn' onClick={setLightMode}><img className='lightMode-icon' src={lightMode} alt="light mode" /></button>
                             <button id='menuBtn' onClick={openMenu}>
-                                <img className={`menuBtn ${darkMode ? 'darkLinks' : ''}`} src={MenuBtn} alt="menu" />
+                                <img className={`menuBtn ${darkMode ? 'darkLinks' : ''}`} src={MenuBtn} alt="Mobile Menu Bar" />
                             </button>
                         </div>
                     </header>
@@ -279,15 +282,15 @@ function App() {
                             <a href={cv} download='cv' className='dl-cv'>DOWNLOAD CV</a>
 
                             <div className="links-section" ref={linkRef}>
-                                <a href="https://github.com/gerlyntan07" target='_blank'><img className='link-icon' src={Github} alt="github logo" /></a>
-                                <a href="https://www.facebook.com/gerlyn.tan.50" target='_blank'><img className='link-icon' src={Facebook} alt="facebook logo" /></a>
-                                <a href="https://www.instagram.com/mehehehe__/" target='_blank'><img className='link-icon' src={Instagram} alt="instagram logo" /></a>
+                                <a href="https://github.com/gerlyntan07" target='_blank'><img className='link-icon' src={Github} alt="Gerlyn Tan Github" /></a>
+                                <a href="https://www.facebook.com/gerlyn.tan.50" target='_blank'><img className='link-icon' src={Facebook} alt="Gerlyn Tan Facebook" /></a>
+                                <a href="https://www.instagram.com/mehehehe__/" target='_blank'><img className='link-icon' src={Instagram} alt="Gerlyn Tan Instagram" /></a>
                             </div>
                         </div>
                     </div>
 
                     <div className='hero-img'>
-                        <img src={HeroImg} className='hero' alt="hero image" />
+                        <img src={HeroImg} className='hero' alt="Profile Picture of Gerlyn Tan" />
                     </div>
                 </div>
 
@@ -303,37 +306,37 @@ function App() {
                         <div className={`visualArts-gallery ${darkMode ? 'darkContainer' : 'abtContainerLight'}`}>
                             <div className="va-column">
                                 <div className="va-photo">
-                                    <img src={va1} alt="artwork 1" />
+                                    <img src={va1} alt="Son Chaeyoung drawing of Gerlyn Tan" />
                                 </div>
                                 <div className="va-photo">
-                                    <img src={va4} alt="artwork 2" />
+                                    <img src={va4} alt="Family portrait artwork of Gerlyn Tan" />
                                 </div>
                                 <div className="va-photo">
-                                    <img src={va9} alt="artwork 3" />
-                                </div>
-                            </div>
-
-                            <div className="va-column">
-                                <div className="va-photo">
-                                    <img src={va8} alt="artwork 4" />
-                                </div>
-                                <div className="va-photo">
-                                    <img src={va5} alt="artwork 5" />
-                                </div>
-                                <div className="va-photo">
-                                    <img src={va2} alt="artwork 6" />
+                                    <img src={va9} alt="Glow art of Gerlyn Tan" />
                                 </div>
                             </div>
 
                             <div className="va-column">
                                 <div className="va-photo">
-                                    <img src={va3} alt="artwork 7" />
+                                    <img src={va8} alt="Mount Fuji using acrylic artwork of Gerlyn Tan" />
                                 </div>
                                 <div className="va-photo">
-                                    <img src={va6} alt="artwork 8" />
+                                    <img src={va5} alt="Graphite and Charcoal drawing of Gerlyn Tan" />
                                 </div>
                                 <div className="va-photo">
-                                    <img src={va7} alt="artwork 9" />
+                                    <img src={va2} alt="Colored pencil drawing on Kraft paper of Gerlyn Tan" />
+                                </div>
+                            </div>
+
+                            <div className="va-column">
+                                <div className="va-photo">
+                                    <img src={va3} alt="Son Chaeyoung-inspired pixelated art of Gerlyn Tan" />
+                                </div>
+                                <div className="va-photo">
+                                    <img src={va6} alt="Family portrait artwork of Gerlyn Tan" />
+                                </div>
+                                <div className="va-photo">
+                                    <img src={va7} alt="Glow art of Gerlyn Tan" />
                                 </div>
                             </div>
                         </div>
@@ -409,7 +412,7 @@ function App() {
                 </div>
 
                 <footer id='footer'>
-                    <img className='footer-logo' src={GTLogo} alt="Developer Logo" />
+                    <img className='footer-logo' src={GTLogo} alt="Gerlyn Tan Logo" />
                     <p className={`footer-tagline ${darkMode ? 'darkTextColor' : ''}`}><span className={darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}>G</span>rowing Talent,</p>
                     <p className={`footer-tagline ${darkMode ? 'darkTextColor' : ''}`}><span className={darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}>T</span>urning Ideas into Reality</p>
                     <p className={`copyright ${darkMode ? 'darkCopyright' : 'lightCopyright'}`}>Copyright &copy; 2024 Gerlyn Tan</p>
