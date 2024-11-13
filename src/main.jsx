@@ -2,9 +2,12 @@ import "./index.css";
 import App from "/src/App.jsx";
 import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <HelmetProvider>
-        <App />
-    </HelmetProvider>
+    <SpeedInsights>
+        <HelmetProvider>
+            <App />
+        </HelmetProvider>
+    </SpeedInsights>
 );
