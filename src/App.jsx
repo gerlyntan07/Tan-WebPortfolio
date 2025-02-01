@@ -19,6 +19,7 @@ import StudentRecordsSlider from '/src/components/StudentRecordsSlider.jsx';
 import AlumniTracking from '/src/components/AlumniTracking.jsx';
 import HotelReservation from '/src/components/HotelReservation.jsx';
 import MiniMikimix from '/src/components/MiniMikimix.jsx';
+import EnrollmentSystem from '/src/assets/es.png';
 import ContactForm from '/src/components/ContactForm.jsx';
 import GTLogo from '/src/assets/portfolio-logo.png';
 import lightMode from '/src/assets/icons8-light-mode-50.png';
@@ -32,6 +33,8 @@ import inkscapeIcon from '/src/assets/icons8-inkscape-60.png';
 import jsIcon from '/src/assets/icons8-javascript-60.png';
 import reactIcon from '/src/assets/icons8-react-js-60.png';
 import vsCodeIcon from '/src/assets/icons8-vs-code-60.png';
+import node from '/src/assets/icons8-nodejs-60.png'
+import light_node from '/src/assets/icons8-nodejs-60-white.png';
 import va1 from '/src/assets/artworks/1.jpg';
 import va2 from '/src/assets/artworks/2.jpg';
 import va3 from '/src/assets/artworks/3.jpg';
@@ -147,6 +150,9 @@ function App() {
         document.body.style.overflow = 'auto';
     }
 
+    const gotoES = () => {
+        window.open('https://group4-enrollment-system-client.vercel.app/', '_blank');
+    }
     const gotoCodev = () => {
         window.open('https://gerlyntan07.github.io/codev/', '_blank');
     }
@@ -347,11 +353,12 @@ function App() {
 
                     <div id="abt-container" className={`abtContainerLight ${darkMode ? 'darkContainer' : ''}`}>
                         <div className="abt-content">
-                            <p className={`abt-skill ${darkMode ? 'darkTextColor' : ''}`}>FRONT-END DEVELOPMENT</p>
-                            <p className={`skill-desc ${darkMode ? 'darkTextColor' : ''}`}>I always get the role of a front-end developer in group projects. I like to code things from scratch, and I enjoy crafting ideas to life.</p>
+                            <p className={`abt-skill ${darkMode ? 'darkTextColor' : ''}`}>FULL-STACK DEVELOPMENT</p>
+                            <p className={`skill-desc ${darkMode ? 'darkTextColor' : ''}`}>I often get the role of both front-end and back-end developer in group projects. I enjoy coding things from scratch, building seamless user experiences, and crafting ideas to life.</p>
                             <p className={`abt-tools ${darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}`}>Language and Dev Tools:</p>
 
                             <ul className='tools-list' ref={toolListRef1}>
+                                <li className='toolsList'><img src={darkMode ? light_node : node} alt="Node JS Icon" />Node</li>
                                 <li className='toolsList'><img src={htmlIcon} alt="HTML Icon" />HTML</li>
                                 <li className='toolsList'><img src={cssIcon} alt="CSS Icon" />CSS</li>
                                 <li className='toolsList'><img src={jsIcon} alt="JavaScript Icon" />JavaScript</li>
@@ -387,11 +394,11 @@ function App() {
                     </div>
 
                     <div className="projects-bot">
+                        <ProjectCards img={EnrollmentSystem} viewOn={gotoES} title="Enrollment System" description="Designed an enrollment system for CvSU - Bacoor Department of Computer Studies, allowing students, officers, and administrators to handle enrollment with ease." date="January 2025" language="React.js, Node.js, SQL" darkMode={darkMode} />
                         <ProjectCards img={Codev} viewOn={gotoCodev} title="Codev IT Company" description="Designed and developed a professional website for a hypothetical IT company, focusing on modern UI/UX principles to showcase services and team expertise." date="November 2023" language="HTML/CSS" darkMode={darkMode} />
                         <ProjectCards img={CvSUWeb} viewOn={gotoCvSUWeb} title="CvSU Website" description="Created a responsive and user-friendly website for Cavite State University, emphasizing clear navigation for students and faculty." date="October 2023" language="HTML/CSS" darkMode={darkMode} />
                         <ProjectCards img={RecordsManagement} viewOn={openStudentRecords} title="Student Records" description="Developed a secure, efficient system to manage and retrieve student records, and enhancing data organization." date="June 2024" language="HTML/CSS, JavaScript, PHP" darkMode={darkMode} />
-                        <ProjectCards img={AlumniTracker} viewOn={openAlumniTracking} title="Alumni Tracking System" description="Built a platform for tracking alumni, enabling networking, and institutional engagement with graduates." date="January 2024" language="HTML/CSS, PHP" darkMode={darkMode} />
-                        <ProjectCards img={HotelReserve} viewOn={openHotelReservation} title="Hotel Reservation" description="Designed a reservation system for Hilton Hotel, allowing users to book rooms, view amenities, and manage their stay preferences with ease." date="January 2023" language="ASP.Net" darkMode={darkMode} />
+                        <ProjectCards img={AlumniTracker} viewOn={openAlumniTracking} title="Alumni Tracking System" description="Built a platform for tracking alumni, enabling networking, and institutional engagement with graduates." date="January 2024" language="HTML/CSS, PHP" darkMode={darkMode} />                        
                         <ProjectCards img={MiniMikimixCover} viewOn={openMiniMikimix} title="Mini Mikimix" description="Created an order and capital management solution for Mini Mikimix, optimizing order tracking, and financial management." date="January 2024" language="Java" darkMode={darkMode} />
                     </div>
                 </div>
