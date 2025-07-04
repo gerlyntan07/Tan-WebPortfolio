@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const ContactForm = ({ darkMode }) => {
+export const ContactForm = ({ labelStyle, inputStyle, toastTheme, submitStyle }) => {
     const form = useRef();
     const [loading, setLoading] = useState(false);
     const [name, setName] = useState('');
@@ -41,19 +41,21 @@ export const ContactForm = ({ darkMode }) => {
 
     return (
         <>
-            <form ref={form} onSubmit={sendEmail} className='contactFormContainer'>
-                <label className={`contactLbl ${darkMode ? 'darkTextColor' : ''}`}>Name</label>
-                <input className={`contactInput ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} type="text" value={name} name="from_name" placeholder="Your name" onChange={(e) => setName(e.target.value)} required />
+            <form ref={form} onSubmit={sendEmail} className='flex flex-col w-[90%] items-start justify-center lg:w-[85%]'>
+                <label className={labelStyle}>Name</label>
+                <input style={{fontFamily: 'Roboto Mono'}} className={inputStyle} type="text" value={name} name="from_name" placeholder="Your name" onChange={(e) => setName(e.target.value)} required />
                 
-                <label className={`contactLbl ${darkMode ? 'darkTextColor' : ''}`}>Email</label>
-                <input className={`contactInput ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} type="email" value={email} name="from_email" placeholder="Your email" onChange={(e) => setEmail(e.target.value)} required />
+                <label className={labelStyle}>Email</label>
+                <input style={{fontFamily: 'Roboto Mono'}} className={inputStyle} type="email" value={email} name="from_email" placeholder="Your email" onChange={(e) => setEmail(e.target.value)} required />
                 
-                <label className={`contactLbl ${darkMode ? 'darkTextColor' : ''}`}>Message</label>
-                <textarea className={`contactInput-txtArea ${darkMode ? 'darkContactInput' : 'lightContactInput'}`} name="message" value={msg} onChange={(e) => setMsg(e.target.value)} required />
+                <label className={labelStyle}>Message</label>
+                <textarea style={{fontFamily: 'Roboto Mono'}} className={inputStyle} name="message" rows={8} value={msg} onChange={(e) => setMsg(e.target.value)} required />
                 
-                <input className="submitContactForm" type="submit" value={loading ? 'SENDING...' : 'SUBMIT'} disabled={loading} />
+                <div className='flex w-full items-center justify-center'>
+                    <input style={{fontFamily: 'Roboto Mono'}} className={submitStyle} type="submit" value={loading ? 'SENDING...' : 'SUBMIT'} disabled={loading} />
+                </div>                
             </form>
-            <ToastContainer theme={darkMode ? 'dark' : 'light'} newestOnTop={true} hideProgressBar={true} />
+            <ToastContainer theme={toastTheme} newestOnTop={true} hideProgressBar={true} />
         </>
     );
 };

@@ -1,29 +1,14 @@
 import { useRef } from 'react';
 import { useState } from 'react';
 import HeroImg from '/src/assets/hero-pic.png'
-import Logo from '/src/assets/portfolio-logo.png';
-import DarkMode from '/src/assets/icons8-dark-mode-50.png';
-import Github from '/src/assets/github.png';
-import Facebook from '/src/assets/facebook.png';
-import Instagram from '/src/assets/instagram.png'
-import MenuBtn from '/src/assets/icons8-menu-50.png'
+import { AiFillGithub } from "react-icons/ai";
+import { AiFillFacebook } from "react-icons/ai";
+import { AiFillInstagram } from "react-icons/ai";
 import cv from '/src/assets/Gerlyn-Tan-CV.pdf';
-import ProjectCards from '/src/components/ProjectCards.jsx';
 import Codev from '/src/assets/codev.png';
-import CvSUWeb from '/src/assets/CvSU-Website.png';
-import RecordsManagement from '/src/assets/student records management/1.png';
-import AlumniTracker from '/src/assets/alumni tracking/1.png';
-import HotelReserve from '/src/assets/hotel reservation/1.png';
-import MiniMikimixCover from '/src/assets/mini mikimix/1.png';
-import StudentRecordsSlider from '/src/components/StudentRecordsSlider.jsx';
-import AlumniTracking from '/src/components/AlumniTracking.jsx';
-import HotelReservation from '/src/components/HotelReservation.jsx';
-import MiniMikimix from '/src/components/MiniMikimix.jsx';
-import EnrollmentSystem from '/src/assets/es.png';
+import EnrollmentSystem from '/src/assets/cvsu-es.png';
 import ContactForm from '/src/components/ContactForm.jsx';
 import GTLogo from '/src/assets/portfolio-logo.png';
-import lightMode from '/src/assets/icons8-light-mode-50.png';
-import { Link } from 'react-scroll';
 import htmlIcon from '/src/assets/icons8-html-60.png';
 import canvaIcon from '/src/assets/icons8-canva-60.png';
 import cssIcon from '/src/assets/icons8-css-60.png';
@@ -35,143 +20,24 @@ import reactIcon from '/src/assets/icons8-react-js-60.png';
 import vsCodeIcon from '/src/assets/icons8-vs-code-60.png';
 import node from '/src/assets/icons8-nodejs-60.png'
 import light_node from '/src/assets/icons8-nodejs-60-white.png';
-import va1 from '/src/assets/artworks/1.jpg';
-import va2 from '/src/assets/artworks/2.jpg';
-import va3 from '/src/assets/artworks/3.jpg';
-import va4 from '/src/assets/artworks/4.jpg';
-import va5 from '/src/assets/artworks/5.jpg';
-import va6 from '/src/assets/artworks/6.jpg';
-import va7 from '/src/assets/artworks/7.jpg';
-import va8 from '/src/assets/artworks/8.jpg';
-import va9 from '/src/assets/artworks/9.jpg';
+import Artworks from './components/Artworks';
 import { Helmet } from 'react-helmet-async';
+import Header from '/src/components/Header.jsx'
+import Marquee from "react-fast-marquee";
+import mysql from '/src/assets/icons8-mysql-60.png';
+import php from '/src/assets/icons8-php-logo-60.png';
+import krita from '/src/assets/krita.png'
+import ProjectCards from './components/ProjectCards';
+import cdjCover from '/src/assets/cafe-de-jur.png';
+import mpCover from '/src/assets/mobile-portfolio.jpg';
+import fnCover from '/src/assets/finding-needmo.png';
+import LightShop from '/src/assets/light-shop.png';
 
 function App() {
     const [darkMode, setDark] = useState(false);
 
-    const sliderContainer = useRef(null);
-    const studentRecsSlider = useRef(null);
-    const alumniTrackingSlider = useRef(null);
-    const HotelReservationSlider = useRef(null);
-    const MiniMikimixSlider = useRef(null);
-    const darkIconBtn = useRef(null);
-    const lightIconBtn = useRef(null);
-    const darkIconBtnPopup = useRef(null);
-    const lightIconBtnPopup = useRef(null);
-    const heroTextRef = useRef(null);
-    const linkRef = useRef(null);
-    const toolListRef1 = useRef(null);
-    const toolListRef2 = useRef(null);
-
-    const setDarkMode = () => {
-        setDark(true);
-        darkIconBtn.current.style.display = 'none';
-        lightIconBtn.current.style.display = 'flex';
-        darkIconBtnPopup.current.style.display = 'none';
-        lightIconBtnPopup.current.style.display = 'flex';
-
-        const elements = heroTextRef.current.querySelectorAll('.hero-des');
-        elements.forEach((el) => {
-            el.classList.add('darkTextColor')
-        })
-
-        const elements1 = heroTextRef.current.querySelectorAll('.link-icon');
-        elements1.forEach((el1) => {
-            el1.classList.add('darkLinks')
-        })
-
-        const elements2 = toolListRef1.current.querySelectorAll('.toolsList');
-        elements2.forEach((el2) => {
-            el2.classList.add('darkTextColor')
-        })
-        const elements3 = toolListRef2.current.querySelectorAll('.toolsList');
-        elements3.forEach((el3) => {
-            el3.classList.add('darkTextColor')
-        })
-
-    }
-
-    const setLightMode = () => {
-        setDark(false);
-        darkIconBtn.current.style.display = 'flex';
-        lightIconBtn.current.style.display = 'none';
-        darkIconBtnPopup.current.style.display = 'flex';
-        lightIconBtnPopup.current.style.display = 'none';
-
-        const elements = heroTextRef.current.querySelectorAll('.hero-des');
-        elements.forEach((el) => {
-            el.classList.remove('darkTextColor')
-        })
-        const elements1 = heroTextRef.current.querySelectorAll('.link-icon');
-        elements1.forEach((el1) => {
-            el1.classList.remove('darkLinks')
-        })
-        const elements2 = toolListRef1.current.querySelectorAll('.toolsList');
-        elements2.forEach((el2) => {
-            el2.classList.remove('darkTextColor')
-        })
-        const elements3 = toolListRef2.current.querySelectorAll('.toolsList');
-        elements3.forEach((el3) => {
-            el3.classList.remove('darkTextColor')
-        })
-    }
-
-    const openStudentRecords = () => {
-        sliderContainer.current.style.display = "flex";
-        studentRecsSlider.current.style.display = "flex";
-        document.body.style.overflow = 'hidden';
-    }
-
-    const openAlumniTracking = () => {
-        sliderContainer.current.style.display = "flex";
-        alumniTrackingSlider.current.style.display = "flex";
-        document.body.style.overflow = 'hidden';
-    }
-
-    const openHotelReservation = () => {
-        sliderContainer.current.style.display = "flex";
-        HotelReservationSlider.current.style.display = "flex";
-        document.body.style.overflow = 'hidden';
-    }
-
-    const openMiniMikimix = () => {
-        sliderContainer.current.style.display = "flex";
-        MiniMikimixSlider.current.style.display = "flex";
-        document.body.style.overflow = 'hidden';
-    }
-
-    const closeSlider = () => {
-        sliderContainer.current.style.display = "none";
-        studentRecsSlider.current.style.display = "none";
-        alumniTrackingSlider.current.style.display = "none";
-        HotelReservationSlider.current.style.display = "none";
-        MiniMikimixSlider.current.style.display = "none";
-
-        document.body.style.overflow = 'auto';
-    }
-
-    const gotoES = () => {
-        window.open('https://group4-enrollment-system-client.vercel.app/', '_blank');
-    }
-    const gotoCodev = () => {
-        window.open('https://gerlyntan07.github.io/codev/', '_blank');
-    }
-    const gotoCvSUWeb = () => {
-        window.open('https://gerlyntan07.github.io/group1_cvsuwebsite/', '_blank');
-    }
-    // Using useRef to access the DOM element
-    const popupMenuRef = useRef(null);
-
-    const openMenu = () => {
-        if (popupMenuRef.current) {
-            popupMenuRef.current.style.width = '100%';
-        }
-    }
-
-    const closeMenu = () => {
-        if (popupMenuRef.current) {
-            popupMenuRef.current.style.width = '0%';
-        }
+    const toggleDarkMode = () => {
+        setDark(prevMode => !prevMode);
     }
 
     {/* SEO */ }
@@ -194,8 +60,71 @@ function App() {
         "description": "Portfolio of a front-end developer and UI designer specializing in React.js."
     };
 
+    const cafeDeJur = [
+        { name: 'React.js' },
+        { name: 'Tailwind CSS' },
+        { name: 'Node.js' },
+        { name: 'MySQL' }
+    ];
+
+    const viewCadeDeJur = () => {
+        window.open('https://youtu.be/ltn0V_MQY1M');
+    }
+
+    const mobilePortfolioStacks = [
+        { name: 'Expo React Native' },
+        { name: 'Tailwind CSS' },
+    ]
+
+    const viewMobielPortfolio = () => {
+        window.open('https://drive.google.com/drive/folders/1LoQeWPuEagl397hbfpjdva3YPu9GQ3G6?usp=drive_link');
+    }
+
+    const cvsuStacks = [
+        { name: 'React.js' },
+        { name: 'Node.js' },
+        { name: 'MySQL' }
+    ];
+
+    const viewCvSU = () => {
+        window.open('https://group4-enrollment-system-client.vercel.app/');
+    }
+
+    const viewFN = () => {
+        window.open('https://youtu.be/DVoQg1aZIOI');
+    }
+
+    const lightShopStacks = [
+        { name: 'Godot' },
+        { name: 'GDScript' },
+        { name: 'Krita' }
+    ];
+
+    const viewLightShop = () => {
+        window.open(`https://drive.google.com/drive/folders/15OfzUcImzmupJyDYHcFnSR70JTBz8510?usp=drive_link`);
+    }
+
+    const codevStack = [
+        { name: 'HTML/CSS' },
+    ];
+
+    const viewCodev = () => {
+        window.open('https://gerlyntan07.github.io/codev/');
+    }
+
+    const darkmodeText = `${darkMode ? 'text-sectionClrLight' : 'text-black'} text-sm md:text-lg`;
+    const darkmodeTextBrown = `${darkMode ? 'text-lightBrown' : 'text-darkBrown'}`;
+    const linkIcons = `${darkMode ? 'text-lightBG' : 'text-sectionClrDark'} text-[2rem] lg:text-[2.5rem]`;
+    const sectionContainers = `${darkMode ? 'bg-darkBackground' : 'bg-lightBG'}`;
+    const section2Containers = `${darkMode ? 'bg-sectionClrDark' : 'bg-sectionClrLight'}`
+    const artworkSection = `${darkMode ? 'bg-sectionClrDark' : 'bg-lightBG'}`
+
+    const projTitle = `${darkMode ? 'text-lightBrown' : 'text-darkBrown'} font-poltawski italic uppercase text-lg xl:text-xl m-0`;
+    const projCard = `${darkMode ? 'bg-sectionContainerDark border-[#404040]' : 'bg-white border-gray-300'} m-0 flex flex-col items-start justify-center p-3 border-3 cursor-pointer hover:scale-102 transition-all duration-300`;
+    const projDesc = `${darkMode ? 'text-sectionClrLight' : 'text-black'} font-roboto text-sm xl:text-base`;    
+
     return (
-        <>
+        <div className={`${darkMode ? 'bg-darkBackground' : 'bg-lightBG'} m-0 p-0`}>
             <Helmet>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
                 <title>Gerlyn Tan | Portfolio</title>
@@ -206,225 +135,132 @@ function App() {
                 <meta property="og:description" content="Portfolio of a skilled Front-End Developer and UI Designer with expertise in React.js." />
             </Helmet>
 
-            <div className={`bodyContainer ${darkMode ? 'darkBody' : ''}`}>
-                {/* POPUP IMAGE SLIDER */}
-                <div className="image-slider" ref={sliderContainer}>
-                    <div id="studentRecs-container" ref={studentRecsSlider}>
-                        <button id='close-carousel' onClick={closeSlider}>x</button>
-                        <StudentRecordsSlider />
-                    </div>
+            <Header toggleDarkMode={toggleDarkMode} isDarkMode={darkMode} />
 
-                    <div id="alumniTracking-container" ref={alumniTrackingSlider}>
-                        <button id='close-carousel' onClick={closeSlider}>x</button>
-                        <AlumniTracking />
-                    </div>
+            {/* HERO */}
+            <div id='hero' className={`${sectionContainers} flex flex-col h-screen items-center justify-center text-center`}>
+                <div className='flex w-full flex-col h-screen items-center justify-center xl:flex-row-reverse xl:justify-between lg:w-[80%] 2xl:w-[70%]'>
+                    <img src={HeroImg} alt="" className='w-[70%] lg:w-[60%] xl:w-[40%] object-contain mb-3' />
 
-                    <div id="hotelReservation-container" ref={HotelReservationSlider}>
-                        <button id='close-carousel' onClick={closeSlider}>x</button>
-                        <HotelReservation />
-                    </div>
+                    <div className='flex flex-col items-center justify-center w-[85%] xl:w-[50%] xl:items-start'>
+                        <p className={`${darkmodeText} font-roboto text-sm lg:text-lg m-0`}>Say <span className='font-bold'>hello</span> to my <span className='font-bold'>world</span>! I am</p>
+                        <p className={`${darkmodeTextBrown} text-[2rem] font-poltawski uppercase italic m-0 lg:text-[3rem]`}>Gerlyn Tan</p>
+                        <p className={`${darkmodeText} font-roboto text-sm lg:text-lg m-0 xl:text-left`}>A passionate Computer Science student dedicated to building appealing, creative, and user-friendly projects. Let’s craft your ideas into reality!</p>
 
-                    <div id="miniMikimix-container" ref={MiniMikimixSlider}>
-                        <button id='close-carousel' onClick={closeSlider}>x</button>
-                        <MiniMikimix />
-                    </div>
-                </div>
+                        <div className='flex flex-col items-center justify-center mt-3 lg:flex-row lg:gap-5'>
+                            <a href={cv} download='Gerlyn Tan CV' className={`bg-darkBrown font-roboto !no-underline py-2 px-4 rounded-full text-white hover:shadow-md outline-none`}>Download CV</a>
 
-                {/* POPUP MENU */}
-                <div className={`popup-menu ${darkMode ? 'toggleDarkSection' : 'lightPopupMenuBG'}`} id='popupMenu' ref={popupMenuRef}>
-                    <div className="popup-container">
-                        <div className='popup-top'>
-                            <button ref={darkIconBtnPopup} className='darkBtnPopup' onClick={setDarkMode}><img className='darkmode-popup' src={DarkMode} alt="dark mode" /></button>
-                            <button ref={lightIconBtnPopup} className='lightBtnPopup' onClick={setLightMode}><img className='lightMode-popup' src={lightMode} alt="light mode" /></button>
-                            <button className='closeBtn' onClick={closeMenu}>x</button>
-                        </div>
-
-                        <div className='popup-navBtn'>
-                            <ul>
-                                <li><Link className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`} to='hero' spy={true} smooth={true} duration={700} onClick={closeMenu}>Home</Link></li>
-                                <li><Link className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`} to='about' offset={-70} spy={true} smooth={true} duration={700} onClick={closeMenu}>About</Link></li>
-                                <li><Link className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`} to='projects' offset={-70} spy={true} smooth={true} duration={700} onClick={closeMenu}>Projects</Link></li>
-                                <li><Link className={`popup-list ${darkMode ? 'darkNavBtnBG' : 'lightNavBtnBG'}`} to='contact' offset={-150} spy={true} smooth={true} duration={700} onClick={closeMenu}>Contact</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                {/* HEADER MENU */}
-                <div id="nav">
-                    <header className={`header ${darkMode ? 'darkHeader' : ''}`}>
-                        <div>
-                            <img className='gt-logo' src={Logo} alt="Gerlyn Tan Logo" />
-                        </div>
-
-                        <div className='nav-btn'>
-                            <ul>
-                                <li><Link to='hero' spy={true} smooth={true} duration={700} className={`${darkMode ? 'darkTextColor' : ''}`}>Home</Link></li>
-                                <li><Link to='about' offset={-100} spy={true} smooth={true} duration={700} className={`${darkMode ? 'darkTextColor' : ''}`}>About</Link></li>
-                                <li><Link to='projects' offset={-100} spy={true} smooth={true} duration={700} href="#projects" className={`${darkMode ? 'darkTextColor' : ''}`}>Projects</Link></li>
-                                <li><Link to='contact' offset={-200} spy={true} smooth={true} duration={700} className={`${darkMode ? 'darkTextColor' : ''}`}>Contact</Link></li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <button ref={darkIconBtn} className='darkBtn' onClick={setDarkMode}><img className='darkmode-icon' src={DarkMode} alt="dark mode" /></button>
-                            <button ref={lightIconBtn} className='lightBtn' onClick={setLightMode}><img className='lightMode-icon' src={lightMode} alt="light mode" /></button>
-                            <button id='menuBtn' onClick={openMenu}>
-                                <img className={`menuBtn ${darkMode ? 'darkLinks' : ''}`} src={MenuBtn} alt="Mobile Menu Bar" />
-                            </button>
-                        </div>
-                    </header>
-                </div>
-
-                {/* HERO SECTION */}
-                <div id='hero'>
-                    <div className='hero-text' ref={heroTextRef}>
-                        <p className='hero-des'>Say <span>hello</span> to my <span>world</span>! I am</p>
-                        <h1 className={`heroName ${darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}`}>GERLYN TAN</h1>
-                        <p className='hero-des'>A passionate Computer Science student dedicated to building appealing, creative, and user-friendly projects. Let’s craft your ideas into reality!</p>
-
-                        <div className='hero-btn-links'>
-                            <a href={cv} download='cv' className='dl-cv'>DOWNLOAD CV</a>
-
-                            <div className="links-section" ref={linkRef}>
-                                <a href="https://github.com/gerlyntan07" target='_blank'><img className='link-icon' src={Github} alt="Gerlyn Tan Github" /></a>
-                                <a href="https://www.facebook.com/gerlyn.tan.50" target='_blank'><img className='link-icon' src={Facebook} alt="Gerlyn Tan Facebook" /></a>
-                                <a href="https://www.instagram.com/mehehehe__/" target='_blank'><img className='link-icon' src={Instagram} alt="Gerlyn Tan Instagram" /></a>
+                            <div className='flex flex-row items-center justify-center gap-3 mt-2 lg:mt-0'>
+                                <a href="https://github.com/gerlyntan07" target='_blank'><AiFillGithub className={`${linkIcons}`} /></a>
+                                <a href="https://www.facebook.com/gerlyn.tan.50" target='_blank'><AiFillFacebook className={`${linkIcons}`} /></a>
+                                <a href="https://www.instagram.com/mehehehe__/" target='_blank'><AiFillInstagram className={`${linkIcons}`} /></a>
                             </div>
                         </div>
                     </div>
-
-                    <div className='hero-img'>
-                        <img src={HeroImg} className='hero' alt="Profile Picture of Gerlyn Tan" />
-                    </div>
                 </div>
-
-                {/* ABOUT SECTION */}
-                <div id="about" className={darkMode ? 'toggleDarkSection' : 'toggleLightSection'}>
-
-                    <div id="preCollege">
-                        <div className="preCollege-desc-container">
-                            <p className={`preCollege-desc ${darkMode ? 'darkTextColor' : ''}`}>Before becoming an aspiring developer, I once dreamt of becoming a great</p>
-                            <p className={`vArtist-span ${darkMode ? 'darkTextColor' : ''}`}>artist</p>
-                        </div>
-
-                        <div className={`visualArts-gallery ${darkMode ? 'darkContainer' : 'abtContainerLight'}`}>
-                            <div className="va-column">
-                                <div className="va-photo">
-                                    <img src={va1} alt="Son Chaeyoung drawing of Gerlyn Tan" />
-                                </div>
-                                <div className="va-photo">
-                                    <img src={va4} alt="Family portrait artwork of Gerlyn Tan" />
-                                </div>
-                                <div className="va-photo">
-                                    <img src={va9} alt="Glow art of Gerlyn Tan" />
-                                </div>
-                            </div>
-
-                            <div className="va-column">
-                                <div className="va-photo">
-                                    <img src={va8} alt="Mount Fuji using acrylic artwork of Gerlyn Tan" />
-                                </div>
-                                <div className="va-photo">
-                                    <img src={va5} alt="Graphite and Charcoal drawing of Gerlyn Tan" />
-                                </div>
-                                <div className="va-photo">
-                                    <img src={va2} alt="Colored pencil drawing on Kraft paper of Gerlyn Tan" />
-                                </div>
-                            </div>
-
-                            <div className="va-column">
-                                <div className="va-photo">
-                                    <img src={va3} alt="Son Chaeyoung-inspired pixelated art of Gerlyn Tan" />
-                                </div>
-                                <div className="va-photo">
-                                    <img src={va6} alt="Family portrait artwork of Gerlyn Tan" />
-                                </div>
-                                <div className="va-photo">
-                                    <img src={va7} alt="Glow art of Gerlyn Tan" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id='skillsIntro'>
-                        <p className={`skillsIntro-txt ${darkMode ? 'darkTextColor' : ''}`}>I now found new challenge in developing, creating, and building computer graphics, software, and applications. I am happy to use my years of experience in the arts in this field.</p>
-                    </div>
-
-                    <div id="abt-container" className={`abtContainerLight ${darkMode ? 'darkContainer' : ''}`}>
-                        <div className="abt-content">
-                            <p className={`abt-skill ${darkMode ? 'darkTextColor' : ''}`}>FULL-STACK DEVELOPMENT</p>
-                            <p className={`skill-desc ${darkMode ? 'darkTextColor' : ''}`}>I often get the role of both front-end and back-end developer in group projects. I enjoy coding things from scratch, building seamless user experiences, and crafting ideas to life.</p>
-                            <p className={`abt-tools ${darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}`}>Language and Dev Tools:</p>
-
-                            <ul className='tools-list' ref={toolListRef1}>
-                                <li className='toolsList'><img src={darkMode ? light_node : node} alt="Node JS Icon" />Node</li>
-                                <li className='toolsList'><img src={htmlIcon} alt="HTML Icon" />HTML</li>
-                                <li className='toolsList'><img src={cssIcon} alt="CSS Icon" />CSS</li>
-                                <li className='toolsList'><img src={jsIcon} alt="JavaScript Icon" />JavaScript</li>
-                                <li className='toolsList'><img src={reactIcon} alt="React JS Icon" />React</li>
-                                <li className='toolsList'><img src={vsCodeIcon} alt="VS Code Icon" />VS Code</li>
-                            </ul>
-                        </div>
-
-                        <div className={`line-separator ${darkMode ? 'toggleDarkSection' : 'toggleLightSection'}`}>&nbsp;</div>
-
-                        <div className="abt-content">
-                            <p className={`abt-skill ${darkMode ? 'darkTextColor' : ''}`}>UI DESIGN</p>
-                            <p className={`skill-desc ${darkMode ? 'darkTextColor' : ''}`}>Art is one thing I have been fond of doing since I was a kid. I love playing with colors and making simple yet appealing designs.</p>
-                            <p className={`abt-tools ${darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}`}>Design Tools:</p>
-
-                            <ul className='tools-list' ref={toolListRef2}>
-                                <li className='toolsList'><img src={figmaIcon} alt="Figma Icon" />Figma</li>
-                                <li className='toolsList'><img src={canvaIcon} alt="Canva icon" />Canva</li>
-                                <li className='toolsList'><img src={inkscapeIcon} alt="Inkscape Icon" />Inkscape</li>
-                                <li className='toolsList'><img src={drawingIcon} alt="Drawing Icon" />Pen & Paper</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                {/* PROJECTS SECTION */}
-                <div id="projects">
-                    <div className="projects-top">
-                        <h2 className={`${darkMode ? 'darkTextColor' : ''}`}>PROJECTS</h2>
-                        <p className={`project-desc ${darkMode ? 'darkTextColor' : ''}`}>These are the individual school projects I have worked on and the group school projects I participated in.</p>
-                    </div>
-
-                    <div className="projects-bot">
-                        <ProjectCards img={EnrollmentSystem} viewOn={gotoES} title="Enrollment System" description="Designed an enrollment system for CvSU - Bacoor Department of Computer Studies, allowing students, officers, and administrators to handle enrollment with ease." date="January 2025" language="React.js, Node.js, SQL" darkMode={darkMode} />
-                        <ProjectCards img={Codev} viewOn={gotoCodev} title="Codev IT Company" description="Designed and developed a professional website for a hypothetical IT company, focusing on modern UI/UX principles to showcase services and team expertise." date="November 2023" language="HTML/CSS" darkMode={darkMode} />
-                        <ProjectCards img={CvSUWeb} viewOn={gotoCvSUWeb} title="CvSU Website" description="Created a responsive and user-friendly website for Cavite State University, emphasizing clear navigation for students and faculty." date="October 2023" language="HTML/CSS" darkMode={darkMode} />
-                        <ProjectCards img={RecordsManagement} viewOn={openStudentRecords} title="Student Records" description="Developed a secure, efficient system to manage and retrieve student records, and enhancing data organization." date="June 2024" language="HTML/CSS, JavaScript, PHP" darkMode={darkMode} />
-                        <ProjectCards img={AlumniTracker} viewOn={openAlumniTracking} title="Alumni Tracking System" description="Built a platform for tracking alumni, enabling networking, and institutional engagement with graduates." date="January 2024" language="HTML/CSS, PHP" darkMode={darkMode} />                        
-                        <ProjectCards img={MiniMikimixCover} viewOn={openMiniMikimix} title="Mini Mikimix" description="Created an order and capital management solution for Mini Mikimix, optimizing order tracking, and financial management." date="January 2024" language="Java" darkMode={darkMode} />
-                    </div>
-                </div>
-
-                { /* CONTACT SECTION */}
-                <div id="contact" className={darkMode ? 'toggleDarkSection' : 'toggleLightSection'}>
-                    <div id="contact-wrapper" className={`contactWrapperLight ${darkMode ? 'darkContainer' : 'contactWrapperLight'}`}>
-                        <div className="contact-top">
-                            <h2 className={`${darkMode ? 'darkTextColor' : ''}`}>CONTACT ME</h2>
-                            <p className={`contact-desc ${darkMode ? 'darkTextColor' : ''}`}>Thanks for taking the time to reach this part. How may I help you?</p>
-                        </div>
-
-                        <div className="contact-bot">
-                            <ContactForm darkMode={darkMode} />
-                        </div>
-                    </div>
-                </div>
-
-                <footer id='footer'>
-                    <img className='footer-logo' src={GTLogo} alt="Gerlyn Tan Logo" />
-                    <p className={`footer-tagline ${darkMode ? 'darkTextColor' : ''}`}><span className={darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}>G</span>rowing Talent,</p>
-                    <p className={`footer-tagline ${darkMode ? 'darkTextColor' : ''}`}><span className={darkMode ? 'toggleLightBrown' : 'toggleDarkBrown'}>T</span>urning Ideas into Reality</p>
-                    <p className={`copyright ${darkMode ? 'darkCopyright' : 'lightCopyright'}`}>Copyright &copy; 2024 Gerlyn Tan</p>
-                </footer>
             </div>
-        </>
+
+            {/* ABOUT */}
+            <div id='about' className='flex flex-col w-full items-center justify-center mt-5'>
+                <div className={`${artworkSection} flex flex-col w-[90%] items-center justify-center p-4 md:w-[90%] xl:flex-row xl:w-[80%] 2xl:w-[70%] border-1 border-gray-400 shadow-md rounded-lg xl:justify-between xl:gap-10`}>
+                    <div className='flex flex-col items-center justify-center w-[90%] text-center xl:w-[50%]'>
+                        <p className={`${darkmodeText} font-roboto text-sm m-0 xl:text-left`}>Before becoming an aspiring developer, I once dreamt of becoming a great</p>
+                        <p className={`${darkmodeTextBrown} font-poltawski italic text-[1.5rem] m-0 uppercase lg:text-[2rem] xl:text-[4rem] xl:pt-5 xl:text-left w-full`}>Artist</p>
+                    </div>
+
+                    <Artworks />
+                </div>
+
+                <p className={`${darkmodeText} w-[90%] lg:w-[70%] font-roboto text-center pt-40 pb-15`}>I now found new challenge in developing, creating, and building computer graphics, software, and applications. I am happy to use my years of experience in the arts in this field.</p>
+
+                <div className={`${section2Containers} flex w-full items-center h-[35rem] justify-center md:h-[33rem] lg:h-[17rem]`}>
+                    <div className={`${sectionContainers} flex flex-col border-3 ${darkMode ? 'border-[#373737]' : 'border-gray-300'} overflow-hidden rounded-2xl w-[90%] items-center justify-center py-10 lg:py-[3rem] xl:py-[4rem] md:w-[75%] lg:flex-row lg:w-[90%] xl:w-[70%] lg:justify-around`}>
+                        <div className='flex flex-col items-center justify-center text-center w-[90%] md:w-[80%] lg:w-[40%]'>
+                            <p className={`${darkmodeText} font-poltawski text-[1rem] xl:text-[1.3rem] italic uppercase`}>Full-Stack Development</p>
+                            <p className={`${darkmodeText} font-roboto text-sm md:text-sm`}>I often get the role of both front-end and back-end developer in group projects. I enjoy coding things from scratch, building seamless user experiences, and crafting ideas to life.</p>
+
+                            <p className={`${darkmodeTextBrown} font-poltawski italic text-[1rem]`}>Languages and Dev Tools</p>
+
+                            <div className='w-full flex items-center justify-center gap-5 overflow-hidden'>
+                                <Marquee direction='horizontal'>
+                                    <div className='flex flex-row items-center justify-center w-full'>
+                                        <img src={darkMode ? light_node : node} alt="" />
+                                        <img src={htmlIcon} alt="" />
+                                        <img src={cssIcon} alt="" />
+                                        <img src={jsIcon} alt="" />
+                                        <img src={reactIcon} alt="" />
+                                        <img src={vsCodeIcon} alt="" />
+                                        <img src={mysql} alt="" />
+                                        <img src={php} alt="" />
+                                    </div>
+                                </Marquee>
+                            </div>
+                        </div>
+
+                        <div className={`${section2Containers} lg:absolute w-full h-2 lg:w-1 lg:h-[18rem] my-10 lg:my-0`}> </div>
+
+                        <div className='flex flex-col items-center justify-center text-center w-[90%] md:w-[80%] lg:w-[40%]'>
+                            <p className={`${darkmodeText} font-poltawski text-[1rem] xl:text-[1.3rem] italic uppercase lg:p-0`}>UI Design</p>
+                            <p className={`${darkmodeText} font-roboto text-sm md:text-sm`}>Art is one thing I have been fond of doing since I was a kid. I love playing with colors and making simple yet appealing designs.</p>
+
+                            <p className={`${darkmodeTextBrown} font-poltawski italic text-[1rem]`}>Design Tools</p>
+
+                            <div className='w-[90%] flex items-center justify-center gap-5 overflow-hidden'>
+                                <Marquee direction='horizontal'>
+                                    <div className='flex flex-row items-center justify-center w-full'>
+                                        <img src={figmaIcon} alt="" />
+                                        <img src={canvaIcon} alt="" />
+                                        <img src={inkscapeIcon} alt="" />
+                                        <img src={drawingIcon} alt="" />
+                                        <img src={krita} alt="" />
+                                        <img src={figmaIcon} alt="" />
+                                        <img src={canvaIcon} alt="" />
+                                        <img src={inkscapeIcon} alt="" />
+                                        <img src={drawingIcon} alt="" />
+                                        <img src={krita} alt="" />
+                                    </div>
+                                </Marquee>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            {/* PROJECTS */}
+            <div id='projects' className={`${sectionContainers} flex flex-col items-center justify-center w-full mt-40`}>
+                <p className={`${darkmodeText} font-poltawski uppercase italic text-xl lg:text-[1.7rem]`}>Recent Projects</p>
+                <p className={`${darkmodeText} font-roboto w-[85%] lg:w-[75%] xl:w-[65%] text-center`}>These are the individual school projects I have worked on and the group school projects I took part in.</p>
+
+                <div className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-[90%] 2xl:w-[75%] mt-7`}>
+                    <ProjectCards title='Café de Júr: E-Commerce Platform' titleStyle={projTitle} projCardStyle={projCard} description='A simple e-commerce website for admin and customers with product management, order management, and online payment simulation.' projDescStyle={projDesc} stacks={cafeDeJur} projCover={cdjCover} viewProj={viewCadeDeJur} />
+                    <ProjectCards title='Light Shop' titleStyle={projTitle} projCardStyle={projCard} description={`A 2D puzzle escape game inspired from a Korean series. Players mustnavigate through each level's unique obstacle pattern — from spiky metal traps and timedtraps to deceptive paths and false lights.`} projDescStyle={projDesc} stacks={lightShopStacks} projCover={LightShop} viewProj={viewLightShop} />
+                    <ProjectCards title='Mobile Portfolio' titleStyle={projTitle} projCardStyle={projCard} description='A visually engaging mobile portfolio that shares my journey as a creative developer — blending stories, inspirations, and future ambitions. Built to reflect not just my skills, but who I am and where I’m headed.' projDescStyle={projDesc} stacks={mobilePortfolioStacks} projCover={mpCover} viewProj={viewMobielPortfolio} />
+                    <ProjectCards title='Enrollment System' titleStyle={projTitle} projCardStyle={projCard} description='A user-friendly design for CvSU - Department of Computer Studies, allowing students, officers, and administrators to handle enrollment with ease.' projDescStyle={projDesc} stacks={cvsuStacks} projCover={EnrollmentSystem} viewProj={viewCvSU} />
+                    <ProjectCards title='Finding NeedMo' titleStyle={projTitle} projCardStyle={projCard} description='A seamless resource hub with role-specific access for managing and retrieving educational content designed for CvSU - Department of Computer Studies.' projDescStyle={projDesc} stacks={cvsuStacks} projCover={fnCover} viewProj={viewFN} />
+                    <ProjectCards title='Codev IT Company' titleStyle={projTitle} projCardStyle={projCard} description='A professional website for a hypothetical IT company, focusing on modern UI/UX principles to showcase services and team expertise.' projDescStyle={projDesc} stacks={codevStack} projCover={Codev} viewProj={viewCodev} />
+                </div>
+            </div>
+
+            {/* CONTACT */}
+            <div id='contact' className={`${section2Containers} w-full h-[35rem] flex items-center justify-center mt-50 md:h-[40rem] xl:h-[38rem]`}>
+                <div className={`${sectionContainers} flex flex-col border-3 ${darkMode ? 'border-[#373737]' : 'border-gray-300'} overflow-hidden rounded-2xl w-[95%] items-center justify-center py-10 md:w-[75%] xl:w-[50%] 2xl:w-[50%]`}>
+                    <p className={`${darkmodeText} font-poltawski uppercase italic text-xl lg:text-[1.7rem]`}>Contact Me</p>
+                    <p className={`${darkmodeText} font-roboto w-[90%] text-center mb-5 lg:w-[70%]`}>Thanks for taking the time to reach this part. How may I help you?</p>
+
+                    <ContactForm toastTheme={darkMode ? `dark` : `light`} submitStyle={`bg-darkBrown py-2 px-5 text-lightBG rounded-full`} labelStyle={`${darkmodeText} font-roboto text-sm`} inputStyle={`${darkmodeText} font-roboto text-sm mb-4 outline-none py-2 px-3 w-full ${darkMode ? 'border-sectionClrDark focus:bg-sectionContainerDark': 'border-gray-200 focus:bg-white'} transition-colors duration-300 border-2 rounded-sm`} darkMode={darkMode} />
+                </div>          
+            </div>               
+
+            {/* FOOTER */}
+            <footer id='footer' className='w-full flex flex-col py-20 mt-20 items-center justify-center text-center'>
+                <img src={GTLogo} alt="" className='w-[10rem]' />
+                <p className={`${darkmodeText} font-roboto italic text-xl m-0 leading-none`}><span className={`${darkmodeTextBrown} font-bold text-[2rem]`}>G</span>rowing Talent,</p>
+                <p className={`${darkmodeText} font-roboto italic text-xl m-0 leading-none`}><span className={`${darkmodeTextBrown} font-bold text-[2rem]`}>T</span>urning Ideas into Reality</p>
+
+                <p className={`${darkMode ? 'text-gray-500' : 'text-gray-400'} font-roboto text-xs mt-2`}>Copyright &copy; 2025 Gerlyn Tan</p>
+            </footer>                 
+        </div>
     );
 }
 
