@@ -49,7 +49,7 @@ export const ContactForm = ({ labelStyle, inputStyle, toastTheme, submitStyle })
                 <input style={{fontFamily: 'Roboto Mono'}} className={inputStyle} type="email" value={email} name="from_email" placeholder="Your email" onChange={(e) => setEmail(e.target.value)} required />
                 
                 <label className={labelStyle}>Message</label>
-                <textarea style={{fontFamily: 'Roboto Mono'}} className={inputStyle} name="message" rows={8} value={msg} onChange={(e) => setMsg(e.target.value)} required />
+                <textarea style={{fontFamily: 'Roboto Mono'}} className={inputStyle} name="message" rows={5} value={msg} onChange={(e) => setMsg(e.target.value)} required />
                 
                 <div className='flex w-full items-center justify-center'>
                     <input style={{fontFamily: 'Roboto Mono'}} className={submitStyle} type="submit" value={loading ? 'SENDING...' : 'SUBMIT'} disabled={loading} />

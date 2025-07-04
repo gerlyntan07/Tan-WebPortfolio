@@ -174,7 +174,7 @@ function App() {
                 <p className={`${darkmodeText} w-[90%] lg:w-[70%] font-roboto text-center pt-40 pb-15`}>I now found new challenge in developing, creating, and building computer graphics, software, and applications. I am happy to use my years of experience in the arts in this field.</p>
 
                 <div className={`${section2Containers} flex w-full items-center h-[35rem] justify-center md:h-[33rem] lg:h-[17rem]`}>
-                    <div className={`${sectionContainers} flex flex-col border-3 ${darkMode ? 'border-[#373737]' : 'border-gray-300'} overflow-hidden rounded-2xl w-[90%] items-center justify-center py-10 lg:py-[3rem] xl:py-[4rem] md:w-[75%] lg:flex-row lg:w-[90%] xl:w-[70%] lg:justify-around`}>
+                    <div className={`${sectionContainers} flex flex-col ${darkMode ? 'border-3 border-[#373737]' : 'shadow-lg'} overflow-hidden rounded-2xl w-[90%] items-center justify-center py-10 lg:py-[3rem] xl:py-[4rem] md:w-[75%] lg:flex-row lg:w-[90%] xl:w-[70%] lg:justify-around`}>
                         <div className='flex flex-col items-center justify-center text-center w-[90%] md:w-[80%] lg:w-[40%]'>
                             <p className={`${darkmodeText} font-poltawski text-[1rem] xl:text-[1.3rem] italic uppercase`}>Full-Stack Development</p>
                             <p className={`${darkmodeText} font-roboto text-sm md:text-sm`}>I often get the role of both front-end and back-end developer in group projects. I enjoy coding things from scratch, building seamless user experiences, and crafting ideas to life.</p>
@@ -205,7 +205,7 @@ function App() {
 
                             <p className={`${darkmodeTextBrown} font-poltawski italic text-[1rem]`}>Design Tools</p>
 
-                            <div className='w-[90%] flex items-center justify-center gap-5 overflow-hidden'>
+                            <div className='w-full flex items-center justify-center gap-5 overflow-hidden'>
                                 <Marquee direction='horizontal'>
                                     <div className='flex flex-row items-center justify-center w-full'>
                                         <img src={figmaIcon} alt="" />
@@ -230,11 +230,11 @@ function App() {
             {/* PROJECTS */}
             <div id='projects' className={`${sectionContainers} flex flex-col items-center justify-center w-full mt-40`}>
                 <p className={`${darkmodeText} font-poltawski uppercase italic text-xl lg:text-[1.7rem]`}>Recent Projects</p>
-                <p className={`${darkmodeText} font-roboto w-[85%] lg:w-[75%] xl:w-[65%] text-center`}>These are the individual school projects I have worked on and the group school projects I took part in.</p>
+                <p className={`${darkmodeText} font-roboto w-[85%] lg:w-[75%] xl:w-[65%] text-center xl:text-[1rem]`}>These are the individual school projects I have worked on and the group school projects I took part in.</p>
 
                 <div className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-[90%] 2xl:w-[75%] mt-7`}>
                     <ProjectCards title='Café de Júr: E-Commerce Platform' titleStyle={projTitle} projCardStyle={projCard} description='A simple e-commerce website for admin and customers with product management, order management, and online payment simulation.' projDescStyle={projDesc} stacks={cafeDeJur} projCover={cdjCover} viewProj={viewCadeDeJur} />
-                    <ProjectCards title='Light Shop' titleStyle={projTitle} projCardStyle={projCard} description={`A 2D puzzle escape game inspired from a Korean series. Players mustnavigate through each level's unique obstacle pattern — from spiky metal traps and timedtraps to deceptive paths and false lights.`} projDescStyle={projDesc} stacks={lightShopStacks} projCover={LightShop} viewProj={viewLightShop} />
+                    <ProjectCards title='Light Shop' titleStyle={projTitle} projCardStyle={projCard} description={`A 2D puzzle escape game inspired from a Korean series. Players must navigate through each level's unique obstacle pattern — from spiky metal traps and timed traps to deceptive paths and false lights.`} projDescStyle={projDesc} stacks={lightShopStacks} projCover={LightShop} viewProj={viewLightShop} />
                     <ProjectCards title='Mobile Portfolio' titleStyle={projTitle} projCardStyle={projCard} description='A visually engaging mobile portfolio that shares my journey as a creative developer — blending stories, inspirations, and future ambitions. Built to reflect not just my skills, but who I am and where I’m headed.' projDescStyle={projDesc} stacks={mobilePortfolioStacks} projCover={mpCover} viewProj={viewMobielPortfolio} />
                     <ProjectCards title='Enrollment System' titleStyle={projTitle} projCardStyle={projCard} description='A user-friendly design for CvSU - Department of Computer Studies, allowing students, officers, and administrators to handle enrollment with ease.' projDescStyle={projDesc} stacks={cvsuStacks} projCover={EnrollmentSystem} viewProj={viewCvSU} />
                     <ProjectCards title='Finding NeedMo' titleStyle={projTitle} projCardStyle={projCard} description='A seamless resource hub with role-specific access for managing and retrieving educational content designed for CvSU - Department of Computer Studies.' projDescStyle={projDesc} stacks={cvsuStacks} projCover={fnCover} viewProj={viewFN} />
@@ -243,12 +243,12 @@ function App() {
             </div>
 
             {/* CONTACT */}
-            <div id='contact' className={`${section2Containers} w-full h-[35rem] flex items-center justify-center mt-50 md:h-[40rem] xl:h-[38rem]`}>
-                <div className={`${sectionContainers} flex flex-col border-3 ${darkMode ? 'border-[#373737]' : 'border-gray-300'} overflow-hidden rounded-2xl w-[95%] items-center justify-center py-10 md:w-[75%] xl:w-[50%] 2xl:w-[50%]`}>
+            <div id='contact' className={`${section2Containers} w-full h-[30rem] flex items-center justify-center mt-50 md:h-[33rem]`}>
+                <div className={`${sectionContainers} flex flex-col ${darkMode ? 'border-3 border-[#373737]' : 'shadow-lg'} overflow-hidden rounded-2xl w-[95%] items-center justify-center py-10 md:w-[75%] xl:w-[50%] 2xl:w-[50%]`}>
                     <p className={`${darkmodeText} font-poltawski uppercase italic text-xl lg:text-[1.7rem]`}>Contact Me</p>
-                    <p className={`${darkmodeText} font-roboto w-[90%] text-center mb-5 lg:w-[70%]`}>Thanks for taking the time to reach this part. How may I help you?</p>
+                    <p className={`${darkmodeText} font-roboto w-[90%] text-center mb-3 lg:w-[70%] xl:text-[1rem]`}>Thanks for taking the time to reach this part. How may I help you?</p>
 
-                    <ContactForm toastTheme={darkMode ? `dark` : `light`} submitStyle={`bg-darkBrown py-2 px-5 text-lightBG rounded-full`} labelStyle={`${darkmodeText} font-roboto text-sm`} inputStyle={`${darkmodeText} font-roboto text-sm mb-4 outline-none py-2 px-3 w-full ${darkMode ? 'border-sectionClrDark focus:bg-sectionContainerDark': 'border-gray-200 focus:bg-white'} transition-colors duration-300 border-2 rounded-sm`} darkMode={darkMode} />
+                    <ContactForm toastTheme={darkMode ? `dark` : `light`} submitStyle={`bg-darkBrown py-2 px-5 text-lightBG rounded-full`} labelStyle={`${darkmodeText} font-roboto text-sm`} inputStyle={`${darkmodeText} font-roboto text-sm mb-4 outline-none py-2 px-3 w-full ${darkMode ? 'border-3 border-sectionClrDark focus:bg-sectionContainerDark': 'border-2 border-gray-200 focus:bg-white'} transition-colors duration-300 rounded-sm`} darkMode={darkMode} />
                 </div>          
             </div>               
 
