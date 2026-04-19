@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import Hero from './components/Hero';
 
 function App() {
     const [darkMode, setDark] = useState(false);
@@ -40,6 +41,7 @@ function App() {
                 <meta property="og:description" content="Portfolio of a skilled Front-End Developer and UI Designer with expertise in React.js." />
             </Helmet>
 
+            <Hero />
         </main>
     );
 }

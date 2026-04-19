@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Instrument+Serif:ital@0;1&display=swap');
 @import "tailwindcss";
 
 @theme {
-    --color-sectionClrDark: #373737;
-    --color-sectionContainerDark: #222222;
-    --color-darkBackground: #262626;
-    --color-darkBrown: #a67538;
-    --color-lightBrown: #CB995B;
-    --color-lightBG: #FAF9F6;
-    --color-sectionClrLight: #e4dcd2;
-    --color-popupMenu: #a89c93;
+    --color-primary: #F9F5F0;
+    --color-primary-foreground: #344F1F;
+    --color-secondary: #F2EAD3;
+    --color-accent: #F4991A;
+    --color-darkgray: #7A7A73;
+    --font-mono: "DM Mono", monospace;
+    --font-serif: "Instrument Serif", serif;
 }
 
 *{    
