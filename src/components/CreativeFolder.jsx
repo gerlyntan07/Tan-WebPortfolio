@@ -3,20 +3,22 @@ import { IoMdGrid, IoIosList } from "react-icons/io";
 import { AnimatePresence, motion } from "motion/react";
 import imageData from "../assets/data/vangoatFolder";
 
+const tabs = [
+  { id: "All" },
+  { id: "Drawings" },
+  { id: "Guitar" },
+];
+
 function CreativeFolder({ setShowFolder }) {
   const [viewMode, setViewMode] = useState("grid");
   const [selectedTab, setSelectedTab] = useState("All");
   const [selectedItem, setSelectedItem] = useState(null);
+  const [isReady, setIsReady] = useState(false);
 
-  const viewModes = [
+  const viewModes = useMemo(() => [
     { id: "grid", icon: <IoMdGrid /> },
     { id: "list", icon: <IoIosList /> },
-  ];
-  const tabs = [
-    { id: "All" },
-    { id: "Drawings" },
-    { id: "Guitar" },
-  ];
+  ], []);
 
   const activeItems = useMemo(
     () => imageData[selectedTab] || imageData.All,
@@ -36,7 +38,7 @@ function CreativeFolder({ setShowFolder }) {
 
   return (
     <div
-      className="absolute inset-0 z-100 flex h-screen w-full items-end md:items-center justify-center bg-black/10 backdrop-blur-xs sm:p-4"
+      className="absolute inset-0 z-100 flex h-screen w-full items-end md:items-center justify-center bg-black/20 sm:p-4 backdrop-blur-sm"
       onClick={() => setShowFolder(false)}
     >
       <motion.div
@@ -44,6 +46,8 @@ function CreativeFolder({ setShowFolder }) {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.96, y: 12 }}
         transition={{ duration: 0.2, ease: "easeOut" }}
+        onAnimationComplete={() => setIsReady(true)}
+        style={{ willChange: "transform, opacity" }}
         className="flex h-[70dvh] w-full md:max-w-3xl flex-col overflow-hidden rounded-xl border border-darkgray/20 bg-white font-mono shadow-xl"
         onClick={(event) => event.stopPropagation()}
       >
@@ -146,21 +150,26 @@ function CreativeFolder({ setShowFolder }) {
             </div>
 
             <div className={`min-h-0 flex-1 overflow-y-auto font-mono ${viewMode === "grid" ? "p-4" : "px-4 pt-4"}`}>
-              {activeItems.length === 0 ? (
+              {!isReady ? (
+                <div className="flex h-full items-center justify-center text-sm text-darkgray/50">
+                  Loading files...
+                </div>
+              ) : activeItems.length === 0 ? (
                 <div className="grid h-full place-items-center rounded-lg border border-dashed border-darkgray/25 bg-white/50 p-6 text-center text-sm text-darkgray/70">
                   No files yet in this folder.
                 </div>
               ) : viewMode === "grid" ? (
                 <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
                   {activeItems.map((item) => (
-                    <article key={item.id} className="space-y-1.5">
+                    <article key={item.id} className="space-y-1.5" style={{ contentVisibility: 'auto', containIntrinsicSize: '150px' }}>
                       <div
                       onClick={() => setSelectedItem(item)}
                     className="aspect-[16/9] overflow-hidden rounded-xl cursor-pointer border border-black/10 bg-black/10 shadow-sm">
                         <img
-                          src={item.src}
+                          src={item.thumb || item.src}
                           alt={item.title}
                           loading="lazy"
+                          decoding="async"
                           className="h-full w-full object-cover transition-transform duration-300 hover:scale-[1.03]"
                         />
                       </div>
@@ -176,12 +185,14 @@ function CreativeFolder({ setShowFolder }) {
                     <li
                       key={`list-${item.id}`}
                       onClick={() => setSelectedItem(item)}
+                      style={{ contentVisibility: 'auto', containIntrinsicSize: '70px' }}
                       className="flex items-center gap-3 rounded-lg p-2 border-b border-darkgray/10 cursor-pointer hover:bg-black/3"
                     >
                       <img
-                        src={item.src}
+                        src={item.thumb || item.src}
                         alt={item.title}
                         loading="lazy"
+                        decoding="async"
                         className="h-14 w-24 rounded-md border border-black/10 object-cover"
                       />
                       <div className="min-w-0">
@@ -209,7 +220,7 @@ function CreativeFolder({ setShowFolder }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-lg p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
             onClick={(e) => {
               e.stopPropagation();
               setSelectedItem(null);

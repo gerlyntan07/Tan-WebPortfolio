@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import logo from "../assets/gt-3d.png";
-import Header from "./Header";
 import { motion, AnimatePresence } from "motion/react";
 import folder from "../assets/folder-icon.png";
 import coffeeImg from "../assets/floating-images/coffee.png";
@@ -9,7 +8,10 @@ import guitarImg from "../assets/floating-images/guitar.png";
 import paintImg from "../assets/floating-images/paint.png";
 import pencilImg from "../assets/floating-images/pencil.png";
 import sunglassesImg from "../assets/floating-images/stylish-silver-aviator-sunglasses.png";
-import CreativeFolder from "./CreativeFolder";
+import Loading from "./ui/loading";
+//import CreativeFolder from "./CreativeFolder";
+
+const CreativeFolder = lazy(() => import("./CreativeFolder"));
 
 function Hero() {
   const fullName = "Gerlyn Tan";
@@ -141,8 +143,6 @@ function Hero() {
         ))}
       </div>
 
-      <Header />
-
       <div className="w-[90%] lg:w-[75%] z-30 mx-auto flex flex-col items-center">
         <motion.img
           src={logo}
@@ -216,7 +216,11 @@ function Hero() {
       </div>
 
       <AnimatePresence initial={false}>
-        {showFolder && <CreativeFolder setShowFolder={setShowFolder} />}
+        {showFolder && (
+          <Suspense fallback={<Loading />}>
+            <CreativeFolder setShowFolder={setShowFolder} />
+          </Suspense>
+        )}
       </AnimatePresence>
     </main>
   );

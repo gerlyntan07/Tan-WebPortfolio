@@ -3,6 +3,12 @@ const imageModules = import.meta.glob("../artworks/*.{png,jpg,jpeg,webp,gif,avif
     import: "default",
 });
 
+const thumbnailModules = import.meta.glob("../artworks/*.{png,jpg,jpeg,webp,gif,avif}", {
+    eager: true,
+    import: "default",
+    query: { w: '400', format: 'webp' }
+});
+
 const cleanFileName = (path) => {
     const fullName = path.split("/").pop() || "untitled";
     return fullName.replace(/\.[^/.]+$/, "");
@@ -30,6 +36,7 @@ const allItems = Object.entries(imageModules)
             id: `${fileName}-${index}`,
             title: toTitleCase(fileName),
             src,
+            thumb: thumbnailModules[path] || src,
             category: inferCategory(path),
         };
     })

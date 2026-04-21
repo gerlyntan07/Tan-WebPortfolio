@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
-import Hero from './components/Hero';
+//import Hero from './components/Hero';
+
+const Header = lazy(() => import('./components/Header'));
+const Hero = lazy(() => import('./components/Hero'));
 
 function App() {
     const [darkMode, setDark] = useState(false);
@@ -41,7 +44,10 @@ function App() {
                 <meta property="og:description" content="Portfolio of a skilled Front-End Developer and UI Designer with expertise in React.js." />
             </Helmet>
 
-            <Hero />
+            <Suspense>
+                <Header />
+                <Hero />
+            </Suspense>            
         </main>
     );
 }
