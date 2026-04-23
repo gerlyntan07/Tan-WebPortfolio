@@ -2,79 +2,109 @@ import React, { useEffect, useState, Suspense, lazy } from "react";
 import logo from "../assets/gt-3d.png";
 import { motion, AnimatePresence } from "motion/react";
 import folder from "../assets/folder-icon.png";
-import coffeeImg from "../assets/floating-images/coffee.png";
-import cursorImg from "../assets/floating-images/cursor.png";
-import guitarImg from "../assets/floating-images/guitar.png";
-import paintImg from "../assets/floating-images/paint.png";
-import pencilImg from "../assets/floating-images/pencil.png";
-import sunglassesImg from "../assets/floating-images/stylish-silver-aviator-sunglasses.png";
+import coffeeImg from "../assets/floating-images/coffee.png?w=680&format=webp&quality=76";
+import cursorImg from "../assets/floating-images/cursor.png?w=360&format=webp&quality=76";
+import guitarImg from "../assets/floating-images/guitar.png?w=560&format=webp&quality=76";
+import paintImg from "../assets/floating-images/paint.png?w=760&format=webp&quality=76";
+import pencilImg from "../assets/floating-images/pencil.png?w=640&format=webp&quality=76";
+import sunglassesImg from "../assets/floating-images/stylish-silver-aviator-sunglasses.png?w=320&format=webp&quality=76";
 import Loading from "./ui/loading";
 //import CreativeFolder from "./CreativeFolder";
 
 const CreativeFolder = lazy(() => import("./CreativeFolder"));
+
+const floatingItems = [
+  {
+    id: "pencil",
+    src: pencilImg,
+    className:
+      "right-[70%] top-[10%] w-30 md:top-[16%] md:w-40 lg:right-[80%] lg:w-[20%]",
+    animate: { y: [0, -10, 0], x: [0, 6, 0], rotate: [-24, -16, -24] },
+    duration: 6,
+    delay: 0.6,
+  },
+  {
+    id: "sunglasses",
+    src: sunglassesImg,
+    className:
+      "right-[2%] top-[38%] w-[80px] sm:w-[92px] md:right-[3%] md:top-[34%] md:w-[108px] lg:w-[124px]",
+    animate: { y: [0, -10, 0], x: [0, 7, 0], rotate: [7, 2, 7] },
+    duration: 7.5,
+    delay: 0.8,
+  },
+  {
+    id: "cursor",
+    src: cursorImg,
+    className:
+      "right-[30%] bottom-[17%] w-[38px] md:right-[30%] md:bottom-[10%] md:w-20 lg:right-[30%] lg:w-[66px]",
+    animate: { y: [0, -14, 0], x: [0, 8, 0], rotate: [-10, -2, -10] },
+    duration: 7,
+    delay: 0.3,
+  },
+  {
+    id: "guitar",
+    src: guitarImg,
+    className:
+      "right-[-8%] top-[15%] w-40 md:right-[20%] md:top-[18%] md:w-[20%] lg:right-[25%] lg:top-[20%] lg:w-[15%]",
+    animate: { y: [0, -16, 0], x: [0, -10, 0], rotate: [18, 14, 18] },
+    duration: 8,
+    delay: 1,
+  },
+  {
+    id: "paint",
+    src: paintImg,
+    className:
+      "right-[60%] top-[80%] w-50 md:right-[70%] md:top-[80%] md:w-70 lg:top-[75%] lg:right-[70%] lg:w-[25%]",
+    animate: { y: [0, -15, 0], x: [0, 8, 0], rotate: [-10, -4, -10] },
+    duration: 8.5,
+    delay: 1.2,
+  },
+  {
+    id: "coffee",
+    src: coffeeImg,
+    className:
+      "right-[4%] bottom-[8%] w-25 md:right-[7%] md:bottom-[20%] md:w-35 lg:right-[9%] lg:w-40",
+    animate: { y: [0, -12, 0], x: [0, 7, 0], rotate: [-9, -3, -9] },
+    duration: 8.7,
+    delay: 1.1,
+  },
+];
+
+const FloatingDecor = React.memo(function FloatingDecor() {
+  return (
+    <div
+      className="pointer-events-none absolute inset-0 z-[4]"
+      aria-hidden="true"
+    >
+      {floatingItems.map((item) => (
+        <motion.img
+          key={item.id}
+          src={item.src}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+          draggable={false}
+          style={{ willChange: "transform" }}
+          className={`absolute select-none opacity-90 md:opacity-95 grayscale-75 ${item.className}`}
+          animate={item.animate}
+          transition={{
+            duration: item.duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: item.delay,
+          }}
+        />
+      ))}
+    </div>
+  );
+});
 
 function Hero() {
   const fullName = "Gerlyn Tan";
   const [typedName, setTypedName] = useState("");
   const [isDeletingName, setIsDeletingName] = useState(false);
   const [showFolder, setShowFolder] = useState(false);
-
-  const floatingItems = [
-    {
-      id: "pencil",
-      src: pencilImg,
-      className:
-        "right-[70%] top-[10%] w-30 md:top-[16%] md:w-40 lg:right-[80%] lg:w-[20%]",
-      animate: { y: [0, -10, 0], x: [0, 6, 0], rotate: [-24, -16, -24] },
-      duration: 6,
-      delay: 0.6,
-    },
-    {
-      id: "sunglasses",
-      src: sunglassesImg,
-      className:
-        "right-[2%] top-[38%] w-[80px] sm:w-[92px] md:right-[3%] md:top-[34%] md:w-[108px] lg:w-[124px]",
-      animate: { y: [0, -10, 0], x: [0, 7, 0], rotate: [7, 2, 7] },
-      duration: 7.5,
-      delay: 0.8,
-    },
-    {
-      id: "cursor",
-      src: cursorImg,
-      className:
-        "right-[30%] bottom-[17%] w-[38px] md:right-[30%] md:bottom-[10%] md:w-20 lg:right-[30%] lg:w-[66px]",
-      animate: { y: [0, -14, 0], x: [0, 8, 0], rotate: [-10, -2, -10] },
-      duration: 7,
-      delay: 0.3,
-    },
-    {
-      id: "guitar",
-      src: guitarImg,
-      className:
-        "right-[-8%] top-[15%] w-40 md:right-[20%] md:top-[18%] md:w-[20%] lg:right-[25%] lg:top-[20%] lg:w-[15%]",
-      animate: { y: [0, -16, 0], x: [0, -10, 0], rotate: [18, 14, 18] },
-      duration: 8,
-      delay: 1,
-    },
-    {
-      id: "paint",
-      src: paintImg,
-      className:
-        "right-[60%] top-[80%] w-50 md:right-[70%] md:top-[80%] md:w-70 lg:top-[75%] lg:right-[70%] lg:w-[25%]",
-      animate: { y: [0, -15, 0], x: [0, 8, 0], rotate: [-10, -4, -10] },
-      duration: 8.5,
-      delay: 1.2,
-    },
-    {
-      id: "coffee",
-      src: coffeeImg,
-      className:
-        "right-[4%] bottom-[8%] w-25 md:right-[7%] md:bottom-[20%] md:w-35 lg:right-[9%] lg:w-40",
-      animate: { y: [0, -12, 0], x: [0, 7, 0], rotate: [-9, -3, -9] },
-      duration: 8.7,
-      delay: 1.1,
-    },
-  ];
 
   useEffect(() => {
     let timer;
@@ -122,26 +152,7 @@ function Hero() {
         />
       </div>
 
-      <div
-        className="pointer-events-none absolute inset-0 z-[4]"
-        aria-hidden="true"
-      >
-        {floatingItems.map((item) => (
-          <motion.img
-            key={item.id}
-            src={item.src}
-            alt=""
-            className={`absolute select-none opacity-90 md:opacity-95 grayscale-75 ${item.className}`}
-            animate={item.animate}
-            transition={{
-              duration: item.duration,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: item.delay,
-            }}
-          />
-        ))}
-      </div>
+      <FloatingDecor />
 
       <div className="w-[90%] lg:w-[75%] z-30 mx-auto flex flex-col items-center">
         <motion.img
