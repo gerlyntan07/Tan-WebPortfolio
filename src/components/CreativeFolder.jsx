@@ -3,11 +3,7 @@ import { IoMdGrid, IoIosList } from "react-icons/io";
 import { AnimatePresence, motion } from "motion/react";
 import imageData from "../assets/data/vangoatFolder";
 
-const tabs = [
-  { id: "All" },
-  { id: "Drawings" },
-  { id: "Guitar" },
-];
+const tabs = [{ id: "All" }, { id: "Drawings" }, { id: "Guitar" }];
 
 function CreativeFolder({ setShowFolder }) {
   const [viewMode, setViewMode] = useState("grid");
@@ -15,14 +11,17 @@ function CreativeFolder({ setShowFolder }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const [isReady, setIsReady] = useState(false);
 
-  const viewModes = useMemo(() => [
-    { id: "grid", icon: <IoMdGrid /> },
-    { id: "list", icon: <IoIosList /> },
-  ], []);
+  const viewModes = useMemo(
+    () => [
+      { id: "grid", icon: <IoMdGrid /> },
+      { id: "list", icon: <IoIosList /> },
+    ],
+    [],
+  );
 
   const activeItems = useMemo(
     () => imageData[selectedTab] || imageData.All,
-    [selectedTab]
+    [selectedTab],
   );
 
   useEffect(() => {
@@ -48,7 +47,7 @@ function CreativeFolder({ setShowFolder }) {
         transition={{ duration: 0.2, ease: "easeOut" }}
         onAnimationComplete={() => setIsReady(true)}
         style={{ willChange: "transform, opacity" }}
-        className="flex h-[70dvh] w-full md:max-w-3xl flex-col overflow-hidden rounded-xl border border-darkgray/20 bg-white font-mono shadow-xl"
+        className="flex h-[85dvh] w-full md:max-w-3xl flex-col overflow-hidden rounded-xl border border-darkgray/20 bg-white font-mono shadow-xl"
         onClick={(event) => event.stopPropagation()}
       >
         {/* MENU */}
@@ -149,7 +148,9 @@ function CreativeFolder({ setShowFolder }) {
               })}
             </div>
 
-            <div className={`min-h-0 flex-1 overflow-y-auto font-mono ${viewMode === "grid" ? "p-4" : "px-4 pt-4"}`}>
+            <div
+              className={`min-h-0 flex-1 overflow-y-auto font-mono ${viewMode === "grid" ? "p-4" : "px-4 pt-4"}`}
+            >
               {!isReady ? (
                 <div className="flex h-full items-center justify-center text-sm text-darkgray/50">
                   Loading files...
@@ -161,10 +162,18 @@ function CreativeFolder({ setShowFolder }) {
               ) : viewMode === "grid" ? (
                 <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
                   {activeItems.map((item) => (
-                    <article key={item.id} className="space-y-1.5" style={{ contentVisibility: 'auto', containIntrinsicSize: '150px' }}>
+                    <article
+                      key={item.id}
+                      className="space-y-1.5"
+                      style={{
+                        contentVisibility: "auto",
+                        containIntrinsicSize: "150px",
+                      }}
+                    >
                       <div
-                      onClick={() => setSelectedItem(item)}
-                    className="aspect-[16/9] overflow-hidden rounded-xl cursor-pointer border border-black/10 bg-black/10 shadow-sm">
+                        onClick={() => setSelectedItem(item)}
+                        className="aspect-[16/9] overflow-hidden rounded-xl cursor-pointer border border-black/10 bg-black/10 shadow-sm"
+                      >
                         <img
                           src={item.thumb || item.src}
                           alt={item.title}
@@ -185,7 +194,10 @@ function CreativeFolder({ setShowFolder }) {
                     <li
                       key={`list-${item.id}`}
                       onClick={() => setSelectedItem(item)}
-                      style={{ contentVisibility: 'auto', containIntrinsicSize: '70px' }}
+                      style={{
+                        contentVisibility: "auto",
+                        containIntrinsicSize: "70px",
+                      }}
                       className="flex items-center gap-3 rounded-lg p-2 border-b border-darkgray/10 cursor-pointer hover:bg-black/3"
                     >
                       <img
@@ -196,8 +208,12 @@ function CreativeFolder({ setShowFolder }) {
                         className="h-14 w-24 rounded-md border border-black/10 object-cover"
                       />
                       <div className="min-w-0">
-                        <p className="truncate text-sm text-darkgray/90">{item.title}</p>
-                        <p className="text-[11px] text-darkgray/65">{item.category}</p>
+                        <p className="truncate text-sm text-darkgray/90">
+                          {item.title}
+                        </p>
+                        <p className="text-[11px] text-darkgray/65">
+                          {item.category}
+                        </p>
                       </div>
                     </li>
                   ))}
@@ -207,8 +223,9 @@ function CreativeFolder({ setShowFolder }) {
 
             <div className="flex items-center justify-between border-t border-darkgray/15 px-3 py-2 text-[11px] text-darkgray/65">
               <p>
-                {activeItems.length} {activeItems.length === 1 ? "item" : "items"}
-              </p>              
+                {activeItems.length}{" "}
+                {activeItems.length === 1 ? "item" : "items"}
+              </p>
             </div>
           </div>
         </div>
@@ -226,29 +243,49 @@ function CreativeFolder({ setShowFolder }) {
               setSelectedItem(null);
             }}
           >
-            <div 
-              className="relative max-w-4xl"
+            <div
+              className={`relative ${selectedItem.videoUrl ? 'w-full md:w-[90vw] overflow-hidden rounded-2xl shadow-2xl' : ''} max-w-5xl`}
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={selectedItem.src}
-                alt={selectedItem.title}
-                className="max-h-[90vh] w-auto object-contain rounded-lg border border-darkgray/25 shadow-lg"
-              />
+              {selectedItem.videoUrl ? (
+                <div className="aspect-video w-full">
+                  <iframe
+                    src={`${selectedItem.videoUrl}?autoplay=1`}
+                    title={selectedItem.title}
+                    className="h-full w-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              ) : (
+                <img
+                  src={selectedItem.src}
+                  alt={selectedItem.title}
+                  className="max-h-[85vh] w-full object-contain"
+                />
+              )}
               <button
                 onClick={() => {
-                    setSelectedItem(null);
+                  setSelectedItem(null);
                 }}
                 className="absolute top-3 right-3 cursor-pointer flex h-6 w-6 items-center justify-center rounded-full bg-black/50 text-white"
               >
                 ✕
               </button>
 
-              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/60 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-5 left-8 font-mono">
-                <p className="text-center text-sm text-white">{selectedItem.title}</p>
-                <p className="text-center text-xs text-gray-300">{selectedItem.category}</p>
-              </div>
+              {!selectedItem.videoUrl && (
+                <>
+                  <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/60 via-black/40 to-transparent"></div>
+                  <div className="absolute bottom-5 left-8 font-mono">
+                    <p className="text-center text-sm text-white">
+                      {selectedItem.title}
+                    </p>
+                    <p className="text-center text-xs text-gray-300">
+                      {selectedItem.category}
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
           </motion.div>
         )}

@@ -33,9 +33,9 @@ function Header() {
   };
 
   return (
-    <header className="fixed w-full bg-primary/85 top-0 left-0 right-0 z-100 backdrop-blur-md">
+    <header className="fixed w-full bg-transparent top-0 left-0 right-0 z-100 backdrop-blur-md">
       <div className="flex items-center justify-between px-4 lg:px-[10%] lg:py-2">
-        <div className="w-13">
+        <div className="w-11">
           <img src={logo} alt="Gerlyn Tan" />
         </div>
 

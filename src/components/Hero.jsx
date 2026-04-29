@@ -170,10 +170,10 @@ function Hero() {
           }}
         />
 
-        <div className="flex flex-col mx-auto items-center [&>p]:text-sm md:[&>p]:text-lg [&>p]:text-darkgray text-center gap-5">
+        <div className="flex flex-col mx-auto items-center [&>p]:text-sm md:[&>p]:text-base [&>p]:text-darkgray text-center gap-5">
           <p className="font-mono">Say hello to my world! I am</p>
           <h1
-            className="font-serif text-5xl md:text-7xl text-accent text-shadow-md"
+            className="font-serif text-5xl md:text-6xl text-accent text-shadow-md"
             aria-label={fullName}
           >
             {typedName}
@@ -188,9 +188,7 @@ function Hero() {
             />
           </h1>
           <p className="font-mono lg:w-2/3">
-            A passionate Computer Science student dedicated to building
-            appealing, creative, and user-friendly projects. Let’s craft your
-            ideas into reality!
+            An aspiring full-stack developer dedicated to developing appealing, creative, and user-friendly projects. Actively seeking job opportunities to apply my skills in real-world applications and contribute to innovative solutions.
           </p>
 
           <motion.div
