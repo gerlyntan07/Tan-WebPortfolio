@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 const Header = lazy(() => import('./components/Header'));
 const Hero = lazy(() => import('./components/Hero'));
 const Metrics = lazy(() => import('./components/MetricsBanner'));
+const About = lazy(() => import('./components/About'));
 
 function App() {
     const [darkMode, setDark] = useState(false);
@@ -48,6 +49,7 @@ function App() {
                 <Header />
                 <Hero />
                 <Metrics />
+                {/* <About /> */}
             </Suspense>            
         </main>
     );
