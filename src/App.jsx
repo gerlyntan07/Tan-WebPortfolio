@@ -1,9 +1,9 @@
 import { useState, lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
-//import Hero from './components/Hero';
 
 const Header = lazy(() => import('./components/Header'));
 const Hero = lazy(() => import('./components/Hero'));
+const Metrics = lazy(() => import('./components/MetricsBanner'));
 
 function App() {
     const [darkMode, setDark] = useState(false);
@@ -47,6 +47,7 @@ function App() {
             <Suspense>
                 <Header />
                 <Hero />
+                <Metrics />
             </Suspense>            
         </main>
     );

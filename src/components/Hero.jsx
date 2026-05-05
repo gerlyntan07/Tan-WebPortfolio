@@ -131,7 +131,7 @@ function Hero() {
   }, [typedName, isDeletingName, fullName]);
 
   return (
-    <main className="relative min-h-screen bg-primary flex items-center justify-center overflow-hidden">
+    <main className="w-full relative min-h-screen bg-primary flex items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         aria-hidden="true"
@@ -188,7 +188,7 @@ function Hero() {
             />
           </h1>
           <p className="font-mono lg:w-2/3">
-            An aspiring full-stack developer dedicated to developing appealing, creative, and user-friendly projects. Actively seeking job opportunities to apply my skills in real-world applications and contribute to innovative solutions.
+            A full-stack developer dedicated to developing appealing, creative, and user-friendly projects. Actively seeking job opportunities to apply my skills in real-world applications and contribute to innovative solutions.
           </p>
 
           <motion.div
