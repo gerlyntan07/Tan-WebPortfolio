@@ -9,7 +9,6 @@ import paintImg from "../assets/floating-images/paint.png?w=760&format=webp&qual
 import pencilImg from "../assets/floating-images/pencil.png?w=640&format=webp&quality=76";
 import sunglassesImg from "../assets/floating-images/stylish-silver-aviator-sunglasses.png?w=320&format=webp&quality=76";
 import Loading from "./ui/loading";
-//import CreativeFolder from "./CreativeFolder";
 
 const CreativeFolder = lazy(() => import("./CreativeFolder"));
 
@@ -100,11 +99,10 @@ const FloatingDecor = React.memo(function FloatingDecor() {
   );
 });
 
-function Hero() {
+function Hero({ showFolder, setShowFolder }) {
   const fullName = "Gerlyn Tan";
   const [typedName, setTypedName] = useState("");
   const [isDeletingName, setIsDeletingName] = useState(false);
-  const [showFolder, setShowFolder] = useState(false);
 
   useEffect(() => {
     let timer;
@@ -170,7 +168,7 @@ function Hero() {
           }}
         />
 
-        <div className="flex flex-col mx-auto items-center [&>p]:text-sm md:[&>p]:text-base [&>p]:text-darkgray text-center gap-5">
+        <div className="flex flex-col mx-auto items-center [&>p]:text-sm [&>p]:text-darkgray text-center gap-5">
           <p className="font-mono">Say hello to my world! I am</p>
           <h1
             className="font-serif text-5xl md:text-6xl text-accent text-shadow-md"
@@ -188,7 +186,10 @@ function Hero() {
             />
           </h1>
           <p className="font-mono lg:w-2/3">
-            A full-stack developer dedicated to developing appealing, creative, and user-friendly projects. Actively seeking job opportunities to apply my skills in real-world applications and contribute to innovative solutions.
+            A full-stack developer dedicated to developing appealing, creative,
+            and user-friendly projects. Actively seeking job opportunities to
+            apply my skills in real-world applications and contribute to
+            innovative solutions.
           </p>
 
           <motion.div
