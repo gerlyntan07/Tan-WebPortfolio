@@ -67,7 +67,7 @@ function App() {
         <Header />
         <Hero showFolder={showFolder} setShowFolder={setShowFolder} />
         <Metrics />
-        {/* <About /> */}
+        <About />
       </Suspense>
     </main>
   );
