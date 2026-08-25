@@ -8,7 +8,7 @@ const Skills = lazy(() => import("./Skills"));
 function About() {
   return (
     <main
-      className="flex flex-col gap-10 justify-center items-center w-full py-23 bg-primary"
+      className="flex flex-col gap-40 justify-center items-center w-full py-23 bg-primary"
       style={{
         backgroundImage:
           "repeating-linear-gradient(to right, rgba(52,79,31,0.08) 0, rgba(52,79,31,0.08) 1px, transparent 1px, transparent 120px)",
@@ -18,11 +18,15 @@ function About() {
         <p className="text-left w-full font-mono text-tertiary md:hidden">
           ABOUT ME
         </p>
-        <TiltCard image={hero} title=""></TiltCard>
+        <TiltCard
+          className="mt-5 mb-10 md:m-0"
+          image={hero}
+          title=""
+        ></TiltCard>
 
         <div className="w-full flex flex-col">
           <p className="font-mono text-tertiary hidden md:block">ABOUT ME</p>
-          <p className="font-serif text-2xl md:text-5xl md:pt-5">
+          <p className="font-serif text-3xl md:text-5xl md:pt-5">
             Hi! I&apos;m Gerlyn.
           </p>
           <p className="font-mono text-xs text-darkgray my-4 md:text-base">
@@ -52,9 +56,9 @@ function About() {
         </div>
       </div>
 
-      {/* <Suspense>
+      <Suspense>
         <Skills />
-      </Suspense> */}
+      </Suspense>
     </main>
   );
 }

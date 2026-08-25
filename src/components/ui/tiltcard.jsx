@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 
-export function TiltCard({ image, title, children }) {
+export function TiltCard({ image, title, children, className }) {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -40,11 +40,10 @@ export function TiltCard({ image, title, children }) {
           overflow: "hidden",
           width: "280px",
           height: "360px",
-          cursor: "pointer",          
+          cursor: "pointer",
         }}
-        className="px-3 pt-3 bg-linear-to-r from-violet-100 via-white to-orange-50 rounded-2xl border-2 border-gray-300 mt-3 mb-8"
+        className={`px-3 pt-3 bg-linear-to-r from-violet-100 via-white to-orange-50 rounded-2xl border-2 border-gray-300 ${className}`}
         whileHover={{ scale: 1.03 }}
-        
       >
         <img
           src={image}
@@ -57,9 +56,9 @@ export function TiltCard({ image, title, children }) {
           style={{
             position: "absolute",
             bottom: 0,
-            transform: "translateZ(40px)",  /* pops forward */            
+            transform: "translateZ(40px)" /* pops forward */,
             fontWeight: 500,
-            width: "100%",            
+            width: "100%",
           }}
           className="font-mono bg-linear-to-r from-violet-100 via-white to-orange-50 h-10 text-sm text-darkgray"
         >
