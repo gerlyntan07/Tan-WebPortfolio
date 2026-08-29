@@ -168,7 +168,7 @@ function Hero({ showFolder, setShowFolder }) {
           }}
         />
 
-        <div className="flex flex-col mx-auto items-center [&>p]:text-sm [&>p]:text-darkgray text-center gap-5">
+        <div className="flex flex-col mx-auto items-center [&>p]:text-sm [&>p]:2xl:text-lg [&>p]:text-darkgray text-center gap-5">
           <p className="font-mono">Say hello to my world! I am</p>
           <h1
             className="font-serif text-5xl md:text-6xl text-accent text-shadow-md"
