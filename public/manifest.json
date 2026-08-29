@@ -1,0 +1,15 @@
+{
+  "name": "Gerlyn Tan | Portfolio",
+  "short_name": "Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F2EAD3",
+  "theme_color": "#344F1F",
+  "icons": [
+    {
+      "src": "/src/assets/gt-3d.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ]
+}
