@@ -8,10 +8,10 @@ const Skills = lazy(() => import("./Skills"));
 function About() {
   return (
     <main
-      className="flex flex-col gap-40 justify-center items-center w-full py-23 bg-primary"
+      className="flex flex-col gap-40 justify-center items-center w-full py-40 bg-primary"
       style={{
-        backgroundImage:
-          "repeating-linear-gradient(to right, rgba(52,79,31,0.08) 0, rgba(52,79,31,0.08) 1px, transparent 1px, transparent 120px)",
+        background:
+          "radial-gradient(circle at 15% 20%, rgba(242,234,211,0.92), transparent 36%), radial-gradient(circle at 80% 60%, rgba(244,153,26,0.2), transparent 34%), radial-gradient(circle at 70% 10%, rgba(52,79,31,0.12), transparent 26%)",
       }}
     >
       <div className="w-[90%] lg:w-[80%] flex flex-col md:flex-row md:gap-10 lg:gap-15 md:items-start md:justify-between justify-start items-center">

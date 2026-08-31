@@ -170,7 +170,7 @@ function Hero({ showFolder, setShowFolder }) {
 
         <div className="flex flex-col mx-auto items-center [&>p]:text-sm [&>p]:2xl:text-lg [&>p]:text-darkgray text-center gap-5">
           <p className="font-mono">Say hello to my world! I am</p>
-          <h1
+          <h2
             className="font-serif text-5xl md:text-6xl text-accent text-shadow-md"
             aria-label={fullName}
           >
@@ -184,7 +184,7 @@ function Hero({ showFolder, setShowFolder }) {
                 ease: "easeInOut",
               }}
             />
-          </h1>
+          </h2>
           <p className="font-mono lg:w-2/3">
             A full-stack developer dedicated to developing appealing, creative,
             and user-friendly projects. Actively seeking job opportunities to

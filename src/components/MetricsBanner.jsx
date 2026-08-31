@@ -139,7 +139,7 @@ function MetricsBanner() {
   return (
     <main
       ref={bannerRef}
-      className="w-full p-6 lg:p-10 grid grid-cols-2 md:grid-cols-4 gap-4 bg-white border-y border-gray-200/80 shadow-xs backdrop-blur-xs"
+      className="w-full p-6 lg:p-10 grid grid-cols-2 md:grid-cols-4 gap-4 bg-white shadow-xs backdrop-blur-xs"
     >
       {metrics.map((metric, index) => (
         <MetricItem

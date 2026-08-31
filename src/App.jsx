@@ -5,6 +5,7 @@ const Header = lazy(() => import("./components/Header"));
 const Hero = lazy(() => import("./components/Hero"));
 const Metrics = lazy(() => import("./components/MetricsBanner"));
 const About = lazy(() => import("./components/About"));
+const Journey = lazy(() => import("./components/Journey"));
 
 function App() {
   const [darkMode, setDark] = useState(false);
@@ -68,6 +69,7 @@ function App() {
         <Hero showFolder={showFolder} setShowFolder={setShowFolder} />
         <Metrics />
         <About />
+        <Journey />
       </Suspense>
     </main>
   );
