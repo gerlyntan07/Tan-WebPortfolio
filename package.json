@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "bootstrap": "^5.3.7",
