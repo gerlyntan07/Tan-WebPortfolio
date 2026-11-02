@@ -6,6 +6,10 @@ const Hero = lazy(() => import("./components/Hero"));
 const Metrics = lazy(() => import("./components/MetricsBanner"));
 const About = lazy(() => import("./components/About"));
 const Journey = lazy(() => import("./components/Journey"));
+const Projects = lazy(() => import("./components/Projects"));
+const HowIWork = lazy(() => import("./components/HowIWork"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   const [darkMode, setDark] = useState(false);
@@ -70,6 +74,10 @@ function App() {
         <Metrics />
         <About />
         <Journey />
+        <Projects />
+        <HowIWork />
+        <Contact />
+        <Footer />
       </Suspense>
     </main>
   );

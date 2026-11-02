@@ -129,7 +129,7 @@ function Hero({ showFolder, setShowFolder }) {
   }, [typedName, isDeletingName, fullName]);
 
   return (
-    <main className="w-full relative min-h-screen bg-primary flex items-center justify-center overflow-hidden">
+    <section id="hero" className="w-full relative min-h-screen bg-primary flex items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         aria-hidden="true"
@@ -232,7 +232,7 @@ function Hero({ showFolder, setShowFolder }) {
           </Suspense>
         )}
       </AnimatePresence>
-    </main>
+    </section>
   );
 }
 

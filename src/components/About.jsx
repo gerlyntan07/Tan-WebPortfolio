@@ -1,13 +1,13 @@
-import { React, lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { TiltCard } from "./ui/tiltcard";
-import image from "../assets/artworks/Flowery.jpg";
 import hero from "../assets/hero.jfif";
 
 const Skills = lazy(() => import("./Skills"));
 
 function About() {
   return (
-    <main
+    <section
+      id="about"
       className="flex flex-col gap-40 justify-center items-center w-full py-40 bg-primary"
       style={{
         background:
@@ -59,7 +59,7 @@ function About() {
       <Suspense>
         <Skills />
       </Suspense>
-    </main>
+    </section>
   );
 }
 

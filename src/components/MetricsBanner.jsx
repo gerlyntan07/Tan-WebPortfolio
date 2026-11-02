@@ -137,7 +137,7 @@ function MetricsBanner() {
   ];
 
   return (
-    <main
+    <div
       ref={bannerRef}
       className="w-full p-6 lg:p-10 grid grid-cols-2 md:grid-cols-4 gap-4 bg-white shadow-xs backdrop-blur-xs"
     >
@@ -149,7 +149,7 @@ function MetricsBanner() {
           containerInView={isInView}
         />
       ))}
-    </main>
+    </div>
   );
 }
 
