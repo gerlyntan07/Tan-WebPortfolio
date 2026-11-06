@@ -31,7 +31,6 @@
     box-shadow: 0 3px 2px rgb(171, 105, 12);
 }
 
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
@@ -68,39 +67,26 @@ html {
     background-size: 4px 4px;
 }
 
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+/* Elegant thin scrollbar for Finder panes */
+.finder-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.18) transparent;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
+.finder-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
 }
 
-/* Faint vertical "graph paper" columns shared across sections */
-.bg-grid-lines {
-    background-image: repeating-linear-gradient(to right,
-            rgba(52, 79, 31, 0.07) 0,
-            rgba(52, 79, 31, 0.07) 1px,
-            transparent 1px,
-            transparent 120px);
+.finder-scroll::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-/* Airmail envelope stripes (red / blue diagonal) */
-.airmail-border {
-    background: repeating-linear-gradient(135deg,
-            #E4683F 0 16px,
-            #FEFBF6 16px 24px,
-            #3852B4 24px 40px,
-            #FEFBF6 40px 48px);
+.finder-scroll::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.16);
+    border-radius: 9999px;
 }
 
-/* Warm postcard paper with a subtle grain */
-.paper-texture {
-    background-color: #FFFDF8;
-    background-image: radial-gradient(rgba(122, 122, 115, 0.07) 1px, transparent 1px);
-    background-size: 4px 4px;
+.finder-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.28);
 }

@@ -1,7 +1,8 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { HiArrowUpRight, HiLockClosed } from "react-icons/hi2";
 import SectionHeading from "./ui/SectionHeading";
+import ProjectShowcase from "./ui/ProjectShowcase";
 import projects, { projectCategories } from "../assets/data/projects";
 
 function FolderIcon({ className = "" }) {
@@ -32,6 +33,11 @@ function ProjectDetail({ project }) {
       transition={{ duration: 0.25, ease: "easeOut" }}
       className="flex flex-col"
     >
+      {/* Primary showcase image on the very top of project detail */}
+      <div className="mb-4 sm:mb-5">
+        <ProjectShowcase project={project} />
+      </div>
+
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-darkgray">
         {project.kind} · {project.period}
       </p>
@@ -108,8 +114,16 @@ function ProjectDetail({ project }) {
 
 function Projects() {
   const [category, setCategory] = useState("All");
-  const [selectedId, setSelectedId] = useState(projects[2]?.id ?? projects[0].id);
+  const [selectedId, setSelectedId] = useState(projects[3]?.id ?? projects[0].id);
   const optionRefs = useRef({});
+  const detailPaneRef = useRef(null);
+
+  // Reset scroll position to top when switching projects
+  useEffect(() => {
+    if (detailPaneRef.current) {
+      detailPaneRef.current.scrollTop = 0;
+    }
+  }, [selectedId]);
 
   const filtered = useMemo(
     () =>
@@ -230,9 +244,9 @@ function Projects() {
             })}
           </div>
 
-          <div className="grid md:grid-cols-[170px_minmax(0,1fr)_minmax(0,1.25fr)] md:min-h-[440px]">
+          <div className="grid md:grid-cols-[170px_minmax(0,1fr)_minmax(0,1.25fr)] md:h-[480px]">
             {/* Sidebar */}
-            <aside className="hidden md:block border-r border-black/8 bg-gray-50/60 px-3 py-5">
+            <aside className="hidden md:block border-r border-black/8 bg-gray-50/60 px-3 py-5 md:h-full md:overflow-y-auto finder-scroll">
               <p className="mb-3 px-2 font-mono text-[11px] font-medium tracking-[0.12em] uppercase text-darkgray/80">
                 Favorites
               </p>
@@ -265,7 +279,7 @@ function Projects() {
             </aside>
 
             {/* File list */}
-            <div className="border-b md:border-b-0 md:border-r border-black/8 p-3">
+            <div className="border-b md:border-b-0 md:border-r border-black/8 p-3 md:h-full md:overflow-y-auto finder-scroll">
               <ul
                 role="listbox"
                 aria-label="Projects"
@@ -313,7 +327,12 @@ function Projects() {
             </div>
 
             {/* Detail pane */}
-            <div className="p-6 md:p-8 min-h-[380px]">
+            <div
+              ref={detailPaneRef}
+              tabIndex={0}
+              aria-label="Project details"
+              className="p-6 md:p-8 md:h-full max-h-[480px] md:max-h-none overflow-y-auto finder-scroll focus-visible:outline-none"
+            >
               <AnimatePresence mode="wait" initial={false}>
                 {selected ? (
                   <ProjectDetail project={selected} />

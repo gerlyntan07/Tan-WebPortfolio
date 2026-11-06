@@ -37,7 +37,7 @@ function HowIWork() {
       id="process"
       className="relative w-full overflow-hidden bg-primary py-28 md:py-36"
     >
-      <div className="absolute inset-0 pointer-events-none bg-grid-lines" aria-hidden="true" />
+      <div className="absolute inset-0 pointer-events-none bg-secondary" aria-hidden="true" />
 
       <div className="relative mx-auto w-[90%] lg:w-[80%] max-w-6xl">
         <SectionHeading
